@@ -14,6 +14,7 @@ import { instructionsApi } from './api/instructions-api.ts'
 import { integrationsApi } from './api/integrations-api.ts'
 import { k8sApi } from './api/k8s-api.ts'
 import { monitoringApi } from './api/monitoring-api.ts'
+import { mailApi } from './api/mail-api.ts'
 import { plaudApi } from './api/plaud-api.ts'
 import { posthogApi } from './api/posthog-api.ts'
 import { providerAccessApi } from './api/provider-access-api.ts'
@@ -38,6 +39,7 @@ import type { WindowInstructionsApi } from './api/window-instructions.ts'
 import type { WindowIntegrationsApi } from './api/window-integrations.ts'
 import type { WindowK8sApi } from './api/window-k8s.ts'
 import type { WindowMonitoringApi } from './api/window-monitoring.ts'
+import type { WindowMailApi } from './api/window-mail.ts'
 import type { WindowPlaudApi } from './api/window-plaud.ts'
 import type { WindowPosthogApi } from './api/window-posthog.ts'
 import type { WindowProviderAccessApi } from './api/window-provider-access.ts'
@@ -71,6 +73,7 @@ declare global {
       WindowIntegrationsApi &
       WindowPosthogApi &
       WindowPlaudApi &
+      WindowMailApi &
       WindowSessionAccessApi &
       WindowChannelsApi &
       WindowAwsApi &
@@ -96,6 +99,7 @@ const rawApi = {
   ...integrationsApi,
   ...posthogApi,
   ...plaudApi,
+  ...mailApi,
   ...awsApi,
   ...gcpClustersApi,
   ...gitApi,

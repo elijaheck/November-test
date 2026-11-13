@@ -100,7 +100,7 @@ export function WorkspaceRightRail({ ws }: { ws: WorkspaceController }) {
       <section className="flex min-h-0 flex-1 flex-col border-t border-line-control/60">
         <div ref={tasksRef} className="flex min-h-0 flex-1 flex-col pt-2" />
       </section>
-      <RailEmails ws={ws} teamId={teamId} />
+      <RailEmails ws={ws} />
     </aside>
   )
 }

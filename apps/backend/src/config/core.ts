@@ -31,6 +31,8 @@ export function coreConfig() {
       // built-in local user with no email or code. Never enable on a backend
       // other people can reach.
       localSignIn: process.env.NODE_ENV !== 'production' && bool('OPENBOT_LOCAL_SIGN_IN', false),
+      /** Seals IMAP app passwords (lib/mail/accounts.ts reads it through its sealer). */
+      mailCredentialKey: optional('MAIL_CREDENTIAL_ENCRYPTION_KEY'),
       publicBaseUrl: (
         optional('NUPHOS_AUTH_BASE_URL') ??
         optional('NUPHOS_PUBLIC_URL') ??
