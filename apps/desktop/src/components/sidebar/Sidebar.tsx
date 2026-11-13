@@ -16,7 +16,7 @@ import { chatSectionActions, useProjectRows } from './section-actions'
 import { SidebarSectionList } from './sections-list'
 import { teamSections } from './sections-services'
 import { SidebarFooter } from './SidebarFooter'
-import { SidebarPeopleAgents } from './SidebarPeopleAgents'
+import { SidebarMessagesBots } from './SidebarMessagesBots'
 import { settingsBackTarget } from './types'
 import { useChatNavKeys } from './use-chat-nav-keys'
 import { useSidebarChrome } from './use-sidebar-chrome'
@@ -227,7 +227,7 @@ export const Sidebar = memo(function Sidebar({
           onCreateTeam={onCreateTeam}
         />
         {teamView ? (
-          <SidebarPeopleAgents
+          <SidebarMessagesBots
             page={sidebarPage}
             onPage={changeSidebarPage}
             sections={sidebarSections}
