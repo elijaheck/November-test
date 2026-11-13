@@ -74,7 +74,7 @@ export function IMessageConversation({ guid }: { guid: string }) {
   // Block body on purpose: newer Chromium returns a Promise from scrollIntoView,
   // and an effect that returns a non-function crashes React on unmount.
   useEffect(() => {
-    void end.current?.scrollIntoView({ block: 'end' })
+    end.current?.scrollIntoView({ block: 'end' })
   }, [newest])
 
   const send = async () => {
