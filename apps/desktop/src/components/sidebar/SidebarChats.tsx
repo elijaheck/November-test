@@ -8,10 +8,13 @@ import {
   setTodayMailTarget,
   useDockTasksTarget,
 } from '../../app/workspace/dockTasksSlot'
+import { selectIMessageChat, useSelectedIMessageChat } from '../../app/workspace/imessageSelection'
+import { useIMessageChats } from '../../app/workspace/useIMessageChats'
 import { t } from '../../i18n'
 import { BotImportDialog } from '../channels/BotImportDialog'
 import { toast } from '../ui/toast'
 
+import { imessageItems, mergeByActivity } from './imessageItems'
 import { SidebarPageList } from './SidebarPageList'
 import { SidebarTeamPages } from './SidebarTeamPages'
 
@@ -121,28 +124,52 @@ export function SidebarChats({
   onScroll: UIEventHandler<HTMLElement>
 }) {
   const tasksTarget = useDockTasksTarget()
+  const imessages = useIMessageChats()
+  const openIMessage = useSelectedIMessageChat()
 
   if (!tasksTarget) {
     return <SidebarTeamPages {...{ page, onPage, sections, listProps, onScroll }} />
   }
-  const list = { sections, listProps, onScroll }
+  // Picking any bot, task or page leaves the iMessage conversation.
+  const select = (key: string) => {
+    selectIMessageChat(null)
+    listProps.onSelect(key)
+  }
+  const people = imessageItems(imessages.data, openIMessage, selectIMessageChat, () => {
+    void api.imessageOpenAccessSettings()
+  })
+  const withPeople = sections.map((section) =>
+    section.title === 'Channels'
+      ? {
+          ...section,
+          items: mergeByActivity(
+            openIMessage
+              ? section.items.map((item) => ({ ...item, active: false }))
+              : section.items,
+            people,
+          ),
+        }
+      : section,
+  )
+  const list = { sections, listProps: { ...listProps, onSelect: select }, onScroll }
   // The section's own action is New Bot; New message sits beside it.
   const newBot = sections.find((section) => section.title === 'Channels')?.action
 
   return (
     <div className="flex min-h-0 flex-1 flex-col">
       <SidebarPageList
+        {...list}
+        sections={withPeople}
         page={0}
         title={t('Chats')}
         action={
           <div className="ml-auto flex items-center gap-1">
-            <NewMessageButton teamId={listProps.scope.teamId} onSelect={listProps.onSelect} />
-            <ImportBotsButton teamId={listProps.scope.teamId} onSelect={listProps.onSelect} />
+            <NewMessageButton teamId={listProps.scope.teamId} onSelect={select} />
+            <ImportBotsButton teamId={listProps.scope.teamId} onSelect={select} />
             {newBot}
           </div>
         }
         emptyText={t('No chats yet. Message a teammate or make a Bot.')}
-        {...list}
       />
       {createPortal(
         <SidebarPageList page={1} title={t('Today')} after={<TodayMailSlot />} {...list} />,

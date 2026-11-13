@@ -15,6 +15,7 @@ import { instructionsApi } from './preload-parts/api-instructions'
 import { integrationsApi } from './preload-parts/api-integrations'
 import { k8sAppApi } from './preload-parts/api-k8s-app'
 import { localTerminalApi } from './preload-parts/api-local-terminal'
+import { imessageApi } from './preload-parts/api-imessage'
 import { mailApi } from './preload-parts/api-mail'
 import { plaudApi } from './preload-parts/api-plaud'
 import { posthogApi } from './preload-parts/api-posthog'
@@ -44,6 +45,7 @@ const api = {
   ...posthogApi,
   ...plaudApi,
   ...mailApi,
+  ...imessageApi,
   ...sessionAccessApi,
   ...channelsApi,
   ...signInSessionsApi,
