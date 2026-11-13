@@ -18,6 +18,7 @@ import { agentSessions } from '@/routes/agent-sessions'
 import { agentTriggersRoutes } from '@/routes/agent-triggers'
 import { asanaAppRoutes } from '@/routes/asana-app'
 import { auth } from '@/routes/auth'
+import { localAuth } from '@/routes/auth-local'
 import { avatarsRoutes } from '@/routes/avatars'
 import { claudeCodeRuntimeSkills } from '@/routes/claude-code-runtime-skills'
 import { cliRoutes } from '@/routes/cli'
@@ -95,6 +96,7 @@ app.route('/.well-known', wellKnownRoutes)
 // The internal issuer's JWKS (conversation tokens), kept apart from the one above.
 app.route('/internal/.well-known', internalWellKnownRoutes)
 app.route('/auth', cliAuthRoutes)
+app.route('/auth/local', localAuth)
 app.route('/auth', auth)
 app.route('/avatars', avatarsRoutes)
 // Server-to-server abuse fence for nuphos.ai's public email handoff. The route

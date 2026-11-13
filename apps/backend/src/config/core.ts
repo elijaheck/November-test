@@ -27,6 +27,10 @@ export function coreConfig() {
     },
     auth: {
       jwtSecret: optional('NUPHOS_JWT_SECRET') ?? optional('JWT_SECRET_KEY'),
+      // Local stacks only: POST /auth/local/sign-in opens a session for one
+      // built-in local user with no email or code. Never enable on a backend
+      // other people can reach.
+      localSignIn: process.env.NODE_ENV !== 'production' && bool('OPENBOT_LOCAL_SIGN_IN', false),
       publicBaseUrl: (
         optional('NUPHOS_AUTH_BASE_URL') ??
         optional('NUPHOS_PUBLIC_URL') ??

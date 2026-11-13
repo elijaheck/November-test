@@ -11,6 +11,7 @@ export const signInSessionsApi = {
   authSignOutAccount: (key: string) => ipcRenderer.invoke('auth:signOutAccount', key),
   authSignOutAllAccounts: () => ipcRenderer.invoke('auth:signOutAllAccounts'),
   authEmailRequestCode: (email: string) => ipcRenderer.invoke('auth:emailRequestCode', email),
+  authLocalSignIn: () => ipcRenderer.invoke('auth:localSignIn'),
   authEmailVerifyCode: (email: string, code: string) =>
     ipcRenderer.invoke('auth:emailVerifyCode', email, code),
   atlasListSignInSessions: () => ipcRenderer.invoke('atlas:listSignInSessions'),

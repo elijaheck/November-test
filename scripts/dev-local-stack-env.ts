@@ -85,6 +85,7 @@ export function localBackendEnv(stack: LocalStack): Record<string, string> {
     CLAUDE_CODE_RUNTIME_PROVISIONER_ENABLED: 'false',
     NUPHOS_DEV_EMAIL_OTP_LOG: 'true',
     NUPHOS_LOCAL_STACK: 'true',
+    OPENBOT_LOCAL_SIGN_IN: 'true',
     NUPHOS_FILE_TRANSFER_S3_BUCKET: S3_BUCKETS.fileTransfers,
     NUPHOS_FILE_TRANSFER_S3_REGION: 'us-east-1',
     NUPHOS_FILE_TRANSFER_S3_ENDPOINT: s3,
