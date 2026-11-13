@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useImperativeHandle, useState } from 'react'
 
 import { AddIntegrationModal } from '../AddIntegrationModal'
+import { BindMailDialog } from '../BindMailDialog'
 import { BindPlaudDialog } from '../BindPlaudDialog'
 import { BindTrelloDialog } from '../BindTrelloDialog'
 import { useResetOnKey } from '../useResetOnKey'
@@ -63,6 +64,7 @@ export const TeamHomeBindFlow = forwardRef<
   const [bindSlackOpen, setBindSlackOpen] = useState(slackBindRequested ?? false)
   const [bindDiscordOpen, setBindDiscordOpen] = useState(false)
   const [bindLarkOpen, setBindLarkOpen] = useState(false)
+  const [bindMailOpen, setBindMailOpen] = useState(false)
   const [bindMode, setBindMode] = useState<BindMode>('install')
 
   // Deep entry points (the sidebar Slack promo) request the Slack bind dialog
@@ -143,6 +145,9 @@ export const TeamHomeBindFlow = forwardRef<
       case 'mongodb':
         setBindDatabaseOpen(true)
         break
+      case 'mail':
+        setBindMailOpen(true)
+        break
     }
   }
 
@@ -201,6 +206,14 @@ export const TeamHomeBindFlow = forwardRef<
           setBindTrelloOpen(false)
           onChanged()
         }}
+      />
+      <BindMailDialog
+        open={bindMailOpen}
+        onClose={() => {
+          setBindMailOpen(false)
+          onDialogsClosed?.()
+        }}
+        onBound={onChanged}
       />
       <BindPlaudDialog
         open={bindPlaudOpen}

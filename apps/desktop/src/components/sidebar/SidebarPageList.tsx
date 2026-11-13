@@ -25,6 +25,7 @@ export function SidebarPageList({
   itemFilter,
   action,
   emptyText,
+  after,
 }: {
   page: 0 | 1
   /** Overrides the page heading (Channels / Tasks). */
@@ -34,6 +35,8 @@ export function SidebarPageList({
   /** Replaces the heading's own action button. */
   action?: ReactNode
   emptyText?: string
+  /** Page 1 only: rendered under the task rows, inside the same scroll. */
+  after?: ReactNode
   sections: Section[]
   listProps: Omit<ComponentProps<typeof SidebarSectionList>, 'sections'>
   onScroll: UIEventHandler<HTMLElement>
@@ -135,10 +138,18 @@ export function SidebarPageList({
         ) : (
           <div className="shrink-0">
             {empty ? (
-              <p className="px-3 py-6 text-center text-[12px] text-tertiary">{t('No tasks yet')}</p>
+              <p
+                className={clsx(
+                  'px-3 text-center text-[12px] text-tertiary',
+                  after ? 'py-2' : 'py-6',
+                )}
+              >
+                {t('No tasks yet')}
+              </p>
             ) : (
               list
             )}
+            {after}
           </div>
         )}
       </nav>

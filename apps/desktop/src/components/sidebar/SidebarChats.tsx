@@ -1,10 +1,15 @@
-import { Loader2, SquarePen } from 'lucide-react'
-import { useState } from 'react'
+import { Download, Loader2, SquarePen } from 'lucide-react'
+import { useCallback, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { api } from '../../api'
-import { useDockTasksTarget } from '../../app/workspace/dockTasksSlot'
+import {
+  clearTodayMailTarget,
+  setTodayMailTarget,
+  useDockTasksTarget,
+} from '../../app/workspace/dockTasksSlot'
 import { t } from '../../i18n'
+import { BotImportDialog } from '../channels/BotImportDialog'
 import { toast } from '../ui/toast'
 
 import { SidebarPageList } from './SidebarPageList'
@@ -49,6 +54,54 @@ function NewMessageButton({
   )
 }
 
+/** Bring Bots in from a Grok Bot export (.zip): roles, skills, memories, files. */
+function ImportBotsButton({
+  teamId,
+  onSelect,
+}: {
+  teamId: string
+  onSelect: (key: string) => void
+}) {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <>
+      <button
+        type="button"
+        title={t('Import Bots')}
+        aria-label={t('Import Bots')}
+        onClick={() => setOpen(true)}
+        className="flex size-7 items-center justify-center rounded-lg text-tertiary hover:bg-state-hover hover:text-main"
+      >
+        <Download className="size-4" strokeWidth={1.8} />
+      </button>
+      {open && (
+        <BotImportDialog
+          teamId={teamId}
+          onClose={() => setOpen(false)}
+          onOpen={(sessionId) => onSelect(`agent-session:${sessionId}`)}
+        />
+      )}
+    </>
+  )
+}
+
+/** The element today's mail portals into, under the task rows. */
+function TodayMailSlot() {
+  const held = useRef<HTMLDivElement | null>(null)
+  const ref = useCallback((element: HTMLDivElement | null) => {
+    if (element) {
+      held.current = element
+      setTodayMailTarget(element)
+    } else if (held.current) {
+      clearTodayMailTarget(held.current)
+      held.current = null
+    }
+  }, [])
+
+  return <div ref={ref} />
+}
+
 /**
  * The team sidebar: one list of conversations, people and Bots together,
  * newest first. Tasks move to the right rail when one is mounted; without it,
@@ -84,13 +137,17 @@ export function SidebarChats({
         action={
           <div className="ml-auto flex items-center gap-1">
             <NewMessageButton teamId={listProps.scope.teamId} onSelect={listProps.onSelect} />
+            <ImportBotsButton teamId={listProps.scope.teamId} onSelect={listProps.onSelect} />
             {newBot}
           </div>
         }
         emptyText={t('No chats yet. Message a teammate or make a Bot.')}
         {...list}
       />
-      {createPortal(<SidebarPageList page={1} {...list} />, tasksTarget)}
+      {createPortal(
+        <SidebarPageList page={1} title={t('Today')} after={<TodayMailSlot />} {...list} />,
+        tasksTarget,
+      )}
     </div>
   )
 }

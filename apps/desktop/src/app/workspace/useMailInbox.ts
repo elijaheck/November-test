@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { useCallback, useRef } from 'react'
 
 import { api } from '../../api'
@@ -17,10 +17,8 @@ export function useMailInbox(): {
   loading: boolean
   refreshing: boolean
   refresh: () => void
-  reload: () => Promise<void>
 } {
   const fresh = useRef(false)
-  const client = useQueryClient()
   const query = useQuery({
     queryKey: MAIL_INBOX_KEY,
     queryFn: () => {
@@ -37,15 +35,18 @@ export function useMailInbox(): {
     fresh.current = true
     void query.refetch()
   }, [query])
-  const reload = useCallback(() => client.invalidateQueries({ queryKey: MAIL_INBOX_KEY }), [client])
 
   return {
     inbox: query.data,
     loading: query.isPending,
     refreshing: query.isFetching && !query.isPending,
     refresh,
-    reload,
   }
+}
+
+/** True when `iso` falls on the local calendar day of `now`. */
+export function isToday(iso: string, now = new Date()): boolean {
+  return new Date(iso).toDateString() === now.toDateString()
 }
 
 /** "3:42 PM" for today, "Nov 9" otherwise, in the user's locale. */
@@ -53,7 +54,7 @@ export function shortMailTime(iso: string, now = new Date()): string {
   const date = new Date(iso)
 
   if (Number.isNaN(date.getTime()) || date.getTime() === 0) return ''
-  if (date.toDateString() === now.toDateString()) {
+  if (isToday(iso, now)) {
     return date.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' })
   }
 

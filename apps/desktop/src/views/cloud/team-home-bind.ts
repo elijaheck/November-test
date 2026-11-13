@@ -43,6 +43,7 @@ export const BIND_DIALOG_KEYS = [
   'discord',
   'lark',
   'mongodb',
+  'mail',
 ] as const
 
 export type BindDialogKey = (typeof BIND_DIALOG_KEYS)[number]

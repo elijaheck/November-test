@@ -48,6 +48,7 @@ export type AddIntegrationKey =
   | 'plaud'
   | 'notion'
   | 'upstash'
+  | 'mail'
   | 'resend'
   | 'instabox'
   | 'slack'
@@ -106,6 +107,10 @@ const ITEM_META: Record<AddIntegrationKey, { name: string; description: string }
   asana: { name: 'Asana', description: t('Tasks & projects.') },
   plaud: { name: 'Plaud', description: t('Recordings, transcripts & summaries.') },
   notion: { name: 'Notion', description: t('Pages, databases & docs.') },
+  mail: {
+    name: 'Mail',
+    description: t('Your iCloud, Gmail or Outlook inbox, with an app password.'),
+  },
   resend: { name: 'Resend', description: t('Send transactional email.') },
   instabox: {
     name: 'instabox',
@@ -142,6 +147,7 @@ const ALIASES: Partial<Record<AddIntegrationKey, string>> = {
   github: 'git',
   gitlab: 'git',
   jira: 'atlassian',
+  mail: 'email inbox icloud gmail outlook imap apple google microsoft',
   resend: 'smtp',
   trello: 'smtp',
   lark: '飛書 飞书',
