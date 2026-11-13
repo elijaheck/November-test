@@ -71,7 +71,11 @@ export function IMessageConversation({ guid }: { guid: string }) {
   const rows = messages.data?.status === 'ok' ? messages.data.data : []
   const newest = rows.at(-1)?.id
 
-  useEffect(() => end.current?.scrollIntoView({ block: 'end' }), [newest])
+  // Block body on purpose: newer Chromium returns a Promise from scrollIntoView,
+  // and an effect that returns a non-function crashes React on unmount.
+  useEffect(() => {
+    void end.current?.scrollIntoView({ block: 'end' })
+  }, [newest])
 
   const send = async () => {
     const text = draft.trim()
