@@ -19,9 +19,9 @@ function OptionRow({ option }: { option: SlashOption }) {
       <span className="flex w-[28%] min-w-0 max-w-[210px] shrink-0 items-baseline gap-1.5">
         <span className="truncate font-mono text-[12px] leading-4 text-main">{name}</span>
         {nuphos && (
-          // Nuphos actions run when picked, so they never pass for something the agent runs.
+          // OpenBot actions run when picked, so they never pass for something the agent runs.
           <span className="shrink-0 rounded bg-state-selected px-1 text-[10px] leading-4 text-tertiary">
-            Nuphos
+            OpenBot
           </span>
         )}
         {hint && <span className="truncate text-[10.5px] leading-4 text-tertiary">{hint}</span>}

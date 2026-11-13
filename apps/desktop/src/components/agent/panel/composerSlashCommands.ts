@@ -2,7 +2,7 @@ import { createContext } from 'react'
 
 import type { AgentCommand } from '../../../lib/runtimeExecution.ts'
 
-/** A Nuphos action the composer's `/` menu offers. It runs only when picked. */
+/** A OpenBot action the composer's `/` menu offers. It runs only when picked. */
 export type SlashCommand = {
   id: string
   title: string
@@ -12,13 +12,14 @@ export type SlashCommand = {
 
 export const SlashCommandsContext = createContext<SlashCommand[]>([])
 
-/** A row in the `/` menu: one of the agent's own commands, or a Nuphos action. */
+/** A row in the `/` menu: one of the agent's own commands, or a OpenBot action. */
 export type SlashOption =
-  { kind: 'agent'; command: AgentCommand } | { kind: 'nuphos'; action: SlashCommand }
+  | { kind: 'agent'; command: AgentCommand }
+  | { kind: 'nuphos'; action: SlashCommand }
 
 /**
  * The `/query` being typed at the caret. `leading` when the message so far is
- * only that, which is where Nuphos actions are offered too; a token later in the
+ * only that, which is where OpenBot actions are offered too; a token later in the
  * message (after a space, caret at its end) offers only the agent's commands.
  * `start` is where the `/` sits in `textBeforeCaret`.
  */
@@ -51,7 +52,7 @@ export function matchSlashCommands(commands: readonly SlashCommand[], query: str
 
 /**
  * The agent's commands first, the most used ahead (A to Z among equals), then
- * the Nuphos actions (only for a leading `/`).
+ * the OpenBot actions (only for a leading `/`).
  */
 export function matchSlashOptions(
   agent: readonly AgentCommand[],
@@ -85,7 +86,7 @@ export const SLASH_VISIBLE_ROWS = 5
  * The row plain Enter picks, or null when Enter should send. A row the arrows
  * picked always counts. Otherwise Enter only completes an agent command (the
  * highlighted one, else the first): it just fills in text, so it is safe without
- * the arrows. A Nuphos action runs, so it needs the arrows or its full name
+ * the arrows. A OpenBot action runs, so it needs the arrows or its full name
  * (`/fork`). An agent command typed out in full is sent as it is, even when
  * another row is highlighted.
  */
@@ -102,7 +103,7 @@ export function slashEnterTarget(
   if (options.some((o) => o.kind === 'agent' && o.command.name.toLowerCase() === typed)) {
     return null
   }
-  // A Nuphos action typed out in full runs, as picking it does.
+  // A OpenBot action typed out in full runs, as picking it does.
   const action = options.find((o) => o.kind === 'nuphos' && o.action.id === typed)
 
   if (action) return action

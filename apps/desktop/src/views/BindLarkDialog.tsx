@@ -113,7 +113,7 @@ export function BindLarkDialog({ open, teamId, onClose, onBound, mode = 'install
               'Credentials saved. Last step — paste the URL below back into your app’s Event Subscription request URL, then publish a version.',
             )
           : t(
-              'Register your own custom app in the Feishu / Lark developer console, then paste its credentials here. Nuphos never asks you to publish an app to the marketplace.',
+              'Register your own custom app in the Feishu / Lark developer console, then paste its credentials here. OpenBot never asks you to publish an app to the marketplace.',
             )
       }
       width={640}
@@ -139,7 +139,7 @@ export function BindLarkDialog({ open, teamId, onClose, onBound, mode = 'install
                   <WizardExampleImage
                     src="/lark-create-app-example.png"
                     alt={t(
-                      'Create custom app form filled with the Nuphos name, description, and icon',
+                      'Create custom app form filled with the OpenBot name, description, and icon',
                     )}
                   />
                 }

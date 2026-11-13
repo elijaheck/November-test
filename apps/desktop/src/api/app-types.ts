@@ -75,7 +75,7 @@ export type LocalAgentSessionInfo = {
   updatedAt: string
 }
 
-/** Outcome of importing a local Claude Code / Codex session as a Nuphos
+/** Outcome of importing a local Claude Code / Codex session as a OpenBot
  *  conversation on a team agent. */
 export type LocalSessionImportResult = {
   sessionId: string
@@ -124,7 +124,12 @@ export type LocalSetupResult = {
   skipped: {
     name: string
     reason:
-      'too_large' | 'too_many_files' | 'name_taken' | 'over_budget' | 'unreadable' | 'needs_review'
+      | 'too_large'
+      | 'too_many_files'
+      | 'name_taken'
+      | 'over_budget'
+      | 'unreadable'
+      | 'needs_review'
   }[]
   instruction: 'synced' | 'removed' | 'none' | 'too_long'
   instructionParts: number

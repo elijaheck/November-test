@@ -101,10 +101,10 @@ export function LocalAgentSignIn({
                               )
                             : isMac
                               ? t(
-                                  'Nuphos uses the Claude sign-in from your terminal. Signing in updates that shared login, restarts your local Claude runtime and stops its running agents.',
+                                  'OpenBot uses the Claude sign-in from your terminal. Signing in updates that shared login, restarts your local Claude runtime and stops its running agents.',
                                 )
                               : t(
-                                  'Nuphos keeps its own Claude sign-in on this computer, separate from Claude in your terminal. Signing in restarts your local Claude runtime and stops its running agents.',
+                                  'OpenBot keeps its own Claude sign-in on this computer, separate from Claude in your terminal. Signing in restarts your local Claude runtime and stops its running agents.',
                                 )}
                 </p>
                 {busy && login?.userCode && (

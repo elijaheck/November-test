@@ -79,7 +79,7 @@ export function BrowserCodeEntry({
           : t('Approve access on {account}’s page, then paste the code it shows you here.', {
               account,
             })}{' '}
-        {t('The runtime keeps the sign-in; Nuphos does not store it.')}
+        {t('The runtime keeps the sign-in; OpenBot does not store it.')}
       </p>
       <Button
         size="md"

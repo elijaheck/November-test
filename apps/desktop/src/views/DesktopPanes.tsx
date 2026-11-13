@@ -30,7 +30,7 @@ const holdingStatus = (display: number) =>
 /**
  * A conversation's own desktop on its Box, watched over the Box's tunnel;
  * `display` is the X display number, or 0 for a Mac's own screen, which
- * Nuphos serves itself with no Mac account. View-only until the owner takes it over:
+ * OpenBot serves itself with no Mac account. View-only until the owner takes it over:
  * the backend drops the viewer's input until then, and taking over also makes
  * the agent's input tools on that desktop wait. A dropped stream reconnects,
  * as the viewer again: the host hands the desktop back when a stream closes.

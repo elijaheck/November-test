@@ -50,7 +50,7 @@ export type TunnelClientDeps = {
   }
   sampleMetrics?: () => Promise<DeviceMetrics | null>
   status: () => LocalRuntimeTunnelStatus
-  /** `connected` is exactly whether Nuphos holds this computer's tunnel right now. */
+  /** `connected` is exactly whether OpenBot holds this computer's tunnel right now. */
   onChange?: (connected: boolean, superseded: boolean) => void
   /** The backend revoked this computer's credential; the tunnel stays down. */
   onRevoked?: () => void

@@ -17,7 +17,7 @@ type LinearLinks = {
 }
 
 // Resolve only known app routes. Native pages and unavailable resources retain
-// their shareable Nuphos URL; never invent a provider workspace slug.
+// their shareable OpenBot URL; never invent a provider workspace slug.
 export async function resolveChatExternalLink(href: string, linear: LinearLinks): Promise<string> {
   const appUrl = isAppWebUrl(href.trim())
 

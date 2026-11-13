@@ -44,11 +44,11 @@ export function TailscaleForm({ st, teamId }: { st: BindState; teamId: string })
         />
       </Field>
       <Field
-        label={t('How Nuphos authenticates')}
+        label={t('How OpenBot authenticates')}
         hint={
           tailscaleFederated
             ? t(
-                'Nuphos proves its identity with a signed token each time, so no credential of yours is ever stored here.',
+                'OpenBot proves its identity with a signed token each time, so no credential of yours is ever stored here.',
               )
             : t(
                 'The secret is encrypted before storage and exchanged for short-lived access tokens.',

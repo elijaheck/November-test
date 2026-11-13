@@ -75,7 +75,7 @@ function InlineSignIn({ provider }: { provider: CliLoginProvider }) {
 /** The CLI may be installed but out of sight: a GUI app reads the login shell's PATH. */
 function MissingCli({ command }: { command: string }) {
   const [pre, post = ''] = t(
-    'Nuphos couldn’t find {command} on this computer. If it’s installed, add it to your login shell’s PATH, then reopen Nuphos.',
+    'OpenBot couldn’t find {command} on this computer. If it’s installed, add it to your login shell’s PATH, then reopen OpenBot.',
   ).split('{command}')
 
   return (
@@ -209,7 +209,7 @@ export function LocalAgentSetupCards() {
           className="rounded-lg bg-state-selected px-4 py-3 text-[12.5px] leading-5 text-secondary"
         >
           {t(
-            'Local runtimes are disabled in development builds connected to Nuphos Cloud. This keeps the installed app’s connection active. You can continue to preview onboarding.',
+            'Local runtimes are disabled in development builds connected to OpenBot Cloud. This keeps the installed app’s connection active. You can continue to preview onboarding.',
           )}
         </p>
       )}

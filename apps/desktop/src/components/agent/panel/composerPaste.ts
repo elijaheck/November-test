@@ -1,7 +1,7 @@
 export type PastePiece = { text: string } | { url: string }
 
 /**
- * A paste split into what the composer inserts: each Nuphos URL on its own
+ * A paste split into what the composer inserts: each OpenBot URL on its own
  * (it becomes a mention chip), the text between URLs whole. Every insert
  * fires an input event that re-reads the whole editor, so inserting a long
  * paste a word at a time froze the window.

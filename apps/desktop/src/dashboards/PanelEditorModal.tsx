@@ -24,7 +24,7 @@ const PANEL_KINDS = [
 ]
 
 const STARTERS: Record<DashboardPanelKind, string> = {
-  chart: `// Globals: params, nuphos (calls Nuphos APIs as you), emit(payload).
+  chart: `// Globals: params, nuphos (calls OpenBot APIs as you), emit(payload).
 // Emit a ChartPayload-shaped object.
 const rows = [
   { date: '2026-07-01', usd: 120 },
@@ -171,7 +171,7 @@ export function PanelEditorModal({ teamId, panel, saving, onCancel, onSave }: Pr
               </div>
               <p className="text-[11px] text-tertiary">
                 {t(
-                  "Runs on one of your team's online agents when created, refreshed, or on the dashboard's auto-refresh schedule. Available globals: {params}, {nuphos} (read-only Nuphos APIs as the script author, limited to the credentials selected above), and {emit}. Editing the script creates a new version; old snapshots keep theirs.",
+                  "Runs on one of your team's online agents when created, refreshed, or on the dashboard's auto-refresh schedule. Available globals: {params}, {nuphos} (read-only OpenBot APIs as the script author, limited to the credentials selected above), and {emit}. Editing the script creates a new version; old snapshots keep theirs.",
                 )
                   .split(/(\{params\}|\{nuphos\}|\{emit\})/)
                   .map((part, i) => (

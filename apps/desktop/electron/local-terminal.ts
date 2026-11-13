@@ -82,7 +82,7 @@ export class LocalTerminalSessions {
       cols: terminalSize(cols, 80),
       rows: terminalSize(rows, 24),
       cwd,
-      env: { ...env, TERM: 'xterm-256color', COLORTERM: 'truecolor', TERM_PROGRAM: 'Nuphos' },
+      env: { ...env, TERM: 'xterm-256color', COLORTERM: 'truecolor', TERM_PROGRAM: 'OpenBot' },
     })
     const session: TerminalSession = {
       owner,

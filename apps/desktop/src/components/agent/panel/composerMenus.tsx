@@ -115,7 +115,7 @@ export function ComposerAttachmentMenu({
   localSessionsError: Partial<Record<LocalSessionSource, string>>
   onOpenSource: (source: LocalSessionSource) => void
   onAttachSession: (session: LocalAgentSessionInfo) => void
-  /** Imports the session as a Nuphos conversation; undefined where the composer
+  /** Imports the session as a OpenBot conversation; undefined where the composer
    *  has no agent to import onto (an existing conversation). */
   onImportSession?: (session: LocalAgentSessionInfo) => void
   onSelectAttachment: () => void

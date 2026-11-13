@@ -101,7 +101,7 @@ export async function focusDockTab(call: BrowserCall): Promise<CuaToolResult> {
   const window = call.dockTab ? await windowWith(call) : undefined
 
   if (!window) return notInDock(call)
-  if (!raiseWindow(window)) return failed('No Nuphos window is showing this tab.')
+  if (!raiseWindow(window)) return failed('No OpenBot window is showing this tab.')
   window.webContents.send('agent:focus-session', {
     sessionId: call.session,
     teamId: call.team,
@@ -137,6 +137,6 @@ export async function openDockTab(call: BrowserCall): Promise<CuaToolResult> {
   }
 
   return failed(
-    'No Nuphos window could open it. Nuphos Desktop needs a window signed in to this team.',
+    'No OpenBot window could open it. OpenBot Desktop needs a window signed in to this team.',
   )
 }

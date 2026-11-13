@@ -118,7 +118,7 @@ export function backendFailure(error: unknown, route: string, requestId: string)
   captureMain('backend_request_failed', { request_id: requestId, route, error: detail })
   const why = reason((error as ErrorLike | undefined)?.cause) ?? reason(error) ?? 'unknown error'
 
-  return new Error(`Nuphos backend request failed: ${why} (trace ${requestId.slice(0, 8)}…)`, {
+  return new Error(`OpenBot backend request failed: ${why} (trace ${requestId.slice(0, 8)}…)`, {
     cause: error,
   })
 }

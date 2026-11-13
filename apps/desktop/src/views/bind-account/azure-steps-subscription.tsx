@@ -93,7 +93,7 @@ export function AzureRoleAssignmentStep({
       </StepList>
       <div className="text-[11.5px] text-tertiary">
         {t(
-          'The role scopes exactly what Nuphos can see and do — start least-privilege and widen later.',
+          'The role scopes exactly what OpenBot can see and do — start least-privilege and widen later.',
         )}
       </div>
     </div>

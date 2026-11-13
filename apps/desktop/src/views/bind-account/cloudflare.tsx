@@ -36,7 +36,7 @@ export function CloudflareConnect({
       </div>
 
       <p className="mt-3 text-center text-[12.5px] leading-relaxed text-secondary">
-        {t('Choose what Nuphos can manage, then authorize in your browser.')}
+        {t('Choose what OpenBot can manage, then authorize in your browser.')}
         <br />
         {t('No API token to create, scope, or paste.')}
       </p>

@@ -153,7 +153,7 @@ export function buildAgentStopNotification(args: {
   const { outcome, title, messages = [] } = args
 
   return {
-    title: title?.trim() || 'Nuphos',
+    title: title?.trim() || 'OpenBot',
     body: truncate(stopNotificationBody(outcome, messages)),
   }
 }

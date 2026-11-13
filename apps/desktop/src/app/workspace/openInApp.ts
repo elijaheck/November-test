@@ -4,7 +4,7 @@ const OPEN_IN_APP = 'nuphos:open-in-app'
 
 type Opener = (href: string) => unknown
 
-/** Views outside a pane (Settings, menus, the sidebar) open a Nuphos link in the focused pane. */
+/** Views outside a pane (Settings, menus, the sidebar) open a OpenBot link in the focused pane. */
 export function openInApp(href: string) {
   window.dispatchEvent(new CustomEvent(OPEN_IN_APP, { detail: href }))
 }

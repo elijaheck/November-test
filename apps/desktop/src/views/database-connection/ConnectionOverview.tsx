@@ -72,7 +72,7 @@ export function OverviewSection({
         <SectionHeader
           icon={<Plug className="h-4 w-4 text-primary" strokeWidth={1.8} />}
           title={t('Connection')}
-          hint={t('How Nuphos reaches this database')}
+          hint={t('How OpenBot reaches this database')}
         />
         <Row label={t('Network')} value={connection.networkMode} />
         <Row label="TLS" value={connection.tls.enabled ? connection.tls.mode : t('Disabled')} />

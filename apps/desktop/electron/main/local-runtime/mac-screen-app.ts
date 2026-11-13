@@ -14,7 +14,7 @@ function announceControl(human: boolean): void {
   if (!human || !Notification.isSupported()) return
   new Notification({
     title: 'This Mac is controlled from your phone',
-    body: 'Nuphos on your phone took over this screen. It stops when the phone hands it back or closes the desktop.',
+    body: 'OpenBot on your phone took over this screen. It stops when the phone hands it back or closes the desktop.',
   }).show()
 }
 

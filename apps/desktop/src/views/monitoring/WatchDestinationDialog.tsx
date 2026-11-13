@@ -158,12 +158,12 @@ export function WatchDestinationDialog({
           <div className="flex items-start justify-between border-b border-line-control px-5 py-4">
             <div className="min-w-0 pr-4">
               <Dialog.Title className="text-[14px] font-semibold text-main">
-                {t('Where should Nuphos report?')}
+                {t('Where should OpenBot report?')}
               </Dialog.Title>
               <Dialog.Description className="mt-1 truncate text-[12px] text-secondary">
                 {group
-                  ? t('Nuphos will manage {n} Watches together.', { n: group.memberCount })
-                  : t('Nuphos will investigate {name} when it fires.', { name: subjectName })}
+                  ? t('OpenBot will manage {n} Watches together.', { n: group.memberCount })
+                  : t('OpenBot will investigate {name} when it fires.', { name: subjectName })}
               </Dialog.Description>
             </div>
             <Dialog.Close
@@ -189,7 +189,7 @@ export function WatchDestinationDialog({
               </label>
               <p className="mt-2 text-[11px] text-tertiary">
                 {t(
-                  'Nuphos shares one ingress per provider connection and keeps each member incident separate.',
+                  'OpenBot shares one ingress per provider connection and keeps each member incident separate.',
                 )}
               </p>
             </div>
@@ -205,8 +205,8 @@ export function WatchDestinationDialog({
               value="nuphos"
               selected={destination === 'nuphos'}
               icon={<FontAwesomeIcon icon={faInbox} className="h-4 w-4" />}
-              title="Nuphos"
-              description={t('Investigate and keep the findings in Nuphos.')}
+              title="OpenBot"
+              description={t('Investigate and keep the findings in OpenBot.')}
             />
             <WatchDestinationCard
               value="slack_dm"
@@ -234,11 +234,11 @@ export function WatchDestinationDialog({
               title={t('Slack channel')}
               description={
                 loadingSlack
-                  ? t('Loading channels Nuphos can post to…')
+                  ? t('Loading channels OpenBot can post to…')
                   : !slackConnected
                     ? t('Connect Slack in Settings to enable channel notifications.')
                     : channels.length === 0
-                      ? t('Invite the Nuphos bot to a channel first.')
+                      ? t('Invite the OpenBot bot to a channel first.')
                       : t('Investigate and post a replyable incident message.')
               }
             />

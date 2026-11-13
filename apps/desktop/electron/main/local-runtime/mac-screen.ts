@@ -6,7 +6,7 @@
 // host takes connections only from this process, exits a minute
 // after its last viewer leaves or as soon as this process does, and opening the
 // screen starts it again. It needs Screen Recording and Accessibility for
-// Nuphos. There is one screen, so one conversation holds it at a time. Its lock names that session
+// OpenBot. There is one screen, so one conversation holds it at a time. Its lock names that session
 // the way a Box's pool does (desktop-session.mjs), and the stream touches it
 // every minute while someone watches. Another conversation gets the screen only
 // once nobody has watched it for IDLE_MS, when the lock is freed; a stream

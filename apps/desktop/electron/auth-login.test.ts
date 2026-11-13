@@ -471,7 +471,7 @@ const EACCES = () =>
   Object.assign(new Error("EACCES: permission denied, mkdir '/Users/u/.config/nuphos'"), {
     code: 'EACCES',
   })
-const UNSAVED = /Nuphos couldn.t save your sign-in to \S+: permission denied\./
+const UNSAVED = /OpenBot couldn.t save your sign-in to \S+: permission denied\./
 
 test('native: a sign-in that cannot be saved says why, in the browser and the app', async () => {
   mkdirError = EACCES()
@@ -579,7 +579,7 @@ test('native: a backend failure delivered as an error code stops the wait', asyn
   const res = await hitCallback(registeredPort(), {
     state: registrations[0]!.clientState,
     error: 'server_error',
-    error_description: 'Nuphos could not be reached. Please try again.',
+    error_description: 'OpenBot could not be reached. Please try again.',
   })
 
   assert.equal(res.status, 400)

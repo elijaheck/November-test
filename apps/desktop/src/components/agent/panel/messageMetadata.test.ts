@@ -5,7 +5,7 @@ import { parseMessageMetadata, senderLabel } from './messageMetadata.ts'
 import { parseSteeringPart } from './steering.ts'
 
 for (const [source, type, displayName] of [
-  ['agent.thread', 'agent', 'Nuphos agent'],
+  ['agent.thread', 'agent', 'OpenBot agent'],
   ['agent.resource', 'system', 'GitHub'],
   ['nuphos', 'user', 'Yuanlin'],
 ]) {

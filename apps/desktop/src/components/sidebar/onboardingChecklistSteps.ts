@@ -58,15 +58,15 @@ export type StepDef = {
 export const STEPS: StepDef[] = [
   {
     id: 'integrate',
-    label: t('Connect your cloud assets'),
-    description: t('Link a cloud account so Nuphos can manage it.'),
+    label: t('Connect your email and apps'),
+    description: t('Link Gmail, Slack or GitHub so your agents can work in them.'),
     navKey: 'team.integrations',
     completeOnOpen: false,
   },
   {
     id: 'chat',
     label: t('Ask the agent your first question'),
-    description: t('Deploy, debug, or query in plain language.'),
+    description: t('Hand it a task in plain language.'),
     navKey: 'team.agent',
     completeOnOpen: true,
   },

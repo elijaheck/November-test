@@ -139,7 +139,7 @@ export function LinkChannelPanel({
           </div>
           <div className="mt-0.5 text-[12px] text-tertiary">
             {t(
-              "Works for any workspace with a Nuphos installation. A channel in another team's workspace needs your linked Slack account to be a member of it.",
+              "Works for any workspace with a OpenBot installation. A channel in another team's workspace needs your linked Slack account to be a member of it.",
             )}
           </div>
           {canManage ? (

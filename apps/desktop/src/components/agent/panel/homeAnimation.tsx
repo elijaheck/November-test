@@ -168,7 +168,7 @@ export function SparkleIcon({ className = 'size-4' }: { className?: string }) {
       width="1em"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>Nuphos Agent</title>
+      <title>OpenBot Agent</title>
       <defs>
         <linearGradient id={`${id}-sheen`} x1="0" y1="0" x2="1" y2="1">
           {palette.sheen.map((color, index) => (

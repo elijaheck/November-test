@@ -73,7 +73,7 @@ describe('planSkillSync', () => {
     assert.deepEqual(plan.deleteSkills, ['gone'])
   })
 
-  it('leaves a personal skill made in Nuphos alone when a local one shares its name', () => {
+  it('leaves a personal skill made in OpenBot alone when a local one shares its name', () => {
     const plan = planSkillSync([skill('handmade', { 'SKILL.md': [1, 'a'] })], {}, [
       { key: 'skills/handmade/SKILL.md', size: 1 },
     ])

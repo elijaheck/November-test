@@ -4,8 +4,8 @@ export type DeskModel = {
   /** A laptop opens its lid; a box (a Mac mini, a Box) turns to show its front, its readings card
    * over its side. */
   form: 'laptop' | 'box'
-  /** The finish it is drawn in. `other` is the plain laptop for a machine whose maker Nuphos cannot
-   * tell; `nuphos` is a Box, black with Nuphos's mark. */
+  /** The finish it is drawn in. `other` is the plain laptop for a machine whose maker OpenBot cannot
+   * tell; `nuphos` is a Box, black with OpenBot's mark. */
   brand: 'apple' | 'windows' | 'other' | 'nuphos'
 }
 

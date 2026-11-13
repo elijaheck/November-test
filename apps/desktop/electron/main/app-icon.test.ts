@@ -8,7 +8,7 @@ before(async () => {
   mock.module('electron', {
     namedExports: {
       app: {
-        getAppPath: () => '/Applications/Nuphos.app/Contents/Resources/app.asar',
+        getAppPath: () => '/Applications/OpenBot.app/Contents/Resources/app.asar',
         isPackaged: true,
         dock: { setIcon: (icon: string) => icons.push(icon) },
       },
@@ -22,6 +22,6 @@ test('sets the Dock icon from the packaged renderer files', () => {
   Object.defineProperty(process, 'platform', { value: 'darwin' })
   applyAppIcon('A')
   assert.deepEqual(icons, [
-    '/Applications/Nuphos.app/Contents/Resources/app.asar/dist/app-icons/A.png',
+    '/Applications/OpenBot.app/Contents/Resources/app.asar/dist/app-icons/A.png',
   ])
 })

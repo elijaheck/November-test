@@ -50,7 +50,7 @@ export async function listTencentAccounts(teamId: string): Promise<TencentAccoun
   }))
 }
 
-// OIDC federation details the customer needs to register Nuphos as a CAM OIDC
+// OIDC federation details the customer needs to register OpenBot as a CAM OIDC
 // identity provider and pin their role's trust policy: issuer URL, audience
 // (client id), and this team's subject claim.
 export type TencentOidcInfo = {
@@ -121,7 +121,7 @@ export async function listAliyunAccounts(teamId: string): Promise<AliyunAccount[
   }))
 }
 
-// OIDC federation details the customer needs to register Nuphos as a RAM OIDC
+// OIDC federation details the customer needs to register OpenBot as a RAM OIDC
 // identity provider and pin their role's trust policy: issuer URL, audience
 // (client id), and this team's subject claim.
 export type AliyunOidcInfo = {
@@ -187,7 +187,7 @@ export async function listVolcengineAccounts(teamId: string): Promise<Volcengine
   }))
 }
 
-// OIDC federation details the customer needs to register Nuphos as an IAM OIDC
+// OIDC federation details the customer needs to register OpenBot as an IAM OIDC
 // identity provider and pin their role's trust policy: issuer URL, audience
 // (client id), and this team's subject claim.
 export type VolcengineOidcInfo = {

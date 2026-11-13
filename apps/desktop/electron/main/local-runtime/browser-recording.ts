@@ -96,7 +96,7 @@ export async function stopRecording(contents: WebContents) {
     JSON.stringify({
       log: {
         version: '1.2',
-        creator: { name: 'Nuphos Desktop', version: app.getVersion() },
+        creator: { name: 'OpenBot Desktop', version: app.getVersion() },
         entries: har,
       },
     }),

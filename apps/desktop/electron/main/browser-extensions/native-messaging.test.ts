@@ -90,7 +90,7 @@ test('only an allow-listed extension, listed in the manifest, finds its host', a
   const missing = path.join(os.tmpdir(), 'no-such-native-host-dir')
 
   assert.equal(await findHost(HOST, EXTENSION_ID, [missing, listed]), '/opt/1password/helper')
-  // The manifest lists it, but Nuphos doesn't allow it.
+  // The manifest lists it, but OpenBot doesn't allow it.
   assert.equal(await findHost(HOST, OTHER, [listed]), null)
   assert.equal(await findHost('com.example.other', EXTENSION_ID, [listed]), null)
 

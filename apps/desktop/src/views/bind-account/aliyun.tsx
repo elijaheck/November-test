@@ -134,7 +134,7 @@ export function AliyunBindWizard({
                 {oidc && !oidc.configured && (
                   <div className="text-[11.5px] text-status-attention">
                     {t(
-                      "Nuphos's OIDC connector isn't configured on this backend yet — binding will fail until it is.",
+                      "OpenBot's OIDC connector isn't configured on this backend yet — binding will fail until it is.",
                     )}
                   </div>
                 )}
@@ -185,7 +185,7 @@ export function AliyunBindWizard({
                 <StepNote>
                   <Fill
                     text={t(
-                      'Keep the trust policy the console generates — its action is {action}, which is what RAM grants to an OIDC provider. {api} is the STS API Nuphos calls, not a trust-policy action; changing the action to it makes the bind fail.',
+                      'Keep the trust policy the console generates — its action is {action}, which is what RAM grants to an OIDC provider. {api} is the STS API OpenBot calls, not a trust-policy action; changing the action to it makes the bind fail.',
                     )}
                     action={<span className="font-mono">sts:AssumeRole</span>}
                     api={<span className="font-mono">AssumeRoleWithOIDC</span>}

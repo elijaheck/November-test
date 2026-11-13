@@ -93,7 +93,7 @@ export function codexOwnerHome(env: NodeJS.ProcessEnv = process.env): string {
 
 /**
  * A CODEX_HOME that holds only links to the user's own login and the Codex
- * App's Computer Use plugin, so Codex serving Nuphos never loads their
+ * App's Computer Use plugin, so Codex serving OpenBot never loads their
  * personal config.toml, MCP servers, connectors or AGENTS.md. Links rather
  * than copies: Codex refreshes the token in place, and the App updates the
  * plugin in place. The plugin supplies MCP cleanup hooks; the App's native
@@ -111,7 +111,7 @@ export function prepareCodexHome(
 
   try {
     mkdirSync(home, { recursive: true, mode: 0o700 })
-    // Without the owner's login Codex still runs, signed out, so it can be signed in from Nuphos.
+    // Without the owner's login Codex still runs, signed out, so it can be signed in from OpenBot.
     if (process.platform === 'win32') hardLinkFrom(ownerHome, home, 'auth.json')
     else linkFrom(ownerHome, home, 'auth.json')
     // Codex skips an enabled plugin that is not installed, so users without the App are unaffected.
@@ -196,7 +196,7 @@ function apiKeyEnv(file: string): { env?: { ANTHROPIC_API_KEY: string } } {
 }
 
 /**
- * A CLAUDE_CONFIG_DIR of Nuphos's own, so Claude Code serving Nuphos never
+ * A CLAUDE_CONFIG_DIR of OpenBot's own, so Claude Code serving OpenBot never
  * loads the owner's settings, hooks, plugins, skills, MCP servers or
  * CLAUDE.md. On macOS the login uses the terminal Keychain independently of
  * this directory; other platforms keep their existing file-backed login.
@@ -222,7 +222,7 @@ export function prepareClaudeHome(userDir: string, workspace: string): string | 
 
 /**
  * Deletes a default agent's home, and for Codex the login that home links to, so the next
- * launch finds nothing to link. Only for a Box, whose whole computer is Nuphos's.
+ * launch finds nothing to link. Only for a Box, whose whole computer is OpenBot's.
  */
 export function deleteDefaultLogin(
   provider: LocalAgentProvider,
@@ -249,7 +249,7 @@ export function prepareAgentHome(
 }
 
 /**
- * A pod Nuphos hosts for one person signed that person's Claude Code in at the pod's own
+ * A pod OpenBot hosts for one person signed that person's Claude Code in at the pod's own
  * ~/.claude before it joined, and the agent serving them keeps using it, never a copy that
  * can go stale. Every other member, and every other machine, keeps a home of its own.
  */

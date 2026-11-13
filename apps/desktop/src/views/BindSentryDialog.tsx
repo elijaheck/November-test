@@ -71,7 +71,7 @@ export function BindSentryDialog({ open, teamId, onClose, onBound }: Props) {
       onClose={close}
       title={t('Connect {name}', { name: 'Sentry' })}
       description={t(
-        'Authorize Nuphos to read issues, events, and releases from your Sentry account so the agent can investigate errors. Read-only — it cannot resolve or change issues.',
+        'Authorize OpenBot to read issues, events, and releases from your Sentry account so the agent can investigate errors. Read-only — it cannot resolve or change issues.',
       )}
       width={460}
     >

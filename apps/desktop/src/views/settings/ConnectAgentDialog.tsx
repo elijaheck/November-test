@@ -36,7 +36,7 @@ function useSecondsLeft(expiresAt: number | undefined): number | undefined {
   return secondsUntil(expiresAt, now)
 }
 
-/** Opened by the agent console's "Connect to Nuphos" link. Nothing leaves Desktop before Confirm. */
+/** Opened by the agent console's "Connect to OpenBot" link. Nothing leaves Desktop before Confirm. */
 export function ConnectAgentDialog({
   link,
   teams,

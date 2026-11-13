@@ -165,7 +165,7 @@ export function CloudRunServicesView({
     if (error.code === 'cloud_run_api_disabled') {
       const svcId = d.service ?? 'run.googleapis.com'
 
-      prompt = `GCP project \`${proj}\` has \`${svcId}\` disabled, so Nuphos can't list Cloud Run services. Bound SA: \`${sa}\`. Please enable the API.`
+      prompt = `GCP project \`${proj}\` has \`${svcId}\` disabled, so OpenBot can't list Cloud Run services. Bound SA: \`${sa}\`. Please enable the API.`
     } else if (d.permission) {
       prompt = `Nuphos-bound GCP SA \`${sa}\` (project \`${proj}\`) is missing the \`${d.permission}\` permission. Please grant it (e.g. via \`roles/run.viewer\`).`
     } else {

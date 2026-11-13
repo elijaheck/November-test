@@ -15,7 +15,7 @@ export const GOOGLE_CLIENT_GUIDE_URL = 'https://docs.nuphos.ai/connectors/google
 
 // The team's own Google OAuth client, which members' Gmail and Google Drive
 // Personal Credentials connect through. The secret is write-only. Where the
-// deployment offers Composio (Nuphos Cloud), members can connect without one,
+// deployment offers Composio (OpenBot Cloud), members can connect without one,
 // so the client is optional until the team saves it.
 export function GoogleOAuthClientCard({ team }: { team: AtlasTeam }) {
   const isAdmin = team.role === 'ADMINISTRATOR'

@@ -214,7 +214,7 @@ export function RepositoryHomeView({
           open
           title={t('Disconnect GitHub account')}
           description={t(
-            'Nuphos will lose access to {name}. The GitHub App stays installed on GitHub — uninstall it there separately if you want to fully revoke access.',
+            'OpenBot will lose access to {name}. The GitHub App stays installed on GitHub — uninstall it there separately if you want to fully revoke access.',
             { name: unbindTarget.accountLogin },
           )}
           confirmLabel={t('Disconnect')}

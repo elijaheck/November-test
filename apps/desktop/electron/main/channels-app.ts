@@ -150,7 +150,7 @@ export const appChannels = {
     pickPaths(e, ['openFile', 'multiSelections']),
   'dialog:selectLocalFolder': async (e: IpcMainInvokeEvent) =>
     pickPaths(e, ['openDirectory', 'multiSelections']),
-  // Continues one of those sessions as a Nuphos conversation on a team agent.
+  // Continues one of those sessions as a OpenBot conversation on a team agent.
   'agent:importLocalSession': (
     _e: IpcMainInvokeEvent,
     args: {

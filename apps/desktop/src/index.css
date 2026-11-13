@@ -205,7 +205,7 @@
     letter-spacing: -0.005em;
     /* Keep the lighter greyscale rendering across themes. Combined with the
        light theme's near-black token, this avoids the dense pure-black texture
-       that made Nuphos typography look heavier than Codex at the same weight. */
+       that made OpenBot typography look heavier than Codex at the same weight. */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
@@ -424,7 +424,7 @@
     word-break: break-word;
   }
 
-  /* Inline mention chip rendered inside the composer for Nuphos row links. */
+  /* Inline mention chip rendered inside the composer for OpenBot row links. */
   .atlas-mention {
     display: inline-flex;
     align-items: center;

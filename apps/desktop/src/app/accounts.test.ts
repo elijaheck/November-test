@@ -32,7 +32,7 @@ test('an account is named by its user, else by its id', () => {
   assert.equal(accountName(bob), 'bob')
 })
 
-test('only a backend other than Nuphos Cloud is named', () => {
+test('only a backend other than OpenBot Cloud is named', () => {
   assert.equal(backendLabel('https://api.nuphos.ai'), null)
   assert.equal(backendLabel('https://nuphos.example.com'), 'nuphos.example.com')
   assert.equal(backendLabel('http://127.0.0.1:3718'), '127.0.0.1:3718')

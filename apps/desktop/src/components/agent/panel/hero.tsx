@@ -76,7 +76,7 @@ export function StarStrip({ onDone }: { onDone: () => void }) {
   return (
     <ConnectorStrip
       message={t(
-        'Nuphos is open source, built by a small team. If it helps you, a star means a lot.',
+        'OpenBot is open source, built by a small team. If it helps you, a star means a lot.',
       )}
       action={
         <>

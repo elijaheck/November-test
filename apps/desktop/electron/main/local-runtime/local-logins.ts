@@ -1,4 +1,4 @@
-// This app's own sign-in, for the agents it can run a CLI login for; others sign in from Nuphos.
+// This app's own sign-in, for the agents it can run a CLI login for; others sign in from OpenBot.
 
 import { LocalAgentLogin, runLoginWrapper } from './agent-login.ts'
 import { loginTarget, loginWrapper } from './login-target.ts'
@@ -59,7 +59,7 @@ export function localLogins(deps: {
   async function wrapper(provider: CliLoginProvider) {
     const userId = deps.userId()
 
-    if (!userId) throw new Error('Sign in to Nuphos first.')
+    if (!userId) throw new Error('Sign in to OpenBot first.')
 
     return loginWrapper(provider, deps.bundleRoot(), await target(provider, userId))
   }
@@ -68,13 +68,13 @@ export function localLogins(deps: {
     async start(provider: CliLoginProvider) {
       const userId = deps.userId()
 
-      if (!userId) throw new Error('Sign in to Nuphos first.')
+      if (!userId) throw new Error('Sign in to OpenBot first.')
       const current = ++request
       const env = await deps.userEnv()
       const login = logins[provider]
 
       if (current !== request) return login.state()
-      if (deps.userId() !== userId) throw new Error('Nuphos account changed. Try again.')
+      if (deps.userId() !== userId) throw new Error('OpenBot account changed. Try again.')
       const { cliPath, env: cliEnv } = await target(provider, userId, env)
 
       return login.start(cliPath, cliEnv)

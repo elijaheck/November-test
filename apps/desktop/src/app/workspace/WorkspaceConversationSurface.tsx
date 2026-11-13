@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { BotTaskMode } from './BotTaskMode'
 import { WorkspaceDockPanels } from './WorkspaceDockPanels'
+import { WorkspaceRightRail } from './WorkspaceRightRail'
 import { WorkspaceSessionPane } from './WorkspaceSessionPane'
 
 import type { WorkspaceController } from './useWorkspaceController'
@@ -35,6 +36,7 @@ export function WorkspaceConversationSurface({
           onOpenTask={setTaskSessionId}
         />
         <WorkspaceDockPanels ws={ws} user={user} />
+        {!ws.mainPageOpen && <WorkspaceRightRail ws={ws} />}
       </div>
       {taskOpen && taskSessionId && ws.scope?.teamId && (
         <BotTaskMode

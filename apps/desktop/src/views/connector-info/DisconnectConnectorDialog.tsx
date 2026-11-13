@@ -24,7 +24,9 @@ export function DisconnectConnectorDialog({
     <ConfirmDialog
       open
       title={t('Disconnect {name}?', { name: target.name })}
-      description={t('Nuphos will lose access to this connection. You can connect it again later.')}
+      description={t(
+        'OpenBot will lose access to this connection. You can connect it again later.',
+      )}
       confirmLabel={t('Disconnect')}
       destructive
       onClose={onClose}

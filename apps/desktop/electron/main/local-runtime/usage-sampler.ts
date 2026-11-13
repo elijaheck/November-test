@@ -10,7 +10,7 @@ type Attempt = { at: number; inFlight: boolean }
 /** Reads what is left of this computer's provider accounts on its own schedule,
  *  never in the way of an agent starting and never clearing a reading it
  *  already holds: a figure a few minutes old beats none, and the hold that
- *  protects the provider lives in Nuphos.
+ *  protects the provider lives in OpenBot.
  *
  *  Every read goes through one floor, because the call sites cannot be trusted
  *  to pace themselves — a crash loop restarts an agent every second or two, and

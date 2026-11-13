@@ -5,7 +5,7 @@ type UpdateChannelTarget = {
 }
 
 /**
- * Nuphos publishes only the stable `latest` manifests. electron-updater
+ * OpenBot publishes only the stable `latest` manifests. electron-updater
  * otherwise derives a channel from prerelease app versions, which makes an
  * old beta client request a manifest such as beta-linux-arm64.yml that the
  * release pipeline intentionally never publishes.

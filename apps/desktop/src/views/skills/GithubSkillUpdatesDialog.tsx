@@ -70,7 +70,7 @@ function UpdateRow({
           {statusText(update)}
         </span>
         {update.edited && (
-          <span className="text-[11px] text-status-warning">{t('Edited in Nuphos')}</span>
+          <span className="text-[11px] text-status-warning">{t('Edited in OpenBot')}</span>
         )}
         {update.problem && (
           <span className="text-[11px] text-status-danger">{update.problem.message}</span>
@@ -81,7 +81,7 @@ function UpdateRow({
 }
 
 /** Checks the skills installed from GitHub against their sources and applies picked updates.
- *  Skills edited in Nuphos start unpicked and need an explicit confirmation to overwrite. */
+ *  Skills edited in OpenBot start unpicked and need an explicit confirmation to overwrite. */
 export function GithubSkillUpdatesDialog({
   teamId,
   scope,
@@ -219,7 +219,7 @@ export function GithubSkillUpdatesDialog({
           <label className="mt-2 flex items-start gap-2 rounded-md border border-line-control px-2.5 py-2 text-[12px]">
             <Checkbox className="mt-0.5" checked={confirmed} onCheckedChange={setConfirmed} />
             <span>
-              {t('Replace the edits made in Nuphos to {names}', { names: overwrite.join(', ') })}
+              {t('Replace the edits made in OpenBot to {names}', { names: overwrite.join(', ') })}
             </span>
           </label>
         )}

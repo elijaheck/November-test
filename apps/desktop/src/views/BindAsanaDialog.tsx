@@ -71,7 +71,7 @@ export function BindAsanaDialog({ open, teamId, onClose, onBound }: Props) {
       onClose={close}
       title={t('Connect {name}', { name: 'Asana' })}
       description={t(
-        'Authorize Nuphos to read and create tasks in your Asana account so the agent can open, comment on, and complete tasks.',
+        'Authorize OpenBot to read and create tasks in your Asana account so the agent can open, comment on, and complete tasks.',
       )}
       width={460}
     >

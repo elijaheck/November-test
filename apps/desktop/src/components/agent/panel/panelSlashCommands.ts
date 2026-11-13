@@ -7,7 +7,7 @@ import type { SlashCommand } from './composerSlashCommands'
 import type { PanelViewCtx } from './ctx'
 
 /**
- * The panel's `/` actions: Codex's most used ones that Nuphos already has a
+ * The panel's `/` actions: Codex's most used ones that OpenBot already has a
  * control for, in Codex's order and wording. Each composer adds Model itself
  * when it has a model control.
  */

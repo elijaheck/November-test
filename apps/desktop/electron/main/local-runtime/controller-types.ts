@@ -15,7 +15,7 @@ import type { LocalRuntimeTunnelStatus } from './tunnel-protocol.ts'
 export type LocalAgentState = {
   /** This build ships the agent for this platform. */
   available: boolean
-  /** Its owner can use it from Nuphos right now. */
+  /** Its owner can use it from OpenBot right now. */
   online: boolean
   /** Why it cannot come online on its own; absent while it is on its way. */
   error?: string
@@ -65,7 +65,7 @@ export type LocalRuntimeControllerDeps = {
   bundle: () => LocalRuntimeBundle | null
   dataDir: () => string
   nodeExecPath: string
-  /** Where this app reaches Nuphos; the agents on this computer use the same address. */
+  /** Where this app reaches OpenBot; the agents on this computer use the same address. */
   backendUrl: string
   userEnv: () => Promise<NodeJS.ProcessEnv>
   probeCli: (
@@ -100,7 +100,7 @@ export type LocalRuntimeControllerDeps = {
     instances?: (request: unknown) => Promise<unknown>,
   ) => RuntimeTunnel
   log?: (message: string, data?: Record<string, unknown>) => void
-  /** A Box: Nuphos owns the whole computer, so its default agents' logins are Nuphos's
+  /** A Box: OpenBot owns the whole computer, so its default agents' logins are OpenBot's
    *  to delete. A person's computer never removes them; their CLIs keep their logins. */
   ownsMachine?: boolean
 }
@@ -135,7 +135,7 @@ export function saveCli(
 }
 
 export const RESTART_BACKOFF_MS = [1_000, 2_000, 5_000, 15_000, 30_000]
-/** Matches the hold Nuphos keeps on a provider's answer: sampling faster would
+/** Matches the hold OpenBot keeps on a provider's answer: sampling faster would
  *  spend this person's rate limit on numbers that have not moved. */
 export const USAGE_SAMPLE_MS = 600_000
 /** A sign-in is worth reading again for; mashing Check is not. */
@@ -187,7 +187,7 @@ export function agentStatesOf(
   const entries = LOCAL_AGENT_PROVIDERS.map((provider): [LocalAgentProvider, LocalAgentState] => {
     const agent = agents[provider]
     const error = context.superseded
-      ? 'Another Nuphos app on this computer took over the local runtime.'
+      ? 'Another OpenBot app on this computer took over the local runtime.'
       : agent.error
 
     return [

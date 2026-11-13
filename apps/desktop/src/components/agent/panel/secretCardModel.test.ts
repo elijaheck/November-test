@@ -11,7 +11,7 @@ test('a runtime too old for an inline secret is reported as outdated, never as a
     secretSaveFailure(
       backendError(
         'runtime_outdated',
-        'The computer running this agent needs Nuphos Desktop 0.95.0',
+        'The computer running this agent needs OpenBot Desktop 0.95.0',
       ),
     ),
     'outdated',

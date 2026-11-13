@@ -138,7 +138,7 @@ export function LoginView({ onLogin, accounts = [], notice, onCancel }: Props) {
   }
 
   // Named for why the screen is shown: an account to sign in to again comes first.
-  let title = t('Welcome to Nuphos')
+  let title = t('Welcome to OpenBot')
 
   if (notice) title = t('Sign in again')
   else if (onCancel) title = t('Add an account')

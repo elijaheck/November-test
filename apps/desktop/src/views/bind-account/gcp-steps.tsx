@@ -37,7 +37,7 @@ export function GcpWizardStepContent({
    *  full list below, since the admin list drops 'Enable APIs'. */
   step: number
   purpose: 'operational'
-  /** Nuphos's principal for the Token Creator grant; null until it loads. */
+  /** OpenBot's principal for the Token Creator grant; null until it loads. */
   wif: GcpWifInfo | null
   saEmail: string
   onSaEmailChange: (v: string) => void
@@ -54,7 +54,7 @@ export function GcpWizardStepContent({
       </div>
       <Field
         label={t('Service Account Email')}
-        hint={t('Nuphos will impersonate this service account.')}
+        hint={t('OpenBot will impersonate this service account.')}
       >
         <input
           type="text"

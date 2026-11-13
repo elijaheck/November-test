@@ -23,7 +23,7 @@ export function GcpBindWizard({
 }: {
   step: number
   purpose: 'operational'
-  /** Nuphos's principal for the Token Creator grant; null until it loads. */
+  /** OpenBot's principal for the Token Creator grant; null until it loads. */
   wif: GcpWifInfo | null
   saEmail: string
   onSaEmailChange: (v: string) => void

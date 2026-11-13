@@ -6,7 +6,7 @@ import type { RuntimeInstance, RuntimeQuota } from '../../types/runtime'
 
 /**
  * How a computer's agent is removed: an added one by its id, a default one by its provider
- * (as for rename). A person's own computer's default is their CLI login, so Nuphos only
+ * (as for rename). A person's own computer's default is their CLI login, so OpenBot only
  * forgets it; it shows again once that CLI is signed in (see visibleAgent).
  */
 export function localRemovalId(instance: RuntimeInstance): string | undefined {

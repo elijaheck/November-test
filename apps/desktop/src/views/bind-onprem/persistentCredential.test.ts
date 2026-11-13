@@ -14,7 +14,7 @@ test('prints a persistent ServiceAccount kubeconfig instead of a temporary Token
   assert.doesNotMatch(command, /--duration=/)
 })
 
-test('grants the credential complete Kubernetes access for Nuphos features', () => {
+test('grants the credential complete Kubernetes access for OpenBot features', () => {
   const command = persistentCredentialCommand('acme-dc1')
 
   assert.match(command, /clusterrolebinding nuphos-cluster-admin/)

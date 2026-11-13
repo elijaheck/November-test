@@ -29,7 +29,7 @@ export function BoxAgentForm({
   deployment,
 }: {
   teamId: string
-  /** The team's own instabox accounts, and whether Nuphos's own can make Boxes here. */
+  /** The team's own instabox accounts, and whether OpenBot's own can make Boxes here. */
   accounts: InstaboxAccount[]
   deployment: boolean
   footer: HTMLElement | null

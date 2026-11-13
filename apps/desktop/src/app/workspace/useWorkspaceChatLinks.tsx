@@ -107,7 +107,7 @@ export function useWorkspaceChatLinks(a: Args) {
     [openNuphosLinkInNewTab, teamId],
   )
 
-  // A provider link carries the provider's own ids, not Nuphos's: the bound
+  // A provider link carries the provider's own ids, not OpenBot's: the bound
   // installation / instance / account the URL points into is what names the
   // in-app page. Anything not bound stays in the browser.
   const openBoundProviderLinkFromChat = useCallback(

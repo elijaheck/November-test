@@ -35,7 +35,8 @@ test('another team is found by name and switches to it', () => {
 
   const found = matchPaletteCommands('design', teams).map(({ id, label }) => ({ id, label }))
 
-  assert.ok(found.some(({ id }) => id === 'team.designs'))
+  // Designs is an infra page this product doesn't offer.
+  assert.ok(!found.some(({ id }) => id === 'team.designs'))
   assert.deepEqual(
     found.filter(({ id }) => id.startsWith('switch-team:')),
     [{ id: 'switch-team:t2', label: 'Switch to Design Team' }],

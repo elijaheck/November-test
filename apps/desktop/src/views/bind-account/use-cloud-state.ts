@@ -32,7 +32,7 @@ export function useCloudProviderState(initialProvider: Provider) {
   const [volcengineLabel, setVolcengineLabel] = useState('')
   const [volcengineRoleTrn, setVolcengineRoleTrn] = useState('')
   // OIDC federation details (issuer / audience / subject), fetched when the
-  // Volcengine form opens, so the customer can register Nuphos as an IAM OIDC
+  // Volcengine form opens, so the customer can register OpenBot as an IAM OIDC
   // identity provider and pin their role's trust policy. null = not yet loaded.
   const [volcengineOidc, setVolcengineOidc] = useState<VolcengineOidcInfo | null>(null)
   const [volcengineStep, setVolcengineStep] = useState(0)
@@ -41,7 +41,7 @@ export function useCloudProviderState(initialProvider: Provider) {
   const [huaweiIdpId, setHuaweiIdpId] = useState('')
   const [huaweiAgencyName, setHuaweiAgencyName] = useState('')
   // OIDC federation details (issuer / audience / subject), fetched when the
-  // Huawei Cloud form opens, so the customer can register Nuphos as an IAM
+  // Huawei Cloud form opens, so the customer can register OpenBot as an IAM
   // identity provider and map this team's subject. null = not yet loaded.
   const [huaweiOidc, setHuaweiOidc] = useState<HuaweiOidcInfo | null>(null)
   const [huaweiStep, setHuaweiStep] = useState(0)
@@ -58,7 +58,7 @@ export function useCloudProviderState(initialProvider: Provider) {
   const purpose = 'operational' as const
   // GCP manual setup, mirroring the AWS wizard: one step per console page.
   const [gcpStep, setGcpStep] = useState(0)
-  // Which Nuphos principal the customer must grant Token Creator to, fetched
+  // Which OpenBot principal the customer must grant Token Creator to, fetched
   // when the GCP form opens. It is team-scoped, so it cannot be hard-coded.
   // null = not yet loaded.
   const [gcpWif, setGcpWif] = useState<GcpWifInfo | null>(null)

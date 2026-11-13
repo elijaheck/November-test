@@ -5,7 +5,7 @@ import { normalizeFrame } from '../model'
 import type { RawFrame } from '../model'
 import type { DataFrame } from '../types'
 
-// All Grafana traffic is forwarded through the Nuphos backend's proxy:
+// All Grafana traffic is forwarded through the OpenBot backend's proxy:
 //   POST /teams/{teamId}/grafana-instances/{instanceId}/proxy/<grafana-path>
 // The renderer never speaks to Grafana directly, so credentials and CORS are
 // handled by the backend.

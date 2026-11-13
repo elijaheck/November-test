@@ -45,7 +45,7 @@ export function EffectivePermissions({
     return (
       <EmptyHint
         message={t(
-          "Couldn't list IAM bindings (typically because {email} lacks resourcemanager.projects.getIamPolicy), and the SA has none of the permissions Nuphos probes for. Effectively read-denied — grant the connector roles and refresh.",
+          "Couldn't list IAM bindings (typically because {email} lacks resourcemanager.projects.getIamPolicy), and the SA has none of the permissions OpenBot probes for. Effectively read-denied — grant the connector roles and refresh.",
           { email: serviceAccountEmail },
         )}
       />

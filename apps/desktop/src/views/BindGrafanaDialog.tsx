@@ -68,7 +68,7 @@ export function BindGrafanaDialog({ teamId, onClose, onBound }: Props) {
         <Field
           label={t('Service account token')}
           hint={t(
-            'Create one at Administration → Service accounts → Add token. Stored encrypted by Nuphos backend.',
+            'Create one at Administration → Service accounts → Add token. Stored encrypted by OpenBot backend.',
           )}
         >
           <input

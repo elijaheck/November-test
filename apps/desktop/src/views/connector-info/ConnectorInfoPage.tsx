@@ -133,7 +133,7 @@ export function ConnectorInfoPage({
     (item) => item.key === provider,
   )
   const description =
-    catalogItem?.description ?? t('{name} connector for Nuphos.', { name: providerLabel })
+    catalogItem?.description ?? t('{name} connector for OpenBot.', { name: providerLabel })
 
   return (
     <div className="mx-auto w-full max-w-[760px] px-7 py-10">

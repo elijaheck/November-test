@@ -80,7 +80,7 @@ test('a host that cannot start says why and holds nothing', async () => {
   const pool = newPool()
 
   const host = fakeHost(
-    'echo "mac-screen-host: Screen Recording is not allowed for Nuphos yet" >&2; exit 1',
+    'echo "mac-screen-host: Screen Recording is not allowed for OpenBot yet" >&2; exit 1',
   )
 
   await assert.rejects(

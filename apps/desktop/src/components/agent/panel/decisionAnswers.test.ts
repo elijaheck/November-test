@@ -70,7 +70,7 @@ test("a card shows the answer the server's notice records, by its request id", (
     ],
     metadata: {
       version: 1,
-      sender: { type: 'system', id: 'nuphos:decision', displayName: 'Nuphos' },
+      sender: { type: 'system', id: 'nuphos:decision', displayName: 'OpenBot' },
       source: 'agent.resource',
       sentAt: '2026-11-12T06:00:00Z',
     },

@@ -8,7 +8,12 @@ import { DEFAULT_LINEAR_NAV, linearCrumbs, linearPageTitle, withLinearNav } from
 
 import type { LinearNavState, NavigationSnapshot } from './appRoutes.ts'
 
-const TEAM = { id: 'team-uuid', key: 'NUPS', name: 'Nuphos', url: 'https://linear.app/z/team/NUPS' }
+const TEAM = {
+  id: 'team-uuid',
+  key: 'NUPS',
+  name: 'OpenBot',
+  url: 'https://linear.app/z/team/NUPS',
+}
 const TEAM_NAV: LinearNavState = { view: 'team', bindingId: 'b1', team: TEAM }
 const ISSUE_NAV: LinearNavState = {
   view: 'issue',
@@ -60,14 +65,14 @@ test('the teams view is a single, current crumb', () => {
 test('a team view links back to the teams list', () => {
   assert.deepEqual(linearCrumbs(TEAM_NAV), [
     { kind: 'root', label: 'Linear', target: DEFAULT_LINEAR_NAV },
-    { kind: 'team', label: 'Nuphos' },
+    { kind: 'team', label: 'OpenBot' },
   ])
 })
 
 test('an issue view reads Linear › team › issue, each ancestor clickable', () => {
   assert.deepEqual(linearCrumbs(ISSUE_NAV), [
     { kind: 'root', label: 'Linear', target: DEFAULT_LINEAR_NAV },
-    { kind: 'team', label: 'Nuphos', target: TEAM_NAV },
+    { kind: 'team', label: 'OpenBot', target: TEAM_NAV },
     { kind: 'issue', label: 'EX-7 · Fix it' },
   ])
   assert.equal(linearPageTitle(ISSUE_NAV), 'EX-7 · Fix it')

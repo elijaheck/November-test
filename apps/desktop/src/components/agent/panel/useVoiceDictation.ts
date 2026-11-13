@@ -13,14 +13,16 @@ import {
 } from './voiceDictation'
 
 export type VoicePhase =
-  { kind: 'idle' } | { kind: 'recording'; startedAt: number } | { kind: 'transcribing' }
+  | { kind: 'idle' }
+  | { kind: 'recording'; startedAt: number }
+  | { kind: 'transcribing' }
 
 /** Why the microphone would not start, in words the person can act on. */
 function microphoneHelp(cause: unknown): string {
   const name = (cause as { name?: unknown } | null)?.name
 
   if (name === 'NotAllowedError' || name === 'SecurityError')
-    return t('Allow Nuphos to use the microphone in System Settings, then try again.')
+    return t('Allow OpenBot to use the microphone in System Settings, then try again.')
   if (name === 'NotFoundError') return t('No microphone was found.')
 
   return t('The microphone could not be started.')

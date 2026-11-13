@@ -6,7 +6,7 @@ export const MAX_UPDATE_NAMES = 50
 export const canUpdate = (update: GithubSkillUpdate): boolean =>
   update.status === 'update_available' && !update.problem
 
-/** Update all: every skill with an update except those edited in Nuphos. */
+/** Update all: every skill with an update except those edited in OpenBot. */
 export function defaultUpdateSelection(updates: GithubSkillUpdate[]): string[] {
   return updates
     .filter((u) => canUpdate(u) && !u.edited)
@@ -14,7 +14,7 @@ export function defaultUpdateSelection(updates: GithubSkillUpdate[]): string[] {
     .slice(0, MAX_UPDATE_NAMES)
 }
 
-/** Selected skills whose edits in Nuphos the update would replace. */
+/** Selected skills whose edits in OpenBot the update would replace. */
 export function editedSelected(updates: GithubSkillUpdate[], selected: string[]): string[] {
   return updates.filter((u) => u.edited && selected.includes(u.name)).map((u) => u.name)
 }

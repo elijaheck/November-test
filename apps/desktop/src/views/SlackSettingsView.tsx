@@ -126,7 +126,7 @@ export function SlackSettingsView({
         open={confirmDisconnectOpen}
         title={t('Disconnect {name}', { name: 'Slack' })}
         description={t(
-          'Disconnect {name} from Nuphos? The bot token is revoked and channel links stop working until you install again.',
+          'Disconnect {name} from OpenBot? The bot token is revoked and channel links stop working until you install again.',
           { name: installation?.slackTeamName ?? 'Slack' },
         )}
         confirmLabel={t('Disconnect')}
@@ -140,7 +140,7 @@ export function SlackSettingsView({
             <h1 className="text-[20px] font-semibold text-main">Slack</h1>
             <p className="mt-1 text-[13px] text-tertiary">
               {t(
-                'Install Nuphos in Slack, pick channels from the bot DM, then @mention the agent in those channels.',
+                'Install OpenBot in Slack, pick channels from the bot DM, then @mention the agent in those channels.',
               )}
             </p>
           </div>
@@ -200,7 +200,7 @@ export function SlackSettingsView({
         ) : channelMappings.length === 0 ? (
           <div className="px-4 py-6 text-[13px] text-tertiary">
             {t(
-              'No channels linked yet. After installing, open your DM with the Nuphos bot and pick a channel.',
+              'No channels linked yet. After installing, open your DM with the OpenBot bot and pick a channel.',
             )}
           </div>
         ) : (

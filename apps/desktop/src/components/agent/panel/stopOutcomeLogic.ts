@@ -30,7 +30,7 @@ export async function settleStopOutcome(
     return { kind: 'failed', status: result.status }
   }
 
-  // A local acceptance only means that Nuphos delivered the cancellation to
+  // A local acceptance only means that OpenBot delivered the cancellation to
   // the runtime-owning request. Forwarding and a 404 can likewise race normal
   // teardown. In every accepted case, confirm the runtime-backed active run
   // disappeared instead of treating the transport acknowledgement as truth.

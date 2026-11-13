@@ -12,5 +12,5 @@ export function unsavedReason(e: unknown): string | null {
 
   if (code !== 'EACCES' && code !== 'EPERM') return null
 
-  return `Nuphos couldn't save your sign-in to ${path.dirname(DESKTOP_CONFIG_PATH)}: permission denied.`
+  return `OpenBot couldn't save your sign-in to ${path.dirname(DESKTOP_CONFIG_PATH)}: permission denied.`
 }

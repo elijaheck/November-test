@@ -77,7 +77,7 @@ export function RuntimeFallbackSection({ team }: { team: AtlasTeam | undefined }
       <SectionHeader
         title={t('Agent fallback')}
         description={t(
-          'When the agent a conversation runs on is low on usage, offline, or fails a turn, Nuphos moves the conversation to the first agent in this list that can take it. A move between agents on the same computer keeps the conversation’s files; any other move carries only the conversation history.',
+          'When the agent a conversation runs on is low on usage, offline, or fails a turn, OpenBot moves the conversation to the first agent in this list that can take it. A move between agents on the same computer keeps the conversation’s files; any other move carries only the conversation history.',
         )}
       />
 

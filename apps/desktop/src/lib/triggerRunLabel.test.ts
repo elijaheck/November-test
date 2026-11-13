@@ -19,7 +19,7 @@ test('a scheduled run says the schedule ran it', () => {
 test('a manual run says a person pressed Run now', () => {
   assert.deepEqual(triggerRunLabel({ id: 't1', kind: 'manual' }), {
     label: 'Manual',
-    description: 'Fired by hand from Nuphos',
+    description: 'Fired by hand from OpenBot',
   })
 })
 

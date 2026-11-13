@@ -495,7 +495,7 @@
   box-shadow: none;
 }
 
-/* A Box: the same footprint in black, Nuphos's mark on top. */
+/* A Box: the same footprint in black, OpenBot's mark on top. */
 .desk-box.is-nuphos .desk-mini {
   background: linear-gradient(165deg, #3c3c41, #2a2a2e 60%, #222225);
   box-shadow:

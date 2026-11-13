@@ -121,7 +121,7 @@ test('watches the named dock tab at the phone size, and serves it once it paints
 
   assert.equal(init.readUInt16BE(0), 780)
   assert.equal(init.readUInt16BE(2), 1400)
-  assert.equal(init.subarray(24).toString(), 'Nuphos tab')
+  assert.equal(init.subarray(24).toString(), 'OpenBot tab')
 
   // A full update request: one ZRLE rectangle of the whole page.
   view.phone([3, 0, 0, 0, 0, 0, 3, 12, 5, 120])

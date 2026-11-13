@@ -10,7 +10,7 @@ import type { LocalAgentProvider } from './providers.ts'
 export type LocalAgentAdapter = {
   /** The adapter's ACP entry point, run on Electron's own Node. */
   entry: string
-  /** nuphos-runtime's stdio bridge to the Nuphos MCP endpoints. */
+  /** nuphos-runtime's stdio bridge to the OpenBot MCP endpoints. */
   bridge: string
   version: string
 }
@@ -30,7 +30,7 @@ export type LocalRuntimeLaunch = {
   nodeExecPath: string
   /** The user's own `claude` or `codex`. */
   cliPath: string
-  /** A home of Nuphos's own that keeps only the user's login, so their personal config stays out. */
+  /** A home of OpenBot's own that keeps only the user's login, so their personal config stays out. */
   agentHome: string
   workspace: string
   openabHome: string
@@ -38,7 +38,7 @@ export type LocalRuntimeLaunch = {
   authKey: string
   /** The user's own login environment, filtered to what a coding agent needs. */
   env: NodeJS.ProcessEnv
-  /** A machine Nuphos made (a Box, a managed runtime's pod), never a person's computer. */
+  /** A machine OpenBot made (a Box, a managed runtime's pod), never a person's computer. */
   ownsMachine?: boolean
 }
 
@@ -83,7 +83,7 @@ function tomlString(value: string): string {
 
 type AgentCliLaunch = Pick<LocalRuntimeLaunch, 'provider' | 'cliPath' | 'agentHome' | 'env'>
 
-/** Nuphos sessions run as the team's agent, never with the owner's personal config or connectors. */
+/** OpenBot sessions run as the team's agent, never with the owner's personal config or connectors. */
 function providerEnv(launch: AgentCliLaunch): Record<string, string> {
   if (launch.provider === 'codex')
     return { CODEX_PATH: launch.cliPath, CODEX_HOME: launch.agentHome }
@@ -146,7 +146,7 @@ export function openabConfigToml(launch: LocalRuntimeLaunch): string {
 }
 
 /**
- * The agent's own sign-in, run by openab when Nuphos asks (the same dialog as a
+ * The agent's own sign-in, run by openab when OpenBot asks (the same dialog as a
  * cloud agent). openab's child inherits openab's env, so this carries only the
  * command and the provider's config-dir variables, so the login lands in the
  * runtime's own login. `OPENAB_RUNTIME_LOGIN_COMMAND` is whitespace-split argv, so
@@ -209,7 +209,7 @@ export function openabEnv(launch: LocalRuntimeLaunch): Record<string, string> {
     OPENAB_ACP_AUTH_KEY: launch.authKey,
     OPENAB_ACP_CONTROL_KEY: deriveControlKey(launch.authKey),
     OPENAB_ADAPTER_VERSION: launch.adapter.version,
-    OPENAB_RUNTIME_LABEL: 'Nuphos Desktop',
+    OPENAB_RUNTIME_LABEL: 'OpenBot Desktop',
     ...(launch.bundle.openabCommit ? { OPENAB_BUILD_SHA: launch.bundle.openabCommit } : {}),
     ...runtimeJobs(launch),
   }
@@ -218,7 +218,7 @@ export function openabEnv(launch: LocalRuntimeLaunch): Record<string, string> {
 /**
  * The jobs this runtime offers. Everywhere: the backend's fixed attachment program, bundled,
  * so a turn's files arrive as a list of signed URLs and no program text crosses the wire. On a
- * machine Nuphos made, also `panel`, which runs the script the backend sends, as the runtime
+ * machine OpenBot made, also `panel`, which runs the script the backend sends, as the runtime
  * image does; never on a person's computer. openab clears a job's environment and splits its
  * command on whitespace, so Electron's run-as-Node switch rides in through `env`. A job that
  * cannot run that way is left out, and the backend reports the runtime as unable to do it.

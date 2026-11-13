@@ -23,7 +23,7 @@ const REGION_OPTIONS = (Object.keys(POSTHOG_REGION_LABELS) as PosthogRegion[]).m
 
 const INTRO: Record<Exclude<PosthogDialogKind, 'reconnect'>, string> = {
   connect: t(
-    "Nuphos requests only the access you choose below. You pick which projects to share on PostHog's consent screen.",
+    "OpenBot requests only the access you choose below. You pick which projects to share on PostHog's consent screen.",
   ),
   permissions: t(
     'PostHog asks you to approve the new permissions. The current grant stays active until PostHog approves the new one.',
@@ -57,7 +57,7 @@ export function FormStep({
     return (
       <p className="text-secondary text-[12.5px] leading-relaxed">
         {t(
-          'PostHog asks you to approve access again. Nuphos requests the permissions this connection already has.',
+          'PostHog asks you to approve access again. OpenBot requests the permissions this connection already has.',
         )}
       </p>
     )

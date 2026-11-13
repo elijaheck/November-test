@@ -78,7 +78,7 @@ export function BotImportDialog({
       <div className="space-y-5 p-5 text-sm text-primary">
         <p className="text-secondary">
           {t(
-            'Bring your Bots, shared chats and working context into Nuphos. Review everything before creating anything.',
+            'Bring your Bots, shared chats and working context into OpenBot. Review everything before creating anything.',
           )}
         </p>
         {error && (

@@ -52,7 +52,7 @@ export async function grafanaProxy<T>(
   const account = await signedIn()
   const cleanPath = path.startsWith('/') ? path.slice(1) : path
   const route = `/teams/${teamId}/grafana-instances/${instanceId}/proxy/${cleanPath}`
-  // Disable compression — the Nuphos backend proxy currently mis-handles
+  // Disable compression — the OpenBot backend proxy currently mis-handles
   // Content-Encoding (forwards the gzip header but ships decoded bytes), which
   // makes undici fail with `Z_DATA_ERROR: incorrect header check`.
   const headers: Record<string, string> = {

@@ -23,7 +23,7 @@ export function SelfManagementCard({
   // Convention (customer perspective):
   //   canRead = true  → green (good: the page can show what's granted)
   //   canRead = false → amber (caution: page will be incomplete)
-  //   canWrite = true → green (good: you can update what Nuphos can do
+  //   canWrite = true → green (good: you can update what OpenBot can do
   //                     without re-binding the account)
   //   canWrite = false → neutral (informational: you'd need higher-level
   //                      access elsewhere to change the permissions)

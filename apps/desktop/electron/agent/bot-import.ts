@@ -19,7 +19,7 @@ async function chosenBytes() {
   const chosen = await dialog.showOpenDialog({
     title: 'Choose a Grok Bot export',
     properties: ['openFile'],
-    filters: [{ name: 'Nuphos Bot bundle', extensions: ['zip'] }],
+    filters: [{ name: 'OpenBot Bot bundle', extensions: ['zip'] }],
   })
   const path = chosen.filePaths[0]
 
@@ -69,7 +69,7 @@ export async function chooseBotImport(
   if (!response.ok) {
     if (response.status === 404)
       throw new Error(
-        'This Nuphos server does not support Bot imports. Update it before importing.',
+        'This OpenBot server does not support Bot imports. Update it before importing.',
       )
     const failure = (await response.json().catch(() => null)) as {
       error?: { message?: string }

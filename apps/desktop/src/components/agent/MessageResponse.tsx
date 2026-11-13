@@ -93,7 +93,7 @@ export function ChatLink({
       ? [
           {
             key: 'open-in-app',
-            label: t('Open in Nuphos'),
+            label: t('Open in OpenBot'),
             icon: PanelRight,
             onSelect: () => menuActions.openInApp(link),
           },

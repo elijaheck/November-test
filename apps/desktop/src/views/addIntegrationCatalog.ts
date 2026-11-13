@@ -5,6 +5,7 @@
 
 import { t } from '../i18n/index.ts'
 import { CONNECTOR_CATEGORIES } from '../lib/connectorCategories.ts'
+import { isOfferedConnectorCategory } from '../product.ts'
 
 import type { ConnectorCategoryId } from '../lib/connectorCategories.ts'
 
@@ -150,15 +151,19 @@ function isAddIntegrationKey(key: string): key is AddIntegrationKey {
   return key in ITEM_META
 }
 
-export const CATALOG: CatalogCategory[] = CONNECTOR_CATEGORIES.map((category) => ({
-  id: category.id,
-  title: category.label,
-  items: category.catalog.filter(isAddIntegrationKey).map((key) => ({
-    key,
-    ...ITEM_META[key],
-    // Everything a query is matched against, folded once at module load: the
-    // category title is in here too, so "messaging" surfaces that whole group.
-    haystack:
-      `${ITEM_META[key].name} ${ITEM_META[key].description} ${key} ${category.label} ${ALIASES[key] ?? ''}`.toLowerCase(),
-  })),
-})).filter((category) => category.items.length > 0)
+export const CATALOG: CatalogCategory[] = CONNECTOR_CATEGORIES.filter((category) =>
+  isOfferedConnectorCategory(category.id),
+)
+  .map((category) => ({
+    id: category.id,
+    title: category.label,
+    items: category.catalog.filter(isAddIntegrationKey).map((key) => ({
+      key,
+      ...ITEM_META[key],
+      // Everything a query is matched against, folded once at module load: the
+      // category title is in here too, so "messaging" surfaces that whole group.
+      haystack:
+        `${ITEM_META[key].name} ${ITEM_META[key].description} ${key} ${category.label} ${ALIASES[key] ?? ''}`.toLowerCase(),
+    })),
+  }))
+  .filter((category) => category.items.length > 0)

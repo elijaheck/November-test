@@ -55,7 +55,7 @@ export function listContexts() {
 
 /**
  * Register a kubeconfig YAML into the per-context cache and return its context
- * name. Nuphos's cluster IPC handlers call this after fetching short-lived
+ * name. OpenBot's cluster IPC handlers call this after fetching short-lived
  * credentials. If the context is already loaded the YAML is merged in place
  * (KubeConfig identity preserved) so live informers and port-forwards keep
  * working under refreshed credentials.

@@ -90,7 +90,7 @@ test('a Linear issue links to its linear.app page once loaded', () => {
 })
 
 test('a Linear team task list links to the team when its URL is known', () => {
-  const team = { id: 'team-uuid', key: 'NUPS', name: 'Nuphos' }
+  const team = { id: 'team-uuid', key: 'NUPS', name: 'OpenBot' }
 
   assert.deepEqual(
     externalPageLink(

@@ -113,7 +113,7 @@ export function VolcengineBindWizard({
                 {oidc && !oidc.configured && (
                   <div className="text-[11.5px] text-status-attention">
                     {t(
-                      "Nuphos's OIDC connector isn't configured on this backend yet — binding will fail until it is.",
+                      "OpenBot's OIDC connector isn't configured on this backend yet — binding will fail until it is.",
                     )}
                   </div>
                 )}
@@ -204,7 +204,7 @@ export function VolcengineBindWizard({
                 </StepList>
                 <div className="text-[11.5px] text-tertiary">
                   {t(
-                    'Skipping this? Clusters still bind, but their contents stay forbidden — Nuphos will show this same guidance when you open one.',
+                    'Skipping this? Clusters still bind, but their contents stay forbidden — OpenBot will show this same guidance when you open one.',
                   )}
                 </div>
               </div>

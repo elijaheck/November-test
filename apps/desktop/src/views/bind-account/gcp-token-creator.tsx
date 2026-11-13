@@ -8,7 +8,7 @@ import type { GcpWifInfo } from '../../types'
 // rather than theirs. The value and explanation live here.
 
 /**
- * Nuphos's principal for the Token Creator grant. Prefers the team's workload
+ * OpenBot's principal for the Token Creator grant. Prefers the team's workload
  * identity subject, which Google pins to this team: a token minted for another
  * team cannot use the grant, so the customer's own IAM policy — not our code —
  * is what keeps teams apart.
@@ -36,9 +36,9 @@ export function GcpTokenCreatorNote({ wif, saName }: { wif: GcpWifInfo | null; s
     <StepNote>
       <Fill
         text={t(
-          'That principal is {own} — the one field in this setup where you paste our identity instead of yours. It is scoped to your team, so it is the only Nuphos identity that can use this grant. Token Creator lets it {actAs} {account} for minutes at a time and nothing else; it gives that account no new power of its own, and Nuphos holds no key. Watch the Role field: it opens on {role}, which is a different thing.',
+          'That principal is {own} — the one field in this setup where you paste our identity instead of yours. It is scoped to your team, so it is the only OpenBot identity that can use this grant. Token Creator lets it {actAs} {account} for minutes at a time and nothing else; it gives that account no new power of its own, and OpenBot holds no key. Watch the Role field: it opens on {role}, which is a different thing.',
         )}
-        own={<span className="text-main">{t("Nuphos's own")}</span>}
+        own={<span className="text-main">{t("OpenBot's own")}</span>}
         actAs={<span className="text-main">{t('act as')}</span>}
         account={saName}
         role={<span className="text-main">Service Account Admin</span>}

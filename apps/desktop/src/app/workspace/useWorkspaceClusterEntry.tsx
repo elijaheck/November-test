@@ -160,7 +160,7 @@ export function useWorkspaceClusterEntry(a: Args) {
   //    in-flight tab is skipped.
   // 2. On failure we stamp `kubeconfigContextError` and skip the tab on every
   //    subsequent render. Without this, the effect would refire on every state
-  //    update — `tabs` is in its deps — and hammer the Nuphos API in a tight
+  //    update — `tabs` is in its deps — and hammer the OpenBot API in a tight
   //    loop. The user clears the error by re-picking the cluster, which goes
   //    through `enterCluster` and resets the error.
   useEffect(() => {

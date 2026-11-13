@@ -59,7 +59,7 @@ test('untilRun counts hours up close and calendar days further out', () => {
   assert.equal(untilRun(new Date(2026, 9, 14, 20, 0), new Date(2026, 9, 14, 0, 0)), 'later today')
 })
 
-test('the Nuphos local_exec tool counts, and other tools never read their output', () => {
+test('the OpenBot local_exec tool counts, and other tools never read their output', () => {
   const command = `bash skills/triggers/scripts/trigger-api.sh "$TEAM" POST '' @/tmp/trigger.json`
   const output = {
     toJSON() {

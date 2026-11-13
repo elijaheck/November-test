@@ -226,7 +226,7 @@ const controller: LocalRuntimeController = new LocalRuntimeController({
       }),
       onChange: (connected, superseded) => {
         onChange(connected, superseded)
-        if (superseded) stop('Another Nuphos app on this computer took over the local runtime.')
+        if (superseded) stop('Another OpenBot app on this computer took over the local runtime.')
       },
     })
 
@@ -275,10 +275,12 @@ if (!deviceCredential)
   setInterval(() => {
     const fresh = currentToken()
 
-    if (!stopping && fresh !== signedIn) stop('Signed out of Nuphos; stopping the local runtimes.')
+    if (!stopping && fresh !== signedIn) stop('Signed out of OpenBot; stopping the local runtimes.')
   }, 2_000)
 for (const signal of ['SIGINT', 'SIGTERM', 'SIGHUP'] as const) process.on(signal, () => stop())
-console.log(`Running this computer's agents for Nuphos as "${device.label}". Press Ctrl-C to stop.`)
+console.log(
+  `Running this computer's agents for OpenBot as "${device.label}". Press Ctrl-C to stop.`,
+)
 console.log(
   'Agents you move onto this computer can be continued by anyone in that team, and their messages run commands here.',
 )

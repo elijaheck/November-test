@@ -1,4 +1,4 @@
-/** The shared three-quarter face and long, low-set eyes of the Nuphos characters. */
+/** The shared three-quarter face and long, low-set eyes of the OpenBot characters. */
 export function BotsModeIcon() {
   return (
     <svg aria-hidden viewBox="0 0 24 24" fill="none" className="size-5 shrink-0">

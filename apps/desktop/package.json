@@ -93,7 +93,7 @@
   },
   "build": {
     "appId": "ai.nuphos.desktop",
-    "productName": "Nuphos",
+    "productName": "OpenBot",
     "artifactName": "${productName}-${version}-${arch}.${ext}",
     "directories": {
       "output": "release",
@@ -105,7 +105,7 @@
     ],
     "protocols": [
       {
-        "name": "Nuphos",
+        "name": "OpenBot",
         "schemes": [
           "nuphos"
         ]

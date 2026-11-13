@@ -35,7 +35,7 @@ export function loginWrapper(
 ) {
   const wrapper = path.join(bundleRoot, `${provider === 'codex' ? 'codex' : 'claude'}-login.mjs`)
 
-  if (!existsSync(wrapper)) throw new Error('Update Nuphos to sign in with an API key.')
+  if (!existsSync(wrapper)) throw new Error('Update OpenBot to sign in with an API key.')
 
   return {
     command: process.execPath,

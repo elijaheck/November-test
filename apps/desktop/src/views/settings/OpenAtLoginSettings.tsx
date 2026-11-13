@@ -9,7 +9,7 @@ import { LOCAL_AGENT_CARD } from './LocalAgentCard'
 
 import type { LoginItemState } from '../../api/device-types'
 
-/** Opens Nuphos at login, so this computer's local runtime comes back after a restart. */
+/** Opens OpenBot at login, so this computer's local runtime comes back after a restart. */
 export function OpenAtLoginSettings() {
   const [state, setState] = useState<LoginItemState | null>(null)
   const [saving, setSaving] = useState(false)
@@ -39,7 +39,7 @@ export function OpenAtLoginSettings() {
     try {
       setState(await api.appSetLoginItem(openAtLogin))
     } catch (err) {
-      toast.apiError(t('Could not change Open Nuphos at login'), err)
+      toast.apiError(t('Could not change Open OpenBot at login'), err)
     } finally {
       setSaving(false)
     }
@@ -48,10 +48,10 @@ export function OpenAtLoginSettings() {
   return (
     <label className={`${LOCAL_AGENT_CARD} flex items-start justify-between gap-3 px-4 py-3.5`}>
       <div>
-        <div className="text-[13px] font-medium text-main">{t('Open Nuphos at login')}</div>
+        <div className="text-[13px] font-medium text-main">{t('Open OpenBot at login')}</div>
         <p className="mt-1 text-[12px] text-tertiary">
           {t(
-            'Open Nuphos when you sign in to this computer, so its local runtime is back online after a restart.',
+            'Open OpenBot when you sign in to this computer, so its local runtime is back online after a restart.',
           )}
         </p>
       </div>

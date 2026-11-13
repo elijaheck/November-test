@@ -15,7 +15,7 @@ import {
 //
 // There is no global "current context" — every k8s operation in this module
 // takes a `context: string` and routes through `getClients(context)`. That
-// keeps Nuphos tabs viewing different clusters truly independent: pointing
+// keeps OpenBot tabs viewing different clusters truly independent: pointing
 // Tab A at cluster X and Tab B at cluster Y produces two separate KubeConfig
 // instances + API clients with no shared mutable state.
 export type ClusterClients = {

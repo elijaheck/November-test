@@ -28,11 +28,11 @@ import type { KeyboardEvent as ReactKeyboardEvent, RefObject } from 'react'
 /**
  * Typing `/` lists the agent's own commands, the ones this computer sends most
  * first (then A to Z), in a strip along the top of the composer; at the start of
- * a message the Nuphos actions the panel provides follow (plus Model when this
+ * a message the OpenBot actions the panel provides follow (plus Model when this
  * composer has a model control). Before a session lists its commands (a new
  * conversation has none yet), the ones its agent listed last stand in. An
  * agent command is only written into the message, in place of the typed
- * `/query`, and Enter completes the first match. A Nuphos action runs only when
+ * `/query`, and Enter completes the first match. A OpenBot action runs only when
  * picked. Escape keeps the menu closed until the `/` is gone. Sends go through
  * `wrapSend` so the commands in them count as used.
  */

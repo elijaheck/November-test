@@ -6,7 +6,7 @@ import type { Vpc } from './aws-network'
 import type { Cluster, KubeconfigResponse } from './clusters'
 
 /**
- * Which Nuphos principal the customer grants Service Account Token Creator to.
+ * Which OpenBot principal the customer grants Service Account Token Creator to.
  * `principal` is the workload identity subject for this team and the value the
  * wizard tells them to paste. A deploy without federation returns
  * `configured: false` and cannot bind GCP accounts.

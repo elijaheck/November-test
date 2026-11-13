@@ -64,7 +64,7 @@ export function RuntimeQuotaHistory({
         (rows.length === 0 ? (
           <p className="mb-4 rounded-xl border border-dashed border-line-control px-4 py-6 text-center text-xs leading-5 text-tertiary">
             {t(
-              'No usage recorded in this range yet. A reading is kept each time a runtime reports its usage while someone on the team has Nuphos open.',
+              'No usage recorded in this range yet. A reading is kept each time a runtime reports its usage while someone on the team has OpenBot open.',
             )}
           </p>
         ) : (

@@ -8,7 +8,7 @@ import { AwsWizardStepContent } from './aws-steps'
 // ---------------------------------------------------------------------------
 // AWS bind wizard — one console step per page. The sub condition entered in
 // step 2 pins the role to this team; it is the security boundary that stops
-// any other Nuphos team from assuming the role.
+// any other OpenBot team from assuming the role.
 // ---------------------------------------------------------------------------
 
 export function AwsBindWizard({

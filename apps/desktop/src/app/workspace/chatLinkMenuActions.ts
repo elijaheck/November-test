@@ -18,7 +18,7 @@ function absolute(href: string): string {
   return isAppWebUrl(href.trim())?.toString() ?? href.trim()
 }
 
-// Right-click menu on a chat link. "Open in Nuphos" is the left-click routing,
+// Right-click menu on a chat link. "Open in OpenBot" is the left-click routing,
 // except that a plain web page lands in the built-in browser tab instead of the
 // system browser; external/copy actions resolve the provider URL when available.
 export function buildChatLinkMenuActions({

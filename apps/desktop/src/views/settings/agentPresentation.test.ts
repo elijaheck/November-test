@@ -219,7 +219,7 @@ test("any computer's default agent can be removed; a person's own is only forgot
   const computer = local('mac-codex', 'mac', true)
   const box = { ...computer, local: { ...computer.local!, box: { state: 'running' } } }
 
-  // Online or not: a signed-out default Nuphos forgets stays hidden until it signs in again.
+  // Online or not: a signed-out default OpenBot forgets stays hidden until it signs in again.
   assert.equal(localRemovalId(computer), 'codex')
   assert.equal(
     localRemovalId({ ...computer, local: { ...computer.local!, online: true } }),

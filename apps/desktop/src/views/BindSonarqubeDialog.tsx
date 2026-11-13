@@ -50,7 +50,7 @@ export function BindSonarqubeDialog({ teamId, onClose, onBound }: Props) {
       <div className="px-5 py-4 space-y-3 text-[13px]">
         <p className="text-secondary text-[12.5px] leading-relaxed">
           {t(
-            'Nuphos validates the token against this instance and stores it encrypted on the server. Source code is not uploaded by this connector.',
+            'OpenBot validates the token against this instance and stores it encrypted on the server. Source code is not uploaded by this connector.',
           )}
         </p>
         <Field label={t('Label')} hint={t('A short name such as security or staging')}>

@@ -21,8 +21,11 @@ export function SidebarPageList({
   sections,
   listProps,
   onScroll,
+  title,
 }: {
   page: 0 | 1
+  /** Overrides the page heading (Channels / Tasks). */
+  title?: string
   sections: Section[]
   listProps: Omit<ComponentProps<typeof SidebarSectionList>, 'sections'>
   onScroll: UIEventHandler<HTMLElement>
@@ -60,7 +63,7 @@ export function SidebarPageList({
   const list = <SidebarSectionList {...props} sections={visible} />
 
   const heading: Section = {
-    title: page === 0 ? 'Channels' : 'Tasks',
+    title: title ?? (page === 0 ? 'Channels' : 'Tasks'),
     items: [],
     nonCollapsible: true,
   }

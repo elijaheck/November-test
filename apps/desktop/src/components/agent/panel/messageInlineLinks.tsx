@@ -5,7 +5,7 @@ import { MENTION_HREF } from './messageMentionText'
 import type { ReactNode } from 'react'
 import { isAppWebUrl } from '../../../lib/webBaseUrl'
 
-// The composer serializes mention chips back to their raw Nuphos URL, so by the
+// The composer serializes mention chips back to their raw OpenBot URL, so by the
 // time a sent message reaches the transcript it's plain text. GFM autolinks the
 // bare URL; this hook swaps the resulting anchor for the same chip the composer
 // used (returning null keeps the default anchor for everything else).

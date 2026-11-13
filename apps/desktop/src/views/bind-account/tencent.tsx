@@ -140,7 +140,7 @@ export function TencentBindWizard({
                 {oidc && !oidc.configured && (
                   <div className="text-[11.5px] text-status-attention">
                     {t(
-                      "Nuphos's OIDC connector isn't configured on this backend yet — binding will fail until it is.",
+                      "OpenBot's OIDC connector isn't configured on this backend yet — binding will fail until it is.",
                     )}
                   </div>
                 )}
@@ -234,7 +234,7 @@ export function TencentBindWizard({
                 </StepList>
                 <div className="text-[11.5px] text-tertiary">
                   {t(
-                    'Skipping this? Clusters still bind, but their contents stay forbidden — Nuphos will show this same guidance when you open one.',
+                    'Skipping this? Clusters still bind, but their contents stay forbidden — OpenBot will show this same guidance when you open one.',
                   )}
                 </div>
               </div>
@@ -261,7 +261,7 @@ export function TencentBindWizard({
                     type="text"
                     value={roleArn}
                     onChange={(e) => onRoleArnChange(e.target.value)}
-                    placeholder="qcs::cam::uin/123456789:roleName/Nuphos"
+                    placeholder="qcs::cam::uin/123456789:roleName/OpenBot"
                     className="w-full h-9 px-2.5 rounded-md bg-surface border border-line-control focus:border-line-focus outline-none text-[12.5px] font-mono placeholder:text-tertiary text-main"
                   />
                 </Field>

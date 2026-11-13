@@ -171,7 +171,7 @@ export const HOME_CARD_CATALOG: HomeCardEntry[] = [
     category: 'dashboards',
     title: t('Dashboard panel'),
     icon: LayoutDashboard,
-    description: t('Pin any panel from your Nuphos dashboards.'),
+    description: t('Pin any panel from your OpenBot dashboards.'),
     keywords: ['chart', 'graph', 'dashboards', 'pin'],
     size: { w: HALF, h: 6 },
     add: 'pick',

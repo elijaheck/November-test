@@ -39,7 +39,7 @@ button { border: 1px solid light-dark(#ccc,#444); border-radius: 6px; padding: 8
 button:focus-visible { outline: 2px solid #a78bfa; outline-offset: 3px; }
 button:hover { filter: brightness(1.1); }
 .confirm { background: #7c3aed; border-color: #7c3aed; color: white; }
-</style></head><body><header>Nuphos · ${escapeHtml(options.title)}</header>
+</style></head><body><header>OpenBot · ${escapeHtml(options.title)}</header>
 <main><h1>${escapeHtml(options.message)}</h1><p>${escapeHtml(options.detail ?? '')}</p></main>
 <footer><form action="https://nuphos-dialog.invalid/cancel"><button autofocus>${cancel}</button></form>
 ${options.confirmLabel ? `<form action="https://nuphos-dialog.invalid/confirm"><button class="confirm">${escapeHtml(options.confirmLabel)}</button></form>` : ''}

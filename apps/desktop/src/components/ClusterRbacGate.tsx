@@ -160,7 +160,7 @@ export function ClusterRbacNotice({
     <div className="flex h-full flex-col items-center justify-center px-6 py-12 text-center">
       <ShieldAlert className="mb-3 h-8 w-8 text-warning" strokeWidth={1.6} />
       <div className="mb-2 text-[14px] font-medium text-main">
-        {t("Connected, but this cluster hasn't authorized Nuphos yet")}
+        {t("Connected, but this cluster hasn't authorized OpenBot yet")}
       </div>
       <div className="mb-4 max-w-lg text-[12px] text-secondary">
         {isVolcengine

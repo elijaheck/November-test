@@ -143,7 +143,7 @@ export function useWorkspaceTabLifecycle(a: Args) {
   const toolbarHasControls =
     Boolean(toolbarPrimaryAction) || toolbarLeftOccupied || toolbarRightOccupied
 
-  // macOS hands Nuphos http(s) links once the user picks it as the default
+  // macOS hands OpenBot http(s) links once the user picks it as the default
   // browser; they open like a link clicked in chat.
   useEffect(() => {
     if (paneActive) return api.onWebUrlDeepLink(stableOpenNuphosLinkFromChat)

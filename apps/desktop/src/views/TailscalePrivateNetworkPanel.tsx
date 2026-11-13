@@ -119,7 +119,7 @@ export function TailscalePrivateNetworkPanel({
         />
         <div className="text-[11.5px] text-secondary leading-relaxed">
           {t(
-            'This is a larger grant than listing devices. If this OAuth client also carries device-write scopes, consider binding a separate client that only has {scope}, so the credential Nuphos holds for the data plane can do nothing else.',
+            'This is a larger grant than listing devices. If this OAuth client also carries device-write scopes, consider binding a separate client that only has {scope}, so the credential OpenBot holds for the data plane can do nothing else.',
             { scope: 'auth_keys' },
           )}
         </div>
@@ -150,7 +150,7 @@ export function TailscalePrivateNetworkPanel({
         <div className="text-[12px] font-medium text-main">{t('Tailnet ACL')}</div>
         <div className="mt-1 text-[11.5px] text-tertiary leading-relaxed">
           {t(
-            'Nuphos never writes your policy file. Generate the blocks below, review them, and apply them yourself — deleting them revokes access immediately.',
+            'OpenBot never writes your policy file. Generate the blocks below, review them, and apply them yourself — deleting them revokes access immediately.',
           )}
         </div>
         <div className="mt-3 flex items-center gap-2">

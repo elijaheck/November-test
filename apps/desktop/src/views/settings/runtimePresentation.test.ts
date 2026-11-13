@@ -33,12 +33,12 @@ test('removing an online computer’s agent keeps the immediate wording', () => 
   for (const online of [true, undefined]) {
     assert.equal(
       runtimeRemovalDescription(added(online)),
-      'This removes the agent and its sign-in from MacBook Air. Your conversation history stays in Nuphos.',
+      'This removes the agent and its sign-in from MacBook Air. Your conversation history stays in OpenBot.',
     )
   }
 })
 
-test("removing a person's own default agent says only Nuphos forgets it", () => {
+test("removing a person's own default agent says only OpenBot forgets it", () => {
   const own: RuntimeInstance = {
     ...added(false),
     id: 'local_owner_box_codex',
@@ -54,6 +54,6 @@ test("removing a person's own default agent says only Nuphos forgets it", () => 
 
   assert.equal(
     runtimeRemovalDescription(own),
-    'This removes Codex from Nuphos. Its CLI sign-in on MacBook Air is yours and stays; while it is signed in there, Codex is listed again.',
+    'This removes Codex from OpenBot. Its CLI sign-in on MacBook Air is yours and stays; while it is signed in there, Codex is listed again.',
   )
 })

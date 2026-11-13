@@ -12,7 +12,7 @@ export function accountName(account: AccountSummary): string {
   return user?.name || user?.username || user?.email || account.key.split('@')[0] || account.key
 }
 
-/** The backend to name beside an account: none for Nuphos Cloud. */
+/** The backend to name beside an account: none for OpenBot Cloud. */
 export function backendLabel(api: string): string | null {
   try {
     const url = new URL(api)

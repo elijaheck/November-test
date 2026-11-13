@@ -79,7 +79,7 @@ export function installAgentCli(
   provider: LocalAgentProvider,
   env: NodeJS.ProcessEnv,
 ): Promise<void> {
-  // Grok Build and OpenCode install from their own installers; Nuphos offers only these two.
+  // Grok Build and OpenCode install from their own installers; OpenBot offers only these two.
   const command =
     provider === 'claude-code' || provider === 'codex' ? installCommand(provider, env) : null
 

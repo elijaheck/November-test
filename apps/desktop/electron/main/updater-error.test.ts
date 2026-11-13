@@ -9,7 +9,7 @@ import {
 
 test('classifies updater failures by actionable cause', () => {
   assert.equal(
-    classifyUpdaterError('Code signature at URL file:///tmp/Nuphos.app failed'),
+    classifyUpdaterError('Code signature at URL file:///tmp/OpenBot.app failed'),
     'signature_validation',
   )
   assert.equal(
@@ -28,16 +28,16 @@ test('classifies updater failures by actionable cause', () => {
 test('redacts local usernames, URL credentials, and random staging ids from telemetry', () => {
   const cases = [
     [
-      '/Users/alice/Library/Caches/app/update.a1B2c3/Nuphos.app failed',
-      '/Users/<redacted>/Library/Caches/app/update.<id>/Nuphos.app failed',
+      '/Users/alice/Library/Caches/app/update.a1B2c3/OpenBot.app failed',
+      '/Users/<redacted>/Library/Caches/app/update.<id>/OpenBot.app failed',
     ],
     [
-      String.raw`C:\Users\alice\AppData\Local\app\update.a1B2c3\Nuphos.exe failed`,
-      String.raw`C:\Users\<redacted>\AppData\Local\app\update.<id>\Nuphos.exe failed`,
+      String.raw`C:\Users\alice\AppData\Local\app\update.a1B2c3\OpenBot.exe failed`,
+      String.raw`C:\Users\<redacted>\AppData\Local\app\update.<id>\OpenBot.exe failed`,
     ],
     [
-      '/home/alice/.cache/app/update.a1B2c3/Nuphos failed',
-      '/home/<redacted>/.cache/app/update.<id>/Nuphos failed',
+      '/home/alice/.cache/app/update.a1B2c3/OpenBot failed',
+      '/home/<redacted>/.cache/app/update.<id>/OpenBot failed',
     ],
     [
       'https://alice:secret@updates.example.com/latest.yml failed',

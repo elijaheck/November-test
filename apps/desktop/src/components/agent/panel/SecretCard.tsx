@@ -78,7 +78,7 @@ export function SecretCard({
         {phase === 'outdated' && (
           <div className="mt-1.5 text-[12px] text-status-warning">
             {t(
-              'The computer running this agent needs a newer Nuphos Desktop to save a secret. Update Nuphos Desktop there, then ask the agent again.',
+              'The computer running this agent needs a newer OpenBot Desktop to save a secret. Update OpenBot Desktop there, then ask the agent again.',
             )}
           </div>
         )}

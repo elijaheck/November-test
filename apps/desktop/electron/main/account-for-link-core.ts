@@ -13,7 +13,7 @@ export type LinkAccountDeps = {
   teamsOf: (account: AccountSummary) => Promise<string[]>
 }
 
-/** The team a Nuphos page path is in: `/teams/<id>/…`. */
+/** The team a OpenBot page path is in: `/teams/<id>/…`. */
 export function teamOfPath(path: string): string | null {
   return /^\/teams\/([^/?#]+)/u.exec(path)?.[1] ?? null
 }

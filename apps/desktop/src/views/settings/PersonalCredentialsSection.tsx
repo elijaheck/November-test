@@ -66,7 +66,7 @@ export function PersonalCredentialsSection({
   onOpenSection?: (section: string) => void
 }) {
   const [credentials, setCredentials] = useState<PersonalCredential[] | null>(null)
-  // Gmail / Google Drive go through the current team's own OAuth client, else Nuphos's Composio.
+  // Gmail / Google Drive go through the current team's own OAuth client, else OpenBot's Composio.
   // Null while unknown, or when it could not be read: Connect stays available and says why if it fails.
   const [googleClient, setGoogleClient] = useState<TeamGoogleClient | null>(null)
   const admin = useAdminName(team?.id, Boolean(team && team.role !== 'ADMINISTRATOR'))
@@ -183,7 +183,7 @@ export function PersonalCredentialsSection({
                     <p className="mt-0.5 text-[12.5px] text-tertiary">{description}</p>
                     {!credential && viaComposio && (
                       <p className="mt-1.5 text-[12.5px] text-secondary">
-                        {t('Connects through Composio, which handles this data for Nuphos.')}
+                        {t('Connects through Composio, which handles this data for OpenBot.')}
                       </p>
                     )}
                     {!credential && needsTeamClient && (

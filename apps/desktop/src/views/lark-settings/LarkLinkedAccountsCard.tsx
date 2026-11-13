@@ -24,7 +24,7 @@ export function LarkLinkedAccountsCard({
         <div className="text-[13px] font-medium text-main">{t('Linked accounts')}</div>
         <div className="mt-0.5 text-[12px] text-tertiary">
           {t(
-            'Lark users mapped to Nuphos members. Members link themselves by DMing the bot a pairing code; remove one to revoke its access.',
+            'Lark users mapped to OpenBot members. Members link themselves by DMing the bot a pairing code; remove one to revoke its access.',
           )}
         </div>
       </div>

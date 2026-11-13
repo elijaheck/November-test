@@ -86,7 +86,7 @@ export async function submitTencent(st: BindState, env: SubmitEnv) {
   if (!TENCENT_ROLE_ARN_PATTERN.test(roleArn)) {
     toast.error(
       t('Invalid role ARN. Must be like {example}', {
-        example: 'qcs::cam::uin/123456789:roleName/Nuphos',
+        example: 'qcs::cam::uin/123456789:roleName/OpenBot',
       }),
     )
 

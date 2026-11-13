@@ -1,4 +1,4 @@
-// Opening Nuphos when the user signs in to the OS, so a computer's local
+// Opening OpenBot when the user signs in to the OS, so a computer's local
 // runtime comes back after a restart without anyone opening the app by hand.
 // It opens as it would by hand, with its windows: the renderer is what reads
 // the stored sign-in, and the local runtime follows that sign-in.
@@ -35,7 +35,7 @@ export function writeLoginItem(
 ): LoginItemState {
   if (typeof openAtLogin !== 'boolean') throw new Error('openAtLogin must be true or false')
   if (!loginItemSupported(app, platform))
-    throw new Error('Opening Nuphos at login is not available on this computer.')
+    throw new Error('Opening OpenBot at login is not available on this computer.')
   app.setLoginItemSettings({ openAtLogin })
 
   return readLoginItem(app, platform)
