@@ -16,8 +16,10 @@ import { ContextMenu } from '../ContextMenu'
 import { INLINE_LINK } from '../ui/inline-link'
 
 import { ChatLinkMenuContext, isChatMenuLink } from './chatLinkMenuContext'
+import { LinkPreviewCard } from './LinkPreviewCard'
 import { standaloneLocalLink } from './localPreviewLink'
 import { MarkdownImage, ReplyImage } from './ReplyImage'
+import { useLinkPeek } from './useLinkPeek'
 
 import type { LinkRenderOptions } from './localPreviewLink'
 import type { ContextMenuItem } from '../ContextMenu'
@@ -67,6 +69,7 @@ export function ChatLink({
 }) {
   const menuActions = useContext(ChatLinkMenuContext)
   const [menu, setMenu] = useState<{ x: number; y: number } | null>(null)
+  const peek = useLinkPeek(link, menuActions?.openInApp)
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!link || !onLinkClick) return
@@ -121,12 +124,14 @@ export function ChatLink({
         rel="noreferrer"
         onClick={handleClick}
         onContextMenu={handleContextMenu}
+        {...peek.handlers}
         className={className}
         title={title}
         aria-label={ariaLabel}
       >
         {children}
       </a>
+      {link && peek.anchor && !menu && <LinkPreviewCard url={link} anchor={peek.anchor} />}
       {menu && items.length > 0 && (
         <ContextMenu x={menu.x} y={menu.y} items={items} onClose={() => setMenu(null)} />
       )}
