@@ -1,3 +1,4 @@
+import { Mail } from 'lucide-react'
 import { CloudLogo } from '../../components/CloudLogo'
 import { DatabaseEngineGlyph } from '../../components/DatabaseEngineIcon'
 import { LinearMark } from '../../components/LinearMark'
@@ -12,6 +13,14 @@ export function CatalogLogo({
   size?: number
 }) {
   if (provider === 'linear') return <LinearMark size={size} />
+  if (provider === 'mail') {
+    return (
+      <Mail
+        className={size < 20 ? 'h-4 w-4 text-secondary' : 'h-5 w-5 text-secondary'}
+        strokeWidth={1.8}
+      />
+    )
+  }
   if (provider === 'mongodb') {
     return <DatabaseEngineGlyph engine="mongodb" className={size < 20 ? 'h-4 w-4' : 'h-5 w-5'} />
   }

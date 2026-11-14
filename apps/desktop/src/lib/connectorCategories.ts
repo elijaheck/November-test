@@ -107,7 +107,7 @@ export const CONNECTOR_CATEGORIES: ConnectorCategory[] = [
   {
     id: 'email',
     label: t('Email'),
-    catalog: ['resend'],
+    catalog: ['mail', 'resend'],
   },
   {
     id: 'messaging',

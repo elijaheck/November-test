@@ -19,16 +19,16 @@ function statusText(state: UpdaterState): string {
     case 'up-to-date':
       return t("You're up to date.")
     case 'downloading':
-      return t('Downloading Nuphos {version}…', { version: state.version })
+      return t('Downloading OpenBot {version}…', { version: state.version })
     case 'ready':
       return state.installerUrl
         ? t(
-            "Nuphos {version} didn't install last time. Restart to try again, or download the installer.",
+            "OpenBot {version} didn't install last time. Restart to try again, or download the installer.",
             {
               version: state.version,
             },
           )
-        : t('Nuphos {version} is ready. Restart to finish updating.', { version: state.version })
+        : t('OpenBot {version} is ready. Restart to finish updating.', { version: state.version })
     case 'error':
       return t("Couldn't check for updates. Check your connection and try again.")
   }
@@ -54,12 +54,12 @@ export function UpdatesSection() {
     <div>
       <SectionHeader
         title={t('Updates')}
-        description={t('Nuphos downloads updates in the background.')}
+        description={t('OpenBot downloads updates in the background.')}
       />
       <div className="rounded-lg border border-line-control bg-surface p-4">
         <div className="flex items-center justify-between gap-4">
           <div className="min-w-0">
-            <div className="text-[13px] font-medium text-main">Nuphos {version}</div>
+            <div className="text-[13px] font-medium text-main">OpenBot {version}</div>
             <p className="mt-1 min-h-[18px] text-[12px] text-tertiary" role="status">
               {statusText(state)}
             </p>

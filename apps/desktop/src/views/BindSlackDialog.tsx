@@ -73,10 +73,10 @@ export function BindSlackDialog({ open, teamId, onClose, onBound, mode = 'instal
       description={
         reinstall
           ? t(
-              'Re-approve Nuphos for your Slack workspace to refresh its permissions (e.g. newly added scopes). Existing channel and account links are kept.',
+              'Re-approve OpenBot for your Slack workspace to refresh its permissions (e.g. newly added scopes). Existing channel and account links are kept.',
             )
           : t(
-              'Add Nuphos to your Slack workspace. After you approve, the bot will DM you to pick channels — no IDs to copy.',
+              'Add OpenBot to your Slack workspace. After you approve, the bot will DM you to pick channels — no IDs to copy.',
             )
       }
       width={460}
@@ -93,7 +93,7 @@ export function BindSlackDialog({ open, teamId, onClose, onBound, mode = 'instal
                     'Click below to open Slack in your browser and re-approve the app. The connection stays active during the process; once approved, the refreshed permissions take effect immediately.',
                   )
                 : t(
-                    'Click below to open Slack in your browser. Approve the install and you will be redirected back automatically. The Nuphos bot will then message you in Slack to choose which channels to use.',
+                    'Click below to open Slack in your browser. Approve the install and you will be redirected back automatically. The OpenBot bot will then message you in Slack to choose which channels to use.',
                   )}
             </div>
           </div>

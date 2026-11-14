@@ -80,6 +80,7 @@ export const appChannels = {
   'auth:switchAccount': (_e: unknown, key: string) => auth.switchAccount(key),
   'auth:signOutAccount': (_e: unknown, key: string) => auth.signOutAccount(key),
   'auth:signOutAllAccounts': () => auth.signOutAllAccounts(),
+  'auth:localSignIn': () => auth.signInLocally(),
   'auth:emailRequestCode': (_e: unknown, email: string) => auth.requestEmailCode(email),
   'auth:emailVerifyCode': (_e: unknown, email: string, code: string) =>
     auth.verifyEmailCode(email, code),
@@ -150,7 +151,7 @@ export const appChannels = {
     pickPaths(e, ['openFile', 'multiSelections']),
   'dialog:selectLocalFolder': async (e: IpcMainInvokeEvent) =>
     pickPaths(e, ['openDirectory', 'multiSelections']),
-  // Continues one of those sessions as a Nuphos conversation on a team agent.
+  // Continues one of those sessions as a OpenBot conversation on a team agent.
   'agent:importLocalSession': (
     _e: IpcMainInvokeEvent,
     args: {

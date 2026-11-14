@@ -104,7 +104,7 @@ export function BindAccountDialog({
       description={
         cliCheck.visible
           ? undefined
-          : t('Grant Nuphos access to this {name} integration.', { name: providerLabel })
+          : t('Grant OpenBot access to this {name} integration.', { name: providerLabel })
       }
       width={500}
       footer={footerContent}

@@ -15,7 +15,7 @@ export const SUCCESS_HTML = `<!DOCTYPE html>
   <div class="wrap">
     <div class="check">✓</div>
     <div class="title">You're logged in</div>
-    <div class="sub">You can close this tab and return to Nuphos.</div>
+    <div class="sub">You can close this tab and return to OpenBot.</div>
   </div>
 </body>
 </html>`
@@ -28,8 +28,8 @@ export const MFA_HTML = SUCCESS_HTML.replace(
 )
   .replace("You're logged in", 'Almost there')
   .replace(
-    'You can close this tab and return to Nuphos.',
-    'Return to Nuphos and enter the code from your authenticator app.',
+    'You can close this tab and return to OpenBot.',
+    'Return to OpenBot and enter the code from your authenticator app.',
   )
 
 // The browser part of a passkey ceremony is done; the app takes it from here.
@@ -37,8 +37,8 @@ export const PASSKEY_DONE_HTML = SUCCESS_HTML.replace(
   '<title>Logged in</title>',
   '<title>Passkey</title>',
 )
-  .replace("You're logged in", 'Return to Nuphos')
-  .replace('You can close this tab and return to Nuphos.', 'You can close this tab.')
+  .replace("You're logged in", 'Return to OpenBot')
+  .replace('You can close this tab and return to OpenBot.', 'You can close this tab.')
 
 function escapeHtml(value: string): string {
   const entities: Record<string, string> = {
@@ -71,7 +71,7 @@ export function errorPage(message: string): string {
     <div class="mark">!</div>
     <div class="title">Sign-in failed</div>
     <div class="sub">${escapeHtml(message)}</div>
-    <div class="sub">You can close this tab and try again from Nuphos.</div>
+    <div class="sub">You can close this tab and try again from OpenBot.</div>
   </div>
 </body>
 </html>`
@@ -86,8 +86,8 @@ export function errorPage(message: string): string {
 const CALLBACK_ERROR_COPY: Record<string, string> = {
   access_denied: 'Sign-in was cancelled.',
   invalid_request: 'Sign-in did not complete. Please try again.',
-  server_error: 'Nuphos could not complete the sign-in. Please try again.',
-  temporarily_unavailable: 'Nuphos took too long to answer. Please try again.',
+  server_error: 'OpenBot could not complete the sign-in. Please try again.',
+  temporarily_unavailable: 'OpenBot took too long to answer. Please try again.',
 }
 
 /** Anything on this machine can reach the listener, so treat both fields as untrusted text. */

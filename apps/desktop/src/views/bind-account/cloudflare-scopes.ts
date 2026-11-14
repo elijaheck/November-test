@@ -3,7 +3,7 @@
 // categories. Generated from `GET https://api.cloudflare.com/client/v4/oauth/scopes`;
 // regenerate when Cloudflare adds scopes, minus the `*.metadata_read` scopes
 // Cloudflare does not offer OAuth clients (only `workers-scripts.metadata_read`
-// is offered). The Nuphos OAuth client must be registered with every scope
+// is offered). The OpenBot OAuth client must be registered with every scope
 // listed here, or Cloudflare rejects the authorize request.
 import {
   faBolt,

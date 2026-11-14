@@ -24,14 +24,14 @@ export function SlackAccountsCard({
         <div className="text-[13px] font-medium text-main">{t('Slack accounts')}</div>
         <div className="mt-0.5 text-[12px] text-tertiary">
           {t(
-            'Which Nuphos user the agent acts as when someone @mentions it. Usually auto-linked by email on install.',
+            'Which OpenBot user the agent acts as when someone @mentions it. Usually auto-linked by email on install.',
           )}
         </div>
       </div>
       {!loading && !myMapping && (
         <div className="border-b border-line-control/60 px-4 py-3 text-[12.5px] text-tertiary">
           {t(
-            'Your Slack account is not linked yet — it links automatically when your Slack email matches your Nuphos account email.',
+            'Your Slack account is not linked yet — it links automatically when your Slack email matches your OpenBot account email.',
           )}
         </div>
       )}

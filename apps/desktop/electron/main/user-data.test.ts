@@ -7,7 +7,7 @@ import { test } from 'node:test'
 import { hasProfile, resolveUserData } from './user-data.ts'
 
 const LEGACY = 'k8s-gui'
-const APP = 'Nuphos'
+const APP = 'OpenBot'
 
 /** A throwaway appData directory, removed whether or not the test throws. */
 function withAppData(run: (appData: string) => void): void {

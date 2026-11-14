@@ -68,7 +68,7 @@ test('the visible failure is the reason and the trace id, without addresses or b
 
   assert.equal(
     visible(undiciFetchFailed(cause)),
-    'Nuphos backend request failed: other side closed (trace 1bb8abcb…)',
+    'OpenBot backend request failed: other side closed (trace 1bb8abcb…)',
   )
 })
 
@@ -80,7 +80,7 @@ test('a system error reads as its syscall and code, not its address', () => {
 
   assert.equal(
     visible(undiciFetchFailed(cause)),
-    'Nuphos backend request failed: connect ECONNREFUSED (trace 1bb8abcb…)',
+    'OpenBot backend request failed: connect ECONNREFUSED (trace 1bb8abcb…)',
   )
 })
 
@@ -98,7 +98,7 @@ test('an empty-message AggregateError reads as its first sub-error', () => {
 
   assert.equal(
     visible(undiciFetchFailed(cause)),
-    'Nuphos backend request failed: connect ETIMEDOUT (trace 1bb8abcb…)',
+    'OpenBot backend request failed: connect ETIMEDOUT (trace 1bb8abcb…)',
   )
 })
 
@@ -110,7 +110,7 @@ test("undici's connect timeout drops its attempted addresses", () => {
 
   assert.equal(
     visible(undiciFetchFailed(cause)),
-    'Nuphos backend request failed: Connect Timeout Error (trace 1bb8abcb…)',
+    'OpenBot backend request failed: Connect Timeout Error (trace 1bb8abcb…)',
   )
 })
 

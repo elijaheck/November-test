@@ -96,7 +96,7 @@ export function AwsIamPermissionsView({
               {visibleData.policies.length === 0 ? (
                 <EmptyHint
                   message={t(
-                    'No IAM policies attached to this role — Nuphos can assume the role but every operation will be denied. Attach a permissions policy (e.g. ReadOnlyAccess) to the role in the AWS IAM console.',
+                    'No IAM policies attached to this role — OpenBot can assume the role but every operation will be denied. Attach a permissions policy (e.g. ReadOnlyAccess) to the role in the AWS IAM console.',
                   )}
                 />
               ) : (

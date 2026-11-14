@@ -63,13 +63,13 @@ function LastSync({
     <div className="space-y-2 text-[13px] text-secondary" role="status">
       <p>
         {last.removedSkills > 0
-          ? t('Last synced {date}: {skills} in Nuphos, {files} uploaded, {removed} removed.', {
+          ? t('Last synced {date}: {skills} in OpenBot, {files} uploaded, {removed} removed.', {
               date: new Date(last.at).toLocaleString(),
               skills: skillCount(last.syncedSkills),
               files: fileCount(last.uploadedFiles),
               removed: skillCount(last.removedSkills),
             })
-          : t('Last synced {date}: {skills} in Nuphos, {files} uploaded.', {
+          : t('Last synced {date}: {skills} in OpenBot, {files} uploaded.', {
               date: new Date(last.at).toLocaleString(),
               skills: skillCount(last.syncedSkills),
               files: fileCount(last.uploadedFiles),
@@ -78,7 +78,7 @@ function LastSync({
       <p>{instructionLine(last, claudeMdChars)}</p>
       {last.failed.length > 0 && (
         <p>
-          {t('Nuphos refused {skills}; they stay on this computer.', {
+          {t('OpenBot refused {skills}; they stay on this computer.', {
             skills: last.failed.join(', '),
           })}
         </p>
@@ -147,7 +147,7 @@ export function LocalSetupSection({ team }: { team: AtlasTeam | undefined }) {
 
       toast.success(
         t('Setup synced'),
-        t('{skills} in Nuphos, {files} uploaded.', {
+        t('{skills} in OpenBot, {files} uploaded.', {
           skills: skillCount(result.syncedSkills),
           files: fileCount(result.uploadedFiles),
         }),
@@ -207,7 +207,7 @@ export function LocalSetupSection({ team }: { team: AtlasTeam | undefined }) {
             </p>
             <p className="mt-1 text-[12px] text-tertiary">
               {t(
-                'A runtime loads at most {files} files and {mb} MB of personal skills, so the smallest skills go first and the rest stay on this computer. Edits to synced skills belong here: the next sync overwrites changes made in Nuphos.',
+                'A runtime loads at most {files} files and {mb} MB of personal skills, so the smallest skills go first and the rest stay on this computer. Edits to synced skills belong here: the next sync overwrites changes made in OpenBot.',
                 {
                   files: status.budget.files.toLocaleString(),
                   mb: Math.round(status.budget.bytes / 1024 / 1024),
@@ -228,7 +228,7 @@ export function LocalSetupSection({ team }: { team: AtlasTeam | undefined }) {
                 disabled={!teamId}
                 label={t('Keep in sync')}
               />
-              {t('Keep in sync while Nuphos is open')}
+              {t('Keep in sync while OpenBot is open')}
             </div>
           </div>
 

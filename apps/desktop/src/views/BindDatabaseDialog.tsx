@@ -137,7 +137,7 @@ export function BindDatabaseDialog({ open, teamId, onClose, onBound }: Props) {
       onClose={close}
       title={t('Add database')}
       description={t(
-        'Nuphos encrypts the credential in the backend and only returns redacted connection metadata.',
+        'OpenBot encrypts the credential in the backend and only returns redacted connection metadata.',
       )}
       width={560}
       footer={
@@ -189,7 +189,7 @@ export function BindDatabaseDialog({ open, teamId, onClose, onBound }: Props) {
         <Field
           label={t('Connection string')}
           hint={t(
-            'Read-only and write-capable accounts are supported. Nuphos operations remain constrained by the access policy below. The value is cleared when this dialog closes.',
+            'Read-only and write-capable accounts are supported. OpenBot operations remain constrained by the access policy below. The value is cleared when this dialog closes.',
           )}
         >
           <input

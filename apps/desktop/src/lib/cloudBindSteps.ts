@@ -64,6 +64,6 @@ export const GCP_STEPS_CONSOLE = [
   t('Create the service account'),
   t('Grant it project access'),
   t('Principals with access'),
-  t('Let Nuphos impersonate it'),
+  t('Let OpenBot impersonate it'),
   t('Enter details'),
 ] as const

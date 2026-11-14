@@ -62,7 +62,7 @@ export function BindGithubDialog({ open, teamId, onClose, onBound }: Props) {
       onClose={close}
       title={t('Connect {name}', { name: 'GitHub' })}
       description={t(
-        'Install the Nuphos GitHub App so the agent can read and act on your repositories.',
+        'Install the OpenBot GitHub App so the agent can read and act on your repositories.',
       )}
       width={460}
     >
@@ -74,7 +74,7 @@ export function BindGithubDialog({ open, teamId, onClose, onBound }: Props) {
             </div>
             <div className="text-[12.5px] text-secondary leading-relaxed text-center max-w-[340px]">
               {t(
-                'Click below to open GitHub in your browser. Pick the user or organization, choose which repositories Nuphos should access, then return here — the dialog will close automatically.',
+                'Click below to open GitHub in your browser. Pick the user or organization, choose which repositories OpenBot should access, then return here — the dialog will close automatically.',
               )}
             </div>
           </div>

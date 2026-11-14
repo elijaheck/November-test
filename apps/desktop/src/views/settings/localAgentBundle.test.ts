@@ -5,7 +5,7 @@ import { unbundledStatus } from './localAgentBundle.ts'
 
 test('a packaged build without the agent keeps its plain copy', () => {
   assert.deepEqual(unbundledStatus('Codex'), {
-    label: 'This build of Nuphos does not include Codex.',
+    label: 'This build of OpenBot does not include Codex.',
     tone: 'off',
   })
 })

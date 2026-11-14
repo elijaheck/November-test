@@ -5,6 +5,8 @@ import { browserSession } from '../browser-extensions/manage.ts'
 import { isAppQuitting } from '../window-session.ts'
 import { raiseWindow } from '../../window-raise.ts'
 
+import { approveTabAction } from './agent-approval.ts'
+import { pageActionOf } from './approval-rules.ts'
 import { startRecording, stopRecording } from './browser-recording.ts'
 import { failed } from './cua-host.ts'
 import { closeDockTab, dockMirrorOf, focusDockTab, openDockTab } from './dock-mirror.ts'
@@ -218,6 +220,9 @@ export async function runBrowserCall(call: BrowserCall): Promise<CuaToolResult> 
   }
   if (call.action === 'eval') {
     if (!call.script) return failed('script is required.')
+    // Only a script that acts waits on the user; a read runs at once.
+    if (pageActionOf(call.script) && !(await approveTabAction(call, contents)))
+      return failed('The user did not allow this action on the page. Ask them in chat first.')
     // A user gesture lets the script click through what only a real click may open.
     const { script } = call
     const value: unknown = await unthrottled(contents, async () => {

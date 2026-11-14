@@ -241,7 +241,7 @@ export function ZeaburForm({ st }: { st: BindState }) {
   return (
     <Field
       label={t('API Token')}
-      hint={t('Nuphos will discover your Zeabur user and teams from this API key.')}
+      hint={t('OpenBot will discover your Zeabur user and teams from this API key.')}
     >
       <input
         type="password"

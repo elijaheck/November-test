@@ -4,7 +4,7 @@
 // and a chat that leaves the screen is forgotten.
 //
 // Versions are named by number, never by tool call id: a live call's id is the
-// one the Nuphos tool made up, and the stored turn that replaces it at the end
+// one the OpenBot tool made up, and the stored turn that replaces it at the end
 // of the turn carries the runtime's id for the same call.
 
 import type { ArtifactVersion } from '../components/agent/artifacts/artifactPayload'

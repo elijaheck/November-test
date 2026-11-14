@@ -118,7 +118,7 @@ const controller: LocalRuntimeController = new LocalRuntimeController({
       activity: sleep.taskActivity,
       connectBackend: (reclaim) => {
         if (!deviceRegistrationAllowed(isDev))
-          throw new Error('Development builds do not register computers with Nuphos Cloud')
+          throw new Error('Development builds do not register computers with OpenBot Cloud')
         const { api, token } = authSession.context()
 
         if (!token) throw new Error('Not signed in')

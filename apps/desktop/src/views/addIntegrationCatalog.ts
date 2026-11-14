@@ -5,6 +5,7 @@
 
 import { t } from '../i18n/index.ts'
 import { CONNECTOR_CATEGORIES } from '../lib/connectorCategories.ts'
+import { isOfferedConnectorCategory } from '../product.ts'
 
 import type { ConnectorCategoryId } from '../lib/connectorCategories.ts'
 
@@ -47,6 +48,7 @@ export type AddIntegrationKey =
   | 'plaud'
   | 'notion'
   | 'upstash'
+  | 'mail'
   | 'resend'
   | 'instabox'
   | 'slack'
@@ -105,6 +107,10 @@ const ITEM_META: Record<AddIntegrationKey, { name: string; description: string }
   asana: { name: 'Asana', description: t('Tasks & projects.') },
   plaud: { name: 'Plaud', description: t('Recordings, transcripts & summaries.') },
   notion: { name: 'Notion', description: t('Pages, databases & docs.') },
+  mail: {
+    name: 'Mail',
+    description: t('Your iCloud, Gmail or Outlook inbox, with an app password.'),
+  },
   resend: { name: 'Resend', description: t('Send transactional email.') },
   instabox: {
     name: 'instabox',
@@ -141,6 +147,7 @@ const ALIASES: Partial<Record<AddIntegrationKey, string>> = {
   github: 'git',
   gitlab: 'git',
   jira: 'atlassian',
+  mail: 'email inbox icloud gmail outlook imap apple google microsoft',
   resend: 'smtp',
   trello: 'smtp',
   lark: '飛書 飞书',
@@ -150,15 +157,19 @@ function isAddIntegrationKey(key: string): key is AddIntegrationKey {
   return key in ITEM_META
 }
 
-export const CATALOG: CatalogCategory[] = CONNECTOR_CATEGORIES.map((category) => ({
-  id: category.id,
-  title: category.label,
-  items: category.catalog.filter(isAddIntegrationKey).map((key) => ({
-    key,
-    ...ITEM_META[key],
-    // Everything a query is matched against, folded once at module load: the
-    // category title is in here too, so "messaging" surfaces that whole group.
-    haystack:
-      `${ITEM_META[key].name} ${ITEM_META[key].description} ${key} ${category.label} ${ALIASES[key] ?? ''}`.toLowerCase(),
-  })),
-})).filter((category) => category.items.length > 0)
+export const CATALOG: CatalogCategory[] = CONNECTOR_CATEGORIES.filter((category) =>
+  isOfferedConnectorCategory(category.id),
+)
+  .map((category) => ({
+    id: category.id,
+    title: category.label,
+    items: category.catalog.filter(isAddIntegrationKey).map((key) => ({
+      key,
+      ...ITEM_META[key],
+      // Everything a query is matched against, folded once at module load: the
+      // category title is in here too, so "messaging" surfaces that whole group.
+      haystack:
+        `${ITEM_META[key].name} ${ITEM_META[key].description} ${key} ${category.label} ${ALIASES[key] ?? ''}`.toLowerCase(),
+    })),
+  }))
+  .filter((category) => category.items.length > 0)

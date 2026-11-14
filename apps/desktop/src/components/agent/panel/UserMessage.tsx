@@ -27,7 +27,7 @@ import type { ImageAttachmentPart, LocalFilePart, TextPart, TransferUploadPart }
 import type { ReactNode } from 'react'
 
 // Pull plan references out of message text. The composer serializes a plan
-// mention chip back to its Nuphos URL (`…/teams/T/plans/<n>`), so a sent
+// mention chip back to its OpenBot URL (`…/teams/T/plans/<n>`), so a sent
 // message carries the URL as plain text; parse those out so we can render the
 // referenced plan inline. Deduped by planId, first-seen order preserved.
 const PLAN_MENTION_TRAILING_PUNCT = new Set(['.', ',', ';', ':', '!', '?', ']', ')', '>', '}'])
@@ -141,7 +141,7 @@ export const UserMessage = memo(
                 <span
                   className="shrink-0 rounded bg-surface-hover px-1.5 py-0.5 text-[10px] text-tertiary"
                   title={t(
-                    'Posted in Discord by someone with no linked Nuphos account. The name is the one they chose.',
+                    'Posted in Discord by someone with no linked OpenBot account. The name is the one they chose.',
                   )}
                 >
                   {t('Discord · unverified')}

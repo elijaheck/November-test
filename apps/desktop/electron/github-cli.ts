@@ -149,7 +149,7 @@ export async function githubCliMerge(
   const confirmed = await requireMainProcessConsent(sender, {
     title: 'Merge pull request?',
     message: `Merge ${pull.owner}/${pull.repo}#${String(pull.number)} using your GitHub CLI account?`,
-    detail: `Method: ${method}. GitHub will record this merge as your account, not Nuphos.`,
+    detail: `Method: ${method}. GitHub will record this merge as your account, not OpenBot.`,
     confirmLabel: 'Merge',
   })
 

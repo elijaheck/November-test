@@ -7,7 +7,7 @@ const isUrl = (text: string) => text.startsWith('https://nuphos.ai/')
 const joined = (pieces: ReturnType<typeof pastePieces>) =>
   pieces.map((p) => ('url' in p ? p.url : p.text)).join('')
 
-test('Nuphos links become chips and the text around them stays as typed', () => {
+test('OpenBot links become chips and the text around them stays as typed', () => {
   const raw = 'see https://nuphos.ai/teams/t/plans/1 then https://nuphos.ai/teams/t/plans/2 ok'
   const pieces = pastePieces(raw, isUrl)
 

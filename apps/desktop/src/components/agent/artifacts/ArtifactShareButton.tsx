@@ -17,7 +17,7 @@ const TRIGGER =
 /**
  * Share inside the team: a link that opens this version beside its chat for
  * anyone who can already see the chat, or a self-contained file to send
- * anywhere. Nothing is published; Nuphos hosts no public copy.
+ * anywhere. Nothing is published; OpenBot hosts no public copy.
  */
 export function ArtifactShareButton({
   current,

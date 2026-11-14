@@ -27,15 +27,15 @@ export function CreateAppStep({ domain }: { domain: LarkDomain }) {
         <li>{rich(t('Click {action}.'), { action: hl(t('Create custom app')) })}</li>
         <li>
           {rich(t('Set the app name to {name} and the description to {description}.'), {
-            name: <WizardCopyableValue value="Nuphos" />,
+            name: <WizardCopyableValue value="OpenBot" />,
             description: <WizardCopyableValue value="The open source Grok Bot alternative." />,
           })}
         </li>
         <li>
-          {t('Use the Nuphos logo as its icon:')}
+          {t('Use the OpenBot logo as its icon:')}
           <div className="mt-2">
             <WizardDownloadLink href="/logo-white-bg.svg" download="nuphos-logo.svg">
-              {t('Download Nuphos logo')}
+              {t('Download OpenBot logo')}
             </WizardDownloadLink>
           </div>
         </li>
@@ -109,7 +109,7 @@ export function PermissionsStep({ domain, appId }: { domain: LarkDomain; appId: 
       <WizardCopyableBlock value={SCOPES_IMPORT_JSON} />
       <p className="text-[11.5px] leading-relaxed text-tertiary">
         {t(
-          'These let Nuphos reply as the bot, list the groups it’s in, and read a sender’s display name. Members link their own account by DMing the bot a pairing code.',
+          'These let OpenBot reply as the bot, list the groups it’s in, and read a sender’s display name. Members link their own account by DMing the bot a pairing code.',
         )}
       </p>
     </div>
@@ -156,7 +156,7 @@ export function EventEncryptStep({
       </Field>
       <p className="text-[11.5px] leading-relaxed text-tertiary">
         {t(
-          'The Encrypt Key is required — Nuphos uses it to verify and decrypt inbound events, and fails closed without it.',
+          'The Encrypt Key is required — OpenBot uses it to verify and decrypt inbound events, and fails closed without it.',
         )}
       </p>
     </div>
@@ -253,7 +253,7 @@ export function PublishStep() {
             t(
               'Add the bot to a Feishu / Lark group — it links automatically and shows up under Groups here. Then {mention} in that group, or DM the bot directly, and it replies.',
             ),
-            { mention: hl(t('@mention Nuphos')) },
+            { mention: hl(t('@mention OpenBot')) },
           )}
         </li>
       </WizardStepList>

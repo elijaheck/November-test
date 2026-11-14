@@ -39,7 +39,7 @@ test('monitoringWatchPrompt keeps the editable handoff focused on intent', () =>
       '- Provider: Grafana (integration: grafana.example.com)',
       '- Item: alert rule "certificate-failure-rate" (id rule-123)',
       '- When it fires: investigate the likely cause using available monitoring and infrastructure tools.',
-      '- Report to: Nuphos.',
+      '- Report to: OpenBot.',
     ].join('\n'),
   )
   assert.doesNotMatch(prompt, /Completion requirements|contact point|incidentMode|roll back/)

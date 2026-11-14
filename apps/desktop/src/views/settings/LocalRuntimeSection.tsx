@@ -97,7 +97,7 @@ export function LocalRuntimeSection({
       <SectionHeader
         title={t('Local runtime')}
         description={t(
-          'Claude Code and Codex on this computer, with your own sign-in, for your own agents only. Always on while Nuphos is open.',
+          'Claude Code and Codex on this computer, with your own sign-in, for your own agents only. Always on while OpenBot is open.',
         )}
       />
 

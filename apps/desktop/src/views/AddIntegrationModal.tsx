@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Mail } from 'lucide-react'
 import { useMemo, useState } from 'react'
 
 import { api } from '../api'
@@ -26,6 +26,7 @@ const CONNECTOR_CAPABILITIES_URL = 'https://docs.nuphos.ai/connectors/capabiliti
 // (deliberately monochrome) brand mark.
 function ItemLogo({ k }: { k: AddIntegrationKey }) {
   if (k === 'linear') return <LinearMark size={20} />
+  if (k === 'mail') return <Mail className="h-5 w-5 text-secondary" strokeWidth={1.8} />
   // Database engines aren't cloud providers, so they carry their own glyph.
   if (k === 'mongodb') return <DatabaseEngineGlyph engine="mongodb" className="h-5 w-5" />
 

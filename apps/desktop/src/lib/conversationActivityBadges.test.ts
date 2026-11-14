@@ -6,7 +6,7 @@ import {
   conversationReadOnlyLabel,
 } from './conversationActivityBadges.ts'
 
-test('ordinary Nuphos conversations have no badge', () => {
+test('ordinary OpenBot conversations have no badge', () => {
   assert.deepEqual(conversationActivityBadges({ origin: 'nuphos', linkedSlackThread: false }), [])
 })
 

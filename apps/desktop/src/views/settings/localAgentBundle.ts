@@ -18,6 +18,6 @@ export function unbundledStatus(name: string, devBundle?: DevBundleHint): Runtim
     case 'missing':
       return { label: `Local runtime not built yet. Run ${PREPARE_COMMAND}`, tone: 'off' }
     case undefined:
-      return { label: t('This build of Nuphos does not include {name}.', { name }), tone: 'off' }
+      return { label: t('This build of OpenBot does not include {name}.', { name }), tone: 'off' }
   }
 }

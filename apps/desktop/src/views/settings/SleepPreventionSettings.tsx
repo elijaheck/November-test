@@ -14,7 +14,7 @@ const STATUS: Record<SleepState['reason'], string> = {
   active: t('Keeping this Mac awake'),
   off: t('Following macOS sleep settings'),
   battery: t('Paused while running on battery'),
-  'signed-out': t('Paused while signed out of Nuphos'),
+  'signed-out': t('Paused while signed out of OpenBot'),
   idle: t('Waiting for a local task'),
   unsupported: t('Available on macOS only'),
 }
@@ -57,7 +57,7 @@ export function SleepPreventionSettings({
         options={[
           { value: 'off', label: t('Off') },
           { value: 'tasks', label: t('While local tasks are running') },
-          { value: 'host', label: t('While signed in to Nuphos') },
+          { value: 'host', label: t('While signed in to OpenBot') },
         ]}
       />
       <label className="flex items-center justify-between gap-3 text-[12px] text-secondary">
@@ -73,7 +73,7 @@ export function SleepPreventionSettings({
       </p>
       <p className="text-[12px] text-tertiary">
         {t(
-          'Saved on this Mac only. Nuphos must stay open. Keeping your Mac awake uses more energy. Task mode includes pending agent turns (including approval waits), remote commands, Computer Use calls and open remote terminals.',
+          'Saved on this Mac only. OpenBot must stay open. Keeping your Mac awake uses more energy. Task mode includes pending agent turns (including approval waits), remote commands, Computer Use calls and open remote terminals.',
         )}
       </p>
     </div>

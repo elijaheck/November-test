@@ -111,7 +111,7 @@ function queueDeepLink(channel: string, payload: unknown) {
 // Single path for deep links so both delivery routes (open-url on macOS,
 // second-instance on Windows/Linux) emit the same event.
 export function handleDeepLink(url: string) {
-  // macOS hands us http(s) links once the user picks Nuphos as the default
+  // macOS hands us http(s) links once the user picks OpenBot as the default
   // browser (the app declares both schemes); the workspace opens them like a
   // link clicked in chat. Checked first: several callback matchers below look
   // only at the host, and a web link must never reach them.
@@ -136,7 +136,7 @@ export function handleDeepLink(url: string) {
       return
     }
     // macOS delivers open-url without raising a window; Windows/Linux raise it
-    // in second-instance. Do it here so "Open Nuphos" visibly lands either way.
+    // in second-instance. Do it here so "Open OpenBot" visibly lands either way.
     if (app.isReady()) windowHooks?.showMainWindow()
     void install.handleCallback(url)
 
@@ -205,7 +205,7 @@ export function handleDeepLink(url: string) {
 }
 
 /**
- * Opens a Nuphos page in the workspace, as a `nuphos://open` link would;
+ * Opens a OpenBot page in the workspace, as a `nuphos://open` link would;
  * resolves once the workspace has it.
  */
 export function openAppPath(path: string): Promise<void> {

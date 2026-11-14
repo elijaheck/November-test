@@ -26,7 +26,7 @@ function ExtensionIcon({ item, className }: { item: BrowserExtensionItem; classN
 }
 
 /**
- * The browser toolbar's extensions: an "Add to Nuphos" button on a Web Store
+ * The browser toolbar's extensions: an "Add to OpenBot" button on a Web Store
  * item page, pinned buttons that open each popup, and a menu whose rows open any extension,
  * as in Chrome, with Pin and Remove in each row's submenu (hover or arrow key). Shows nothing
  * for a tab outside the user's browser session (an agent's), which has no extensions.
@@ -98,7 +98,7 @@ export function BrowserExtensions({
           onClick={() => add(addableId)}
         >
           <Puzzle className="h-3.5 w-3.5" aria-hidden="true" />
-          {adding ? t('Adding…') : t('Add to Nuphos')}
+          {adding ? t('Adding…') : t('Add to OpenBot')}
         </Button>
       )}
       {items
@@ -181,7 +181,7 @@ export function BrowserExtensions({
                   destructive
                   onClick={() => remove(item.id)}
                 >
-                  {t('Remove from Nuphos…')}
+                  {t('Remove from OpenBot…')}
                 </MenuItem>
               </MenuContent>
             </MenuSubmenu>

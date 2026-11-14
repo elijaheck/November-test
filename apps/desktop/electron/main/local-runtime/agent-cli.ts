@@ -104,7 +104,8 @@ async function claudeLogin(
   env: NodeJS.ProcessEnv,
 ): Promise<Partial<AgentCliStatus> & { loggedIn: boolean | null }> {
   const oauth = (await readClaudeCredential(homeOf(env), env))?.claudeAiOauth as
-    { accessToken?: unknown; refreshToken?: unknown; subscriptionType?: unknown } | undefined
+    | { accessToken?: unknown; refreshToken?: unknown; subscriptionType?: unknown }
+    | undefined
   const config = env.CLAUDE_CONFIG_DIR
     ? await readJson(path.join(env.CLAUDE_CONFIG_DIR, '.claude.json'))
     : null
@@ -227,7 +228,7 @@ function usageRequest(
 }
 
 /** Asks the provider what is left of this computer's own account. It runs here,
- *  not in Nuphos, because the credential is here — and because the rate limit it
+ *  not in OpenBot, because the credential is here — and because the rate limit it
  *  spends is this person's, not a shared one. Every failure reports nothing:
  *  usage is decoration, never a reason to call the agent broken, and the token
  *  must never reach a log. */

@@ -5,15 +5,16 @@ import { buildGcpCredentialSections } from '../components/agent/panel/credential
 
 import { CATALOG } from './addIntegrationCatalog.ts'
 
-test('Firebase discovery reuses the Google Cloud connection entry and selection', () => {
-  const matches = CATALOG.flatMap((category) => category.items).filter((item) =>
-    item.haystack.includes('firebase'),
+test("the catalog offers only the product's connector categories", () => {
+  assert.deepEqual(
+    CATALOG.map((category) => category.id),
+    ['source-control', 'project-management', 'document', 'email', 'messaging'],
   )
-
-  assert.equal(matches.length, 1)
-  assert.equal(matches[0].key, 'gcp')
-  assert.match(matches[0].name, /Firebase/)
-  assert.match(matches[0].description, /project and app inventory/)
+  // Cloud consoles (and Firebase through GCP) are not offered.
+  assert.equal(
+    CATALOG.flatMap((category) => category.items).filter((item) => item.key === 'gcp').length,
+    0,
+  )
 })
 
 test('Firebase credential discovery keeps the existing GCP binding identifiers', () => {

@@ -14,7 +14,7 @@ export function effortStops<T extends Choice>(choices: T[]): T[] {
 }
 
 /** The level a session runs at. Claude's "default" names its level in its
- *  description (the Nuphos adapter patch reads it from Claude Code). */
+ *  description (the OpenBot adapter patch reads it from Claude Code). */
 export function resolvedEffort(
   choices: (Choice & { description?: string })[],
   current: string,

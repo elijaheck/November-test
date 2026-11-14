@@ -231,7 +231,7 @@ function ShardingTab({ detail }: { detail: MongoCollectionDetail }) {
     return (
       <EmptyDetail
         text={t(
-          'Sharding metadata is unavailable to this database account or deployment. Nuphos does not request elevated privileges to discover it.',
+          'Sharding metadata is unavailable to this database account or deployment. OpenBot does not request elevated privileges to discover it.',
         )}
       />
     )

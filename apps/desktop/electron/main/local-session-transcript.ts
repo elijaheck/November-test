@@ -1,5 +1,5 @@
 // Reads a whole Claude Code / Codex session log into the transcript shape
-// Nuphos stores, so a local conversation can be continued on a team agent.
+// OpenBot stores, so a local conversation can be continued on a team agent.
 // Only the human-readable turns survive: tool calls, sub-agent side chains and
 // harness preambles are the runtime's own business, not the conversation.
 import fs from 'node:fs/promises'

@@ -84,7 +84,7 @@ export function readEditorText(el: HTMLDivElement | null): string {
 }
 
 /**
- * Rebuild the editor from serialized text, turning Nuphos links back into
+ * Rebuild the editor from serialized text, turning OpenBot links back into
  * chips. `[Image #N]` becomes a chip only when the caller restores the same
  * images (a draft); a recalled message has none, so it stays plain text.
  */

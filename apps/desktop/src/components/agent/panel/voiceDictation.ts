@@ -5,7 +5,7 @@
  */
 
 /** Spelling hints for Whisper, the same list the iOS and Android apps send by default. */
-export const VOICE_PROMPT = 'Nuphos, Claude Code, Codex, GitHub, Linear, Slack, Discord.'
+export const VOICE_PROMPT = 'OpenBot, Claude Code, Codex, GitHub, Linear, Slack, Discord.'
 
 /** Longest take: far below the route's 25 MB limit at the recorder's Opus bitrate. */
 export const MAX_RECORDING_MS = 10 * 60 * 1000

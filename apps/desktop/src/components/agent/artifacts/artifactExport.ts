@@ -1,5 +1,5 @@
 // A download of an artifact that works anywhere, offline and forever: one file,
-// named after its title. Nuphos hosts nothing; the user decides where it goes.
+// named after its title. OpenBot hosts nothing; the user decides where it goes.
 //
 // A page may load libraries, fonts and images from public CDNs (the tool allows
 // it), so its download fetches each one and inlines it, then pins a policy

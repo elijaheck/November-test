@@ -58,7 +58,7 @@ export function InstallButton({ provider }: { provider: CliLoginProvider }) {
       else
         toast.info(
           t('{name} was installed but not found yet', { name }),
-          t('Restart Nuphos, then check again.'),
+          t('Restart OpenBot, then check again.'),
         )
     } catch (err) {
       toast.apiError(t('Could not install {name}', { name }), err, {
@@ -231,7 +231,7 @@ export function LocalAgentCard({
           <div className="text-[13px] font-medium text-main">{name}</div>
           <div className="mt-0.5 text-[12px] text-tertiary">
             {t(
-              "Once {name} is installed and signed in, your own agents in any of your teams can run it here while Nuphos is open — including shell commands with your user's access. Nobody else can use it.",
+              "Once {name} is installed and signed in, your own agents in any of your teams can run it here while OpenBot is open — including shell commands with your user's access. Nobody else can use it.",
               { name },
             )}{' '}
             {connectors}

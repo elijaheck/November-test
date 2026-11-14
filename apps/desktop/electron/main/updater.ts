@@ -116,7 +116,7 @@ function readFailedRestart(): string | null {
   }
 }
 
-/** Whether release `a` is older than `b`; Nuphos ships plain major.minor.patch. */
+/** Whether release `a` is older than `b`; OpenBot ships plain major.minor.patch. */
 function isOlder(a: string, b: string): boolean {
   const [x, y] = [a, b].map((v) => v.split('.').map(Number))
 
@@ -127,7 +127,7 @@ function isOlder(a: string, b: string): boolean {
   return false
 }
 
-/** The installer for this platform and architecture, from the Nuphos download page. */
+/** The installer for this platform and architecture, from the OpenBot download page. */
 function installerUrl(): string {
   const platform = { darwin: 'mac', win32: 'windows' }[process.platform as string] ?? 'linux'
   const arch = process.arch === 'arm64' ? 'arm64' : 'x64'

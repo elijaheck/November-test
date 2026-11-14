@@ -131,7 +131,7 @@ test('native cleanup preserves an existing root notify and is absent without the
 })
 
 test('Claude Code’s home keeps the owner’s CLAUDE.md files above the workspace out', () => {
-  const excludes = claudeHomeSettings('/Users/me/Library/Nuphos/users/u1/workspace')
+  const excludes = claudeHomeSettings('/Users/me/Library/OpenBot/users/u1/workspace')
     .claudeMdExcludes as string[]
 
   for (const file of [
@@ -143,7 +143,7 @@ test('Claude Code’s home keeps the owner’s CLAUDE.md files above the workspa
   ])
     assert.ok(excludes.includes(file), file)
   assert.ok(
-    !excludes.some((file) => file.startsWith('/Users/me/Library/Nuphos/users/u1/workspace/')),
+    !excludes.some((file) => file.startsWith('/Users/me/Library/OpenBot/users/u1/workspace/')),
   )
 })
 
@@ -154,7 +154,7 @@ test('Claude Code’s home turns off the owner’s claude.ai skills and plugins'
   assert.equal(settings.syncClaudeAiPlugins, false)
 })
 
-test('the prepared home holds only Nuphos’s own settings, readable by the owner alone', (t) => {
+test('the prepared home holds only OpenBot’s own settings, readable by the owner alone', (t) => {
   const userDir = mkdtempSync(path.join(os.tmpdir(), 'claude-home-'))
 
   t.after(() => {

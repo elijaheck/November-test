@@ -63,7 +63,7 @@ export function CloudCliSetupChoice({
     <div className="pb-1 pt-2" aria-busy={check.checking || starting}>
       <div className="pb-5">
         <h3 className="text-[22px] font-semibold leading-[1.25] tracking-[-0.025em] text-main">
-          {check.checking ? t('A quicker way to connect.') : t('Let Nuphos take it from here.')}
+          {check.checking ? t('A quicker way to connect.') : t('Let OpenBot take it from here.')}
         </h3>
         <p className="mt-2 text-[13px] leading-relaxed text-secondary">
           {check.checking

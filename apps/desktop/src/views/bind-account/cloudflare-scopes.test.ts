@@ -3,7 +3,7 @@ import { test } from 'node:test'
 
 import { CLOUDFLARE_SCOPE_CATEGORIES } from './cloudflare-scopes.ts'
 
-// The Nuphos OAuth client can only be registered with scopes Cloudflare offers
+// The OpenBot OAuth client can only be registered with scopes Cloudflare offers
 // OAuth clients. Of the `*.metadata_read` scopes, only Workers Scripts is
 // offered; requesting any other fails the authorize request with invalid_scope.
 test('Cloudflare scope catalog only requests scopes offered to OAuth clients', () => {

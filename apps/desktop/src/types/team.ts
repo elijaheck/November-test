@@ -198,7 +198,7 @@ export type HomeGithubCard =
   | { id: string; kind: 'pulls'; repos: HomeRepo[]; statuses: HomePullStatus[] }
   | { id: string; kind: 'ci'; repos: HomeRepo[]; statuses: HomeRunStatus[] }
 
-/** A Nuphos Dashboards panel pinned to the home page. */
+/** A OpenBot Dashboards panel pinned to the home page. */
 export type HomePanel = { dashboardId: string; panelId: string }
 
 /**
@@ -273,7 +273,12 @@ export type AgentStats = {
 }
 
 export type HomeMetricKind =
-  'agent-time' | 'sessions' | 'pull-requests' | 'streak' | 'longest-run' | 'runtime-mix'
+  | 'agent-time'
+  | 'sessions'
+  | 'pull-requests'
+  | 'streak'
+  | 'longest-run'
+  | 'runtime-mix'
 
 /** A metric card on the home page, with its own range and scope. */
 export type HomeMetricCard = {

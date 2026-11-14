@@ -25,7 +25,7 @@ type Step = 'choose' | 'box'
 
 const TITLE: Record<Step, string> = {
   choose: t('Add computer'),
-  box: t('Nuphos cloud computer'),
+  box: t('OpenBot cloud computer'),
 }
 
 /** The one place to add a computer (and so its runtimes), from the Runtimes page or the composer's agent picker. */
@@ -42,7 +42,7 @@ export function AddAgentDialog({
   const devices = useAgentDevices(() => 0, teamId, { teamId }).list
   const deploymentBoxes = devices?.boxAvailable === true
   const instaboxAccounts = useInstaboxAccounts(teamId)
-  // A team's own instabox account offers computers even where Nuphos has none, to those who
+  // A team's own instabox account offers computers even where OpenBot has none, to those who
   // may create one there: its administrators.
   const boxAvailable =
     deploymentBoxes || (instaboxAccounts.length > 0 && devices?.canCreateBox === true)

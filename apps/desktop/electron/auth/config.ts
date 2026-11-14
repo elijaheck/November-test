@@ -84,7 +84,7 @@ export function configFile(deps: ConfigFileDeps) {
     // so every sign-in names that backend.
     if (cfg.token && !cfg.api) throw new Error('A sign-in must name the backend that issued it')
     if (cfg.token && cfg.api && normalizedApi(cfg.api) !== api) throw new OtherBackendError()
-    // One item per user and backend, so a dev backend's sign-in never replaces Nuphos Cloud's.
+    // One item per user and backend, so a dev backend's sign-in never replaces OpenBot Cloud's.
     const item = accountKey(api, cfg.userInfo)
     const active: Config = { ...stored(cfg, api), api, keychainAccount: undefined }
     const others = cfg.token

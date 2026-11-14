@@ -26,8 +26,8 @@ export async function signInClaude(
   if (!cliPath || !agentHome) return
   console.log(
     process.platform === 'darwin'
-      ? 'Sign Claude Code in for Nuphos (updates the Claude login used by your terminal):'
-      : 'Sign Claude Code in for Nuphos (a separate sign-in from your own terminal):',
+      ? 'Sign Claude Code in for OpenBot (updates the Claude login used by your terminal):'
+      : 'Sign Claude Code in for OpenBot (a separate sign-in from your own terminal):',
   )
   await new Promise((resolve) => {
     spawn(cliPath, ['auth', 'login', '--claudeai'], {

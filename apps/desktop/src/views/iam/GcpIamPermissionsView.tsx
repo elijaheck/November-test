@@ -127,7 +127,7 @@ export function GcpIamPermissionsView({
               ) : (
                 <EmptyHint
                   message={t(
-                    'No IAM bindings include this service account on this project. Nuphos can impersonate the SA but every API call will be denied. Grant the connector roles (typically roles/container.viewer, roles/compute.viewer, etc.) and refresh.',
+                    'No IAM bindings include this service account on this project. OpenBot can impersonate the SA but every API call will be denied. Grant the connector roles (typically roles/container.viewer, roles/compute.viewer, etc.) and refresh.',
                   )}
                 />
               )}

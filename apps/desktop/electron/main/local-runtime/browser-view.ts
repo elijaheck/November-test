@@ -204,7 +204,7 @@ export class BrowserViewStream implements SocketLike {
 
   private serverInit(): void {
     this.phase = 'messages'
-    this.out(serverInitMessage(this.screen, 'Nuphos tab'))
+    this.out(serverInitMessage(this.screen, 'OpenBot tab'))
     this.read()
   }
 

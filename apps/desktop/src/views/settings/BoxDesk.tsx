@@ -45,7 +45,7 @@ function Keyboard() {
   )
 }
 
-/** A Box carries Nuphos's mark on its top, as in public/logo-dark-bg.svg, inline so it stays sharp.
+/** A Box carries OpenBot's mark on its top, as in public/logo-dark-bg.svg, inline so it stays sharp.
  * Other machines carry no maker's mark: the desk draws their shape, not someone else's logo. */
 function Mark({ brand }: { brand: DeskModel['brand'] }) {
   if (brand !== 'nuphos') return null

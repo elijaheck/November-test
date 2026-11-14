@@ -183,7 +183,7 @@ export function buildComplianceExportFiles(
     })),
     evidenceModel: {
       sessionEvents:
-        'Complete per-session SHA-256 hash chains, recomputed by Nuphos at export time.',
+        'Complete per-session SHA-256 hash chains, recomputed by OpenBot at export time.',
       resourceEvents:
         'Supplementary append-only resource mutation records; not members of a session hash chain.',
       displayedContent: 'Hash-exempt conversation display copies are intentionally omitted.',

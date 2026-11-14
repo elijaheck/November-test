@@ -54,7 +54,7 @@ export function ChannelMessage({
   ownAgent: boolean
   viewerId: string
   teamId: string
-  /** The same link handling as a conversation's messages: Nuphos links open in the app. */
+  /** The same link handling as a conversation's messages: OpenBot links open in the app. */
   links: Links
   onOpenSession: (sessionId: string) => void
   /** Right-click: the post's menu, unless text is selected to copy. */
@@ -64,7 +64,7 @@ export function ChannelMessage({
   const text = textOf(message)
   const posted = channelFiles(message)
 
-  // An answer to an agent's question, recorded by Nuphos: a muted line, never a person's post.
+  // An answer to an agent's question, recorded by OpenBot: a muted line, never a person's post.
   if (metadata?.sender.id === DECISION_RECORD && text) return <DecisionRecord text={text} />
   // A channel shows people and agents only; any other sender is not a post.
   if (!metadata || !speaksInChannel(metadata.sender) || (!text && !posted.any)) return null

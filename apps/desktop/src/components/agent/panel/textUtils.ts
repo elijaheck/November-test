@@ -56,7 +56,7 @@ export function formatLocalFileInstruction(filePath: string, visibleText: string
   const language = inferUserLanguage(visibleText)
 
   return [
-    'The user selected this local file path in the Nuphos UI:',
+    'The user selected this local file path in the OpenBot UI:',
     `<local_file_path>${escapeLocalFilePath(filePath)}</local_file_path>`,
     'When the user asks about the file, use local_exec to inspect it directly.',
     'Do not tell the user that you can only see the path or that the content was not uploaded.',

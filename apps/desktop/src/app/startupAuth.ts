@@ -12,7 +12,8 @@ import { setStorageAccount } from './accountStorage'
 import type { AccountSummary, UserInfo } from '../types'
 
 export type AuthState =
-  { status: 'anonymous'; accounts: AccountSummary[] } | { status: 'authenticated'; user: UserInfo }
+  | { status: 'anonymous'; accounts: AccountSummary[] }
+  | { status: 'authenticated'; user: UserInfo }
 
 /** The accounts signed in on this computer; none if the list cannot be read. */
 function readAccounts(): Promise<AccountSummary[]> {
@@ -39,6 +40,10 @@ async function readStartup(): Promise<AuthState> {
   const status = await api.authStatus().catch(() => ({ loggedIn: false }) as const)
 
   if (status.loggedIn) return enterAs(status.user)
+  // A local backend needs no account: it signs its one local user straight in.
+  const local = await api.authLocalSignIn().catch(() => null)
+
+  if (local) return enterAs(local)
 
   return { status: 'anonymous', accounts: await readAccounts() }
 }

@@ -130,7 +130,7 @@ test('switching endpoints ends the session, so hosting stops until a sign-in on 
   assert.equal(getLocalRuntimeState().userId, null)
   assert.ok(stopped > 0)
   assert.equal(authSession.current(), null)
-  assert.throws(() => connectBackend?.(), /do not register computers with Nuphos Cloud/u)
+  assert.throws(() => connectBackend?.(), /do not register computers with OpenBot Cloud/u)
   assert.equal(requests.length, 1)
   assert.equal(sockets.length, 1)
 })

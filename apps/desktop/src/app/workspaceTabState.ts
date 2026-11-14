@@ -216,7 +216,7 @@ export type WorkspaceTabState = {
    * Set when the auto-rehydrate attempt for this cluster tab failed. Until
    * the user explicitly retries (re-picking the cluster via `enterCluster`),
    * the rehydrate effect skips this tab so a failing call (network, expired
-   * auth, etc.) doesn't loop the Nuphos API on every state change.
+   * auth, etc.) doesn't loop the OpenBot API on every state change.
    */
   kubeconfigContextError: string | null
   sshTerminal: SshTerminalTabState | null

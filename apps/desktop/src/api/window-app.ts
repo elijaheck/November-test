@@ -85,6 +85,7 @@ export type WindowAppApi = {
   authSignOutAccount(key: string): Promise<void>
   authSignOutAllAccounts(): Promise<void>
   authEmailRequestCode(email: string): Promise<void>
+  authLocalSignIn(): Promise<UserInfo>
   authEmailVerifyCode(email: string, code: string): Promise<UserInfo>
   analyticsIdentify(userId: string, props?: Record<string, unknown>): Promise<void>
   analyticsSetTeam(teamId: string | null): Promise<void>

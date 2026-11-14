@@ -106,7 +106,7 @@ export function AwsWizardStepContent({
           </StepList>
           <div className="text-[11.5px] text-tertiary">
             {t(
-              'The condition pins this role to your team — without it, any Nuphos team could assume the role.',
+              'The condition pins this role to your team — without it, any OpenBot team could assume the role.',
             )}
           </div>
         </div>
@@ -116,7 +116,7 @@ export function AwsWizardStepContent({
         <div className="space-y-3">
           <div className="text-[12px] text-secondary leading-relaxed">
             <Fill
-              text={t('On the {page} page, choose what Nuphos is allowed to do in this account:')}
+              text={t('On the {page} page, choose what OpenBot is allowed to do in this account:')}
               page={<span className="text-main">Add permissions</span>}
             />
           </div>
@@ -192,7 +192,7 @@ export function AwsWizardStepContent({
           <Field
             label={t('IAM Role ARN')}
             hint={t(
-              'The role Nuphos will assume in your account. Account ID is parsed from the ARN.',
+              'The role OpenBot will assume in your account. Account ID is parsed from the ARN.',
             )}
           >
             <input

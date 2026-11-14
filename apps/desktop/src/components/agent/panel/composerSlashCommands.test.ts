@@ -70,7 +70,7 @@ const agent = [
   { name: 'model', description: "The agent's own model command" },
 ]
 
-test("the agent's commands come first, matched by name, then Nuphos actions", () => {
+test("the agent's commands come first, matched by name, then OpenBot actions", () => {
   assert.deepEqual(
     matchSlashOptions(agent, commands, 'mo').map((option) =>
       option.kind === 'agent' ? `agent:${option.command.name}` : `nuphos:${option.action.id}`,
@@ -180,7 +180,7 @@ test('the first ↓ moves off the row shown highlighted', () => {
   assert.equal(slashStep(2, 1, options.length), 0)
 })
 
-test('/model + Enter never runs a Nuphos action unless the arrows picked it', () => {
+test('/model + Enter never runs a OpenBot action unless the arrows picked it', () => {
   const options = matchSlashOptions([], commands, 'mo')
 
   assert.equal(slashEnterTarget(options, 'mo', { active: -1, armed: false }), null)

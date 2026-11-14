@@ -22,7 +22,7 @@ const promptData = (value: string): string => JSON.stringify(value)
 
 function watchDestinationCopy(destination: WatchDestination): string {
   return destination.type === 'nuphos'
-    ? 'Nuphos.'
+    ? 'OpenBot.'
     : destination.type === 'slack_dm'
       ? 'my Slack DM, with a replyable incident thread.'
       : `Slack channel #${destination.channelName} (${destination.channelId}), with a replyable incident thread.`
@@ -105,7 +105,7 @@ export function monitoringWatchGroupPrompt(
   return [
     'Watch these monitoring items as one group:',
     `- Group: ${promptData(name)}`,
-    `- Members: ${String(rows.length)}; create one shared ingress per provider/integration, not one Nuphos trigger per item.`,
+    `- Members: ${String(rows.length)}; create one shared ingress per provider/integration, not one OpenBot trigger per item.`,
     ...itemLines,
     '- When an item fires: investigate the likely cause using available monitoring and infrastructure tools.',
     '- Keep incidents isolated by the matched member so unrelated alerts never share a Slack thread.',

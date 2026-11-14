@@ -1,9 +1,17 @@
 import * as atlas from '../atlas'
 
+import { agentApprovalChannels } from './channels-agent-approval'
+import { imessageChannels } from './channels-imessage'
+import { linkPreviewChannels } from './channels-link-preview'
+import { mailChannels } from './channels-mail'
 import { plaudChannels } from './channels-plaud'
 
 export const integrationsChannels = {
   ...plaudChannels,
+  ...mailChannels,
+  ...imessageChannels,
+  ...agentApprovalChannels,
+  ...linkPreviewChannels,
   'atlas:listLinodeAccounts': (_e: unknown, teamId: string) => atlas.listLinodeAccounts(teamId),
   'atlas:bindLinodeAccount': (_e: unknown, teamId: string, label: string, token: string) =>
     atlas.bindLinodeAccount(teamId, label, token),

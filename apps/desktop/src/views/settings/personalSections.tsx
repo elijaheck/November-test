@@ -82,7 +82,7 @@ const APP_ICON_CHARACTERS = [
 ]
 const APP_ICON_LAYOUTS = [t('Classic'), t('Bleed'), t('Peek')]
 const APP_ICONS = [
-  { id: 'A', name: 'Nuphos' },
+  { id: 'A', name: 'OpenBot' },
   ...APP_ICON_CHARACTERS.flatMap((character, c) =>
     APP_ICON_LAYOUTS.map((layout, l) => ({
       id: `${'BCDEF'[c]}${String(l + 1)}`,
@@ -129,7 +129,7 @@ function AppIconPicker() {
         ))}
       </div>
       <p className="mt-1.5 text-[12px] text-tertiary">
-        {t('Shown in the Dock while Nuphos runs.')}
+        {t('Shown in the Dock while OpenBot runs.')}
       </p>
     </fieldset>
   )

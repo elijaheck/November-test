@@ -40,7 +40,7 @@ export function canManage(device: AgentDevice): boolean {
 }
 
 /** Shown when the backend gives no reason, e.g. an older backend without the route. */
-const REMOVE_FALLBACK = t('Could not remove it. Update Nuphos and try again.')
+const REMOVE_FALLBACK = t('Could not remove it. Update OpenBot and try again.')
 
 /** Only the owner removes a machine; a list without the access field is the viewer's own. */
 export function isOwner(device: Pick<AgentDevice, 'access'>): boolean {
@@ -61,7 +61,7 @@ export function removal(device: AgentDevice) {
       error: t('Could not delete computer'),
       fallback: REMOVE_FALLBACK,
       description: t(
-        "This permanently deletes the computer, its files and its runtimes' sign-ins, and stops agents running on it. Your agent history stays in Nuphos.",
+        "This permanently deletes the computer, its files and its runtimes' sign-ins, and stops agents running on it. Your agent history stays in OpenBot.",
       ),
     }
 
@@ -73,7 +73,7 @@ export function removal(device: AgentDevice) {
     error: t('Could not remove computer'),
     fallback: REMOVE_FALLBACK,
     description: t(
-      'This removes the computer and its runtimes from Nuphos. Opening Nuphos on it registers it again. Your agent history stays in Nuphos.',
+      'This removes the computer and its runtimes from OpenBot. Opening OpenBot on it registers it again. Your agent history stays in OpenBot.',
     ),
   }
 }

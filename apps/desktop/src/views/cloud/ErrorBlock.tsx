@@ -91,7 +91,7 @@ export function ErrorBlock({ message }: { message: string }) {
           ? `Regions checked: ${details.regions.join(', ')}.`
           : null,
         details?.upstreamMessage ? `Upstream error: ${details.upstreamMessage}` : null,
-        'Please diagnose and fix the missing permission so Nuphos can perform this operation, then verify it works.',
+        'Please diagnose and fix the missing permission so OpenBot can perform this operation, then verify it works.',
       ]
         .filter(Boolean)
         .join(' ')

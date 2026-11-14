@@ -21,7 +21,7 @@ export type * from './agent-chat-skill/types.ts'
 const LEGACY_SKILL_NAME = 'nuphos-agent-chat'
 // Removed skills Desktop may have installed earlier. get-short-lived-creds-from-nuphos
 // read the full session token, which now lives in the OS credential store, so it could
-// no longer work; agents that need credentials run in a Nuphos runtime instead (#1039).
+// no longer work; agents that need credentials run in a OpenBot runtime instead (#1039).
 const RETIRED_SKILL_IDS = ['get-short-lived-creds-from-nuphos']
 const TARGET_LABELS: Record<AgentChatSkillTarget, string> = {
   claude: 'Claude Code',
@@ -65,8 +65,8 @@ function legacyHelperPath(target: AgentChatSkillTarget, skill: SkillDefinition):
 const SKILLS: SkillDefinition[] = [
   {
     id: 'open-in-nuphos',
-    name: 'Open in Nuphos',
-    description: 'Open a Nuphos Agent chat with bug context, prompts, and local files.',
+    name: 'Open in OpenBot',
+    description: 'Open a OpenBot Agent chat with bug context, prompts, and local files.',
     helperName: 'open-in-nuphos',
     legacyName: LEGACY_SKILL_NAME,
     legacyHelperName: 'open-agent-chat.sh',

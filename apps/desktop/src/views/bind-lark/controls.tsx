@@ -19,7 +19,7 @@ export function SiteStep({
     <div className="space-y-4">
       <p className="text-[12px] leading-relaxed text-secondary">
         {t(
-          'Feishu (China) and Lark (Global) are separate platforms. Pick the one your organization uses — it decides which developer console and API host Nuphos talks to.',
+          'Feishu (China) and Lark (Global) are separate platforms. Pick the one your organization uses — it decides which developer console and API host OpenBot talks to.',
         )}
       </p>
       <div className="flex gap-2">

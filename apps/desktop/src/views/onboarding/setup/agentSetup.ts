@@ -11,7 +11,7 @@ export const LOCAL_SETUP_PROVIDERS = [
 
 export const LOCAL_AGENT_INFO: Record<
   CliLoginProvider,
-  /** `command` is what Nuphos looks for on the login shell's PATH. */
+  /** `command` is what OpenBot looks for on the login shell's PATH. */
   { name: string; installUrl: string; command: string }
 > = {
   'claude-code': {

@@ -68,7 +68,7 @@ export function NewBoxFields({
             disabled={creating}
             onValueChange={account.setAccountId}
             options={[
-              ...(account.deployment ? [{ value: '', label: t('Your Nuphos plan') }] : []),
+              ...(account.deployment ? [{ value: '', label: t('Your OpenBot plan') }] : []),
               ...account.accounts.map((a) => ({
                 value: a.id,
                 label: t('instabox: {label}', { label: a.label }),

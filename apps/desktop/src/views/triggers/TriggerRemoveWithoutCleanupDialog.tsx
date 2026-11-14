@@ -27,17 +27,17 @@ export function TriggerRemoveWithoutCleanupDialog({
         <span className="block">
           <span className="block">
             {t(
-              '“{name}” will be removed. Providers Nuphos can still reach are cleaned up as usual. Resources in a provider whose integration is disconnected stay there and must be deleted by hand.',
+              '“{name}” will be removed. Providers OpenBot can still reach are cleaned up as usual. Resources in a provider whose integration is disconnected stay there and must be deleted by hand.',
               { name },
             )}
           </span>
           <span className="mt-3 block">
             {resources.length > 0
               ? t(
-                  'Nuphos recorded these resources. Older Watches may have more than this list shows.',
+                  'OpenBot recorded these resources. Older Watches may have more than this list shows.',
                 )
               : t(
-                  'Nuphos has no record of which resources this Watch created. Check the provider by hand.',
+                  'OpenBot has no record of which resources this Watch created. Check the provider by hand.',
                 )}
           </span>
           {resources.length > 0 && (

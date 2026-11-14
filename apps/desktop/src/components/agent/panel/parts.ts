@@ -34,7 +34,7 @@ export type ImageAttachmentPart = {
   // the actual file into the sandbox on demand.
   attachmentId?: string
 }
-// Files the user uploaded to the Nuphos transfer store. The bytes
+// Files the user uploaded to the OpenBot transfer store. The bytes
 // live in S3; the agent pulls them into its sandbox via the file-transfer
 // skill. Rendered as a card; serialized to a pull instruction for the agent.
 export type TransferUploadPart = {
@@ -139,7 +139,7 @@ export type ToolPart = {
     signature?: string
     approved?: boolean
     reason?: string
-    /** OpenAB permission relays are one-shot provider decisions, not Nuphos rules. */
+    /** OpenAB permission relays are one-shot provider decisions, not OpenBot rules. */
     source?: 'openab'
   }
   // Auto Mode: which policy authorized (or required auth for) this call.

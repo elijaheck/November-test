@@ -169,7 +169,7 @@ export function IntegrationCatalog({
             {t('Connectors')}
           </h1>
           <p className="mb-5 mt-1.5 text-[13.5px] text-secondary">
-            {t('Connect Nuphos to your code, data, cloud, and everyday tools.')}
+            {t('Connect OpenBot to your code, data, cloud, and everyday tools.')}
           </p>
           <ConnectorSearch
             filter={filter}

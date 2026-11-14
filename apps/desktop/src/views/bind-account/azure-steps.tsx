@@ -132,7 +132,7 @@ export function AzureWizardStepContent({
           {oidc && !oidc.configured && (
             <div className="text-[11.5px] text-status-attention">
               {t(
-                "Nuphos's OIDC connector isn't configured on this backend yet — binding will fail until it is.",
+                "OpenBot's OIDC connector isn't configured on this backend yet — binding will fail until it is.",
               )}
             </div>
           )}

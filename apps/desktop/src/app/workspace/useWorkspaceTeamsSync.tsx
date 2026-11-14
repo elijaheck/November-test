@@ -69,7 +69,7 @@ export function useWorkspaceTeamsSync(a: Args) {
 
   // Invitations usually arrive while the app is already open (a teammate just
   // clicked Invite), so a mount-only fetch leaves every affordance stale.
-  // Refresh on window focus — the "check Nuphos, I invited you" moment — plus
+  // Refresh on window focus — the "check OpenBot, I invited you" moment — plus
   // a slow poll as a fallback for long-lived unfocused windows.
   useEffect(() => {
     const onFocus = () => refreshInvitationsSilently()

@@ -164,7 +164,7 @@ export function openabCommand(
 export class OpenabProcess {
   private readonly machine: Pick<LocalRuntimeLaunch, 'ownsMachine'>
 
-  /** Whether it runs on a machine Nuphos made; see `runtimeJobs`. */
+  /** Whether it runs on a machine OpenBot made; see `runtimeJobs`. */
   constructor(machine: Pick<LocalRuntimeLaunch, 'ownsMachine'> = {}) {
     this.machine = machine
   }

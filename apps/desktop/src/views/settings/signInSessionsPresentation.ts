@@ -3,10 +3,10 @@ import { t } from '../../i18n/index.ts'
 import type { SignInSession } from '../../types'
 
 const APPS: Record<string, string> = {
-  'nuphos-desktop': 'Nuphos Desktop',
-  'nuphos-ios': t('Nuphos for iOS'),
-  'nuphos-android': t('Nuphos for Android'),
-  'nuphos-cli': 'Nuphos CLI',
+  'nuphos-desktop': 'OpenBot Desktop',
+  'nuphos-ios': t('OpenBot for iOS'),
+  'nuphos-android': t('OpenBot for Android'),
+  'nuphos-cli': 'OpenBot CLI',
 }
 const BROWSERS: [RegExp, string][] = [
   [/Edg\//, 'Edge'],

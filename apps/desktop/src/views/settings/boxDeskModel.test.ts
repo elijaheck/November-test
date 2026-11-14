@@ -26,7 +26,7 @@ test('anything not Apple is a laptop: Windows in its own finish, the rest plain'
   assert.deepEqual(machine('freebsd'), { form: 'laptop', brand: 'other' })
 })
 
-test('a Box is a Nuphos box, whatever it runs', () => {
+test('a Box is a OpenBot box, whatever it runs', () => {
   const box = { provider: 'instabox', sandboxId: 'sb', state: 'running' } as AgentDevice['box']
 
   assert.deepEqual(machine('linux', undefined, box), { form: 'box', brand: 'nuphos' })

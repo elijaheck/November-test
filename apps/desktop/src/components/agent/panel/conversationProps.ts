@@ -34,7 +34,7 @@ export type ConversationProps = {
     canChat: boolean
     keepPolling: boolean
   } | null
-  /** Opens Nuphos markdown links from assistant messages inside the desktop workspace. */
+  /** Opens OpenBot markdown links from assistant messages inside the desktop workspace. */
   onOpenNuphosLink?: (href: string, beside?: boolean) => boolean
   /** Re-runs one of your sent messages with new text, in a fork of the chat. */
   onEditMessage?: {

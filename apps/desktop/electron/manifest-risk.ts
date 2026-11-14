@@ -16,7 +16,7 @@ function asRecord(v: unknown): LooseRecord | null {
   return v && typeof v === 'object' && !Array.isArray(v) ? (v as LooseRecord) : null
 }
 
-// Every place a PodSpec can hide across the kinds Nuphos can apply:
+// Every place a PodSpec can hide across the kinds OpenBot can apply:
 //   Pod                                   -> spec
 //   Deployment/StatefulSet/DaemonSet/
 //   ReplicaSet/Job/ReplicationController   -> spec.template.spec

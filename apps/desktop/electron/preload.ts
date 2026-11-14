@@ -4,6 +4,7 @@ import { agentApi } from './preload-parts/api-agent'
 import { appConfigApi } from './preload-parts/api-app-config'
 import { awsApi } from './preload-parts/api-aws'
 import { browserExtensionsApi } from './preload-parts/api-browser-extensions'
+import { channelsApi } from './preload-parts/api-channels'
 import { cloudAccountsApi } from './preload-parts/api-cloud-accounts'
 import { cloudOpsApi } from './preload-parts/api-cloud-ops'
 import { cloudflareApi } from './preload-parts/api-cloudflare'
@@ -11,18 +12,21 @@ import { connectApi } from './preload-parts/api-connect'
 import { databasesApi } from './preload-parts/api-databases'
 import { deviceApi } from './preload-parts/api-device'
 import { githubCliApi } from './preload-parts/api-github-cli'
+import { agentApprovalApi } from './preload-parts/api-agent-approval'
+import { imessageApi } from './preload-parts/api-imessage'
 import { instructionsApi } from './preload-parts/api-instructions'
 import { integrationsApi } from './preload-parts/api-integrations'
 import { k8sAppApi } from './preload-parts/api-k8s-app'
+import { linkPreviewApi } from './preload-parts/api-link-preview'
 import { localTerminalApi } from './preload-parts/api-local-terminal'
+import { mailApi } from './preload-parts/api-mail'
 import { plaudApi } from './preload-parts/api-plaud'
 import { posthogApi } from './preload-parts/api-posthog'
-import { channelsApi } from './preload-parts/api-channels'
 import { sessionAccessApi } from './preload-parts/api-session-access'
+import { sidebarGesturesApi } from './preload-parts/api-sidebar-gestures'
 import { signInSessionsApi } from './preload-parts/api-sign-in-sessions'
 import { teamApi } from './preload-parts/api-team'
 import { voiceApi } from './preload-parts/api-voice'
-import { sidebarGesturesApi } from './preload-parts/api-sidebar-gestures'
 import { windowSessionApi } from './preload-parts/api-window-session'
 
 const api = {
@@ -42,6 +46,10 @@ const api = {
   ...integrationsApi,
   ...posthogApi,
   ...plaudApi,
+  ...mailApi,
+  ...imessageApi,
+  ...agentApprovalApi,
+  ...linkPreviewApi,
   ...sessionAccessApi,
   ...channelsApi,
   ...signInSessionsApi,

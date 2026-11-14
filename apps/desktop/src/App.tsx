@@ -12,6 +12,7 @@ import { signOutLocally } from './app/signOutLocally'
 import { enterAs, startupAuth } from './app/startupAuth'
 import { Workspace } from './app/workspace/Workspace'
 import { ChangeBotAvatarHost } from './components/agent/ChangeBotAvatarDialog'
+import { AgentApprovalHost } from './components/AgentApprovalHost'
 import { StepUpPrompt } from './components/MfaCodeDialog'
 import { toast } from './components/ui/toast'
 import { CurrentUserContext } from './hooks/useCurrentUser'
@@ -122,6 +123,7 @@ function SignedInApp() {
         <AgentSetupHost />
         <ChangeBotAvatarHost />
         <StepUpPrompt />
+        <AgentApprovalHost />
       </div>
       {/* Over the workspace, which stays mounted: Cancel returns to it as it was. */}
       {adding && (

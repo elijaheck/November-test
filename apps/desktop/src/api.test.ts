@@ -32,16 +32,16 @@ const NETWORK_ERRORS = [
   "Error invoking remote method 'fileTransfer:upload': Error: net::ERR_CONNECTION_REFUSED",
   'net::ERR_INTERNET_DISCONNECTED',
   // The real-world shape from the report: an Electron IPC-wrapped connect timeout.
-  "Error invoking remote method 'atlas:getMonitoringOverview': Error: Nuphos backend " +
+  "Error invoking remote method 'atlas:getMonitoringOverview': Error: OpenBot backend " +
     '/teams/abc/monitoring/overview Connect Timeout Error (attempted addresses: ' +
     '52.9.93.56:443, 52.52.27.1:443, timeout: 10000ms)',
   // Node TLS handshake interrupted mid-connect.
   'Client network socket disconnected before secure TLS connection was established',
-  "Error invoking remote method 'atlas:listTeamConnectors': Error: Nuphos backend " +
+  "Error invoking remote method 'atlas:listTeamConnectors': Error: OpenBot backend " +
     '/teams/abc/connectors: Client network socket disconnected before secure TLS ' +
     'connection was established',
   'socket hang up',
-  "Error invoking remote method 'atlas:listTeamConnectors': Error: Nuphos backend request " +
+  "Error invoking remote method 'atlas:listTeamConnectors': Error: OpenBot backend request " +
     'failed: other side closed (trace 1bb8abcb…)',
 ]
 

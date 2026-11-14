@@ -49,7 +49,7 @@ export function useCanvasShortcuts(args: Args) {
         if (e.shiftKey) a.redo()
         else a.undo()
       } else if (mod && key === 'c') a.copy()
-      // ⌘D splits the window in Nuphos, so Duplicate lives on ⌘⇧V.
+      // ⌘D splits the window in OpenBot, so Duplicate lives on ⌘⇧V.
       else if (mod && e.shiftKey && key === 'v') {
         e.preventDefault()
         a.duplicate()

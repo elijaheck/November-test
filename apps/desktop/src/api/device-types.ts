@@ -5,7 +5,12 @@ export type DeviceIdentity = {
 }
 
 export type DeviceExecOutcome =
-  'ok' | 'timeout' | 'device_offline' | 'rejected' | 'error' | 'unknown'
+  | 'ok'
+  | 'timeout'
+  | 'device_offline'
+  | 'rejected'
+  | 'error'
+  | 'unknown'
 
 export type DeviceExecOrigin = 'user' | 'trigger' | 'automation' | 'database-alert'
 
@@ -37,7 +42,7 @@ export type DeviceExecAuditPage = {
 /** This computer's own agent CLI; team runtimes can run more (`AgentProvider`). */
 export type LocalAgentProvider = 'claude-code' | 'codex' | 'grok' | 'antigravity' | 'opencode'
 
-/** The agents this app signs in itself, through their own CLI login; the rest sign in from Nuphos. */
+/** The agents this app signs in itself, through their own CLI login; the rest sign in from OpenBot. */
 export type CliLoginProvider = 'claude-code' | 'codex'
 
 /** One more agent of a provider on a device. `runtimeId` is the catalog's RuntimeInstance.id. */
@@ -82,7 +87,9 @@ export type LocalAgentInstance = {
 
 /** Only for an unpackaged app with no local agent bundle: what `bun run dev` is doing about it. */
 export type DevBundleHint =
-  { state: 'preparing' } | { state: 'failed'; reason: string } | { state: 'missing' }
+  | { state: 'preparing' }
+  | { state: 'failed'; reason: string }
+  | { state: 'missing' }
 
 export type LocalAgentLoginState = {
   state: 'idle' | 'waiting' | 'checking' | 'connected' | 'failed' | 'cancelled'
@@ -98,7 +105,7 @@ export type SleepState = SleepPreferences & {
   reason: 'unsupported' | 'off' | 'battery' | 'signed-out' | 'idle' | 'active'
 }
 
-/** Whether the OS opens Nuphos at login (macOS and Windows releases only). */
+/** Whether the OS opens OpenBot at login (macOS and Windows releases only). */
 export type LoginItemState = { supported: boolean; openAtLogin: boolean }
 
 export type LocalRuntimeState = {
@@ -135,7 +142,7 @@ export type LocalRuntimeActivityPage = {
 /** `connecting`: the machine runs but its host has not joined yet. */
 export type BoxState = 'creating' | 'connecting' | 'running' | 'paused' | 'error'
 
-/** A Box: a device Nuphos runs in a sandbox for its owner. */
+/** A Box: a device OpenBot runs in a sandbox for its owner. */
 /** How far an owner lets teammates use their own computer's Local Agent. */
 export type LocalShareLevel = 'off' | 'approve' | 'full'
 
@@ -196,7 +203,7 @@ export type BoxStatus = {
   updateStartedAt?: string
 }
 
-/** One of the signed-in user's devices; `box` is set when Nuphos hosts it. */
+/** One of the signed-in user's devices; `box` is set when OpenBot hosts it. */
 export type DeviceMetrics = {
   sampledAt: string
   cpuPercent: number
@@ -295,4 +302,5 @@ export type SshJoinProblem = 'no-ssh' | 'host-key' | 'auth' | 'unreachable' | 'f
 
 /** On success, the joined computer's id when the machine reported it. */
 export type SshJoinResult =
-  { ok: true; deviceId: string | null } | { ok: false; problem: SshJoinProblem }
+  | { ok: true; deviceId: string | null }
+  | { ok: false; problem: SshJoinProblem }

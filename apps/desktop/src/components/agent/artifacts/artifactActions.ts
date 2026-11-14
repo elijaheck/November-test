@@ -67,7 +67,7 @@ export async function downloadArtifact(version: ArtifactVersion) {
   }
 }
 
-/** Copy a link that opens the artifact in Nuphos for anyone who can see its chat. */
+/** Copy a link that opens the artifact in OpenBot for anyone who can see its chat. */
 export async function copyArtifactLink(url: string) {
   try {
     await navigator.clipboard.writeText(url)

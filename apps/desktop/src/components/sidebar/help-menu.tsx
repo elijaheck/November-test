@@ -93,7 +93,7 @@ function UpdateItems({ update }: { update: NonNullable<ReturnType<typeof useRead
           hint={<span className="tabular-nums">{update.percent}%</span>}
           disabled
         >
-          {t('Downloading Nuphos {version}…', { version: update.version })}
+          {t('Downloading OpenBot {version}…', { version: update.version })}
         </MenuItem>
       )}
       {installerUrl && (

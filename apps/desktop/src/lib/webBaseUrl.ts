@@ -1,4 +1,4 @@
-// Renderer-side view of the Nuphos web origin. The value itself is resolved in
+// Renderer-side view of the OpenBot web origin. The value itself is resolved in
 // the main process (electron/web-base-url.ts) from NUPHOS_WEB_URL and handed
 // over the preload bridge, so a self-hosted deployment configures it at runtime
 // instead of the client compiling nuphos.ai in.

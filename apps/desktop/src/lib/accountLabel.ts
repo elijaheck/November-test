@@ -55,7 +55,7 @@ export function shortAccount(account: string | undefined): string | undefined {
     : oneLine
 }
 
-/** The providers this app signs in itself; a catalog also carries ones only Nuphos runs. */
+/** The providers this app signs in itself; a catalog also carries ones only OpenBot runs. */
 function localProvider(provider: AgentProvider): LocalAgentProvider | undefined {
   return provider === 'antigravity' ? undefined : provider
 }

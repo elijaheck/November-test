@@ -13,7 +13,7 @@ delete process.env.ATLAS_API_URL
 const { apiUrl, setApiUrl, deviceRegistrationAllowed } = await import('./api-endpoint.ts')
 const { authSession } = await import('./auth-session.ts')
 
-test('resetting the endpoint returns to the launch-time one, not Nuphos Cloud', () => {
+test('resetting the endpoint returns to the launch-time one, not OpenBot Cloud', () => {
   assert.equal(setApiUrl('https://nuphos.example.com/path'), 'https://nuphos.example.com')
   assert.equal(setApiUrl(null), 'http://127.0.0.1:3718')
   assert.equal(apiUrl(), 'http://127.0.0.1:3718')

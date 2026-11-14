@@ -8,7 +8,7 @@ import { prepareFirstLaunch } from './first-launch.ts'
 
 test('only fresh app data gets the intro, including after complete data removal', () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'nuphos-first-launch-'))
-  const userData = path.join(root, 'Nuphos')
+  const userData = path.join(root, 'OpenBot')
 
   try {
     assert.equal(prepareFirstLaunch(userData)(), true)

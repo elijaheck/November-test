@@ -192,7 +192,7 @@ export type TencentAccount = {
   createdAt?: string
 }
 
-// OIDC federation details the customer needs to register Nuphos as a CAM OIDC
+// OIDC federation details the customer needs to register OpenBot as a CAM OIDC
 // identity provider and pin their role's trust policy. `jwks` is the signing
 // public key — Tencent CAM (unlike the others) does not auto-fetch it.
 export type TencentOidcInfo = {
@@ -216,7 +216,7 @@ export type AliyunAccount = {
   createdAt?: string
 }
 
-// OIDC federation details the customer needs to register Nuphos as a RAM OIDC
+// OIDC federation details the customer needs to register OpenBot as a RAM OIDC
 // identity provider and pin their role's trust policy.
 export type AliyunOidcInfo = {
   configured: boolean
@@ -232,7 +232,7 @@ export type VolcengineAccount = {
   createdAt?: string
 }
 
-// OIDC federation details the customer needs to register Nuphos as a Volcengine
+// OIDC federation details the customer needs to register OpenBot as a Volcengine
 // IAM OIDC identity provider and pin their role's trust policy.
 export type VolcengineOidcInfo = {
   configured: boolean
@@ -250,7 +250,7 @@ export type HuaweiAccount = {
   createdAt?: string
 }
 
-// OIDC federation details the customer needs to register Nuphos as a Huawei
+// OIDC federation details the customer needs to register OpenBot as a Huawei
 // Cloud IAM identity provider and assign a trust agency to this team's audience.
 export type HuaweiOidcInfo = {
   configured: boolean
@@ -288,7 +288,7 @@ export type AzureOidcInfo = {
   audience: string
 }
 
-// Which Nuphos principal the customer grants Service Account Token Creator to.
+// Which OpenBot principal the customer grants Service Account Token Creator to.
 // `principal` is this team's workload identity subject and the value the GCP
 // wizard tells them to paste. A deploy without federation returns configured:
 // false and cannot bind GCP accounts.

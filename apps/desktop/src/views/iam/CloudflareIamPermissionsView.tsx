@@ -181,7 +181,7 @@ export function CloudflareIamPermissionsView({
                       'This token is account-scoped, so Cloudflare won\'t return its own policy list (only user-scoped tokens with "User Details: Read" can self-introspect). The token works for the granted account/zone APIs — view it in the Cloudflare dashboard at My Profile → API Tokens to see the exact permissions.',
                     )
                   : t(
-                      'Cloudflare API tokens can only list their own policies if they include the "User Details: Read" permission. Add it to your Nuphos token to see what was granted.',
+                      'Cloudflare API tokens can only list their own policies if they include the "User Details: Read" permission. Add it to your OpenBot token to see what was granted.',
                     )
               }
             />

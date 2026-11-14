@@ -205,7 +205,7 @@
     letter-spacing: -0.005em;
     /* Keep the lighter greyscale rendering across themes. Combined with the
        light theme's near-black token, this avoids the dense pure-black texture
-       that made Nuphos typography look heavier than Codex at the same weight. */
+       that made OpenBot typography look heavier than Codex at the same weight. */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
@@ -424,7 +424,7 @@
     word-break: break-word;
   }
 
-  /* Inline mention chip rendered inside the composer for Nuphos row links. */
+  /* Inline mention chip rendered inside the composer for OpenBot row links. */
   .atlas-mention {
     display: inline-flex;
     align-items: center;
@@ -1217,11 +1217,38 @@
   /* Dark mode stays opaque: the window's vibrancy blurs whatever sits behind
      it, so a light window there (a browser, say) bled through the 25% gap as a
      white glow that came and went with window order. */
+  /* Glass panels (OpenBot): the side panels are frosted over the window's
+     native vibrancy and washed with one accent tint, so the chat reads as the
+     solid surface between them. Dark mode keeps enough opacity (0.78) that a
+     bright window behind ours can't glow through. --glass-tint is an RGB
+     triple; a Space can override it. */
+  :root {
+    --glass-tint: 64 120 255;
+  }
   .sidebar-surface {
-    background-color: rgb(var(--color-appBg));
+    background-color: rgba(var(--color-appBg), 0.78);
+    background-image: linear-gradient(
+      180deg,
+      rgba(var(--glass-tint), 0.1) 0%,
+      rgba(var(--glass-tint), 0.035) 55%,
+      rgba(var(--glass-tint), 0.06) 100%
+    );
   }
   html.light .sidebar-surface {
-    background-color: rgba(var(--color-appBg), 0.65);
+    background-color: rgba(var(--color-appBg), 0.55);
+    background-image: linear-gradient(
+      180deg,
+      rgba(var(--glass-tint), 0.08) 0%,
+      rgba(var(--glass-tint), 0.025) 55%,
+      rgba(var(--glass-tint), 0.05) 100%
+    );
+  }
+  /* A hairline of light on the glass edge that faces the chat. */
+  .workspace-right-rail.sidebar-surface {
+    box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.05);
+  }
+  html.light .workspace-right-rail.sidebar-surface {
+    box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.6);
   }
   /* Docked in light mode, the partial alpha lets the window's vibrancy through.
      Floating over the content while collapsed there is no vibrancy behind it —
@@ -1229,6 +1256,7 @@
   .sidebar-surface.is-floating,
   html.light .sidebar-surface.is-floating {
     background-color: rgb(var(--color-appBg));
+    background-image: none;
   }
 
   /*

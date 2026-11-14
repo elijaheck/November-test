@@ -94,7 +94,7 @@ export function SonarqubeConnectorGuide({
         </div>
         <p className="mt-1 text-[11.5px] leading-relaxed text-tertiary">
           {t(
-            'Nuphos reads results already stored in this SonarQube instance. Connecting does not automatically scan code or grant access to a source repository.',
+            'OpenBot reads results already stored in this SonarQube instance. Connecting does not automatically scan code or grant access to a source repository.',
           )}
         </p>
       </div>

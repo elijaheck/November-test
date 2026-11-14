@@ -23,7 +23,7 @@ function findChatTarget(root: HTMLElement, target: JournalChatTarget): HTMLEleme
     : null
 
   if (byId) return byId
-  // A native runtime's transcript keeps its own call id for a question Nuphos recorded under
+  // A native runtime's transcript keeps its own call id for a question OpenBot recorded under
   // another: the card is the first one an answer would map to this request.
   if (target.toolCallId && target.question !== undefined) {
     const request = { id: target.toolCallId, question: target.question, options: target.options }

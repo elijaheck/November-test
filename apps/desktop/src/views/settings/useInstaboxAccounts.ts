@@ -25,7 +25,7 @@ export function useInstaboxAccounts(teamId: string): InstaboxAccount[] {
 }
 
 /**
- * Which account a new Box goes on: Nuphos's (undefined) when this deployment offers Boxes,
+ * Which account a new Box goes on: OpenBot's (undefined) when this deployment offers Boxes,
  * else the team's first. A team account's sizes are its own: null while read, [] if that failed.
  */
 export function useBoxAccount(teamId: string, accounts: InstaboxAccount[], deployment: boolean) {
@@ -51,7 +51,7 @@ export function useBoxAccount(teamId: string, accounts: InstaboxAccount[], deplo
     accounts,
     deployment,
     accountId,
-    /** '' picks Nuphos's own account. */
+    /** '' picks OpenBot's own account. */
     setAccountId: (id: string) => setPicked(id || undefined),
     sizes: accountId && sizes?.accountId === accountId ? sizes.sizes : null,
   }

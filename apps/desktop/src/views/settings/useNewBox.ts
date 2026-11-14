@@ -44,9 +44,9 @@ export function useNewBox({
 }: {
   teamId: string
   usage: BoxUsage | null
-  /** The team's own instabox accounts, which a Box may go on instead of Nuphos's. */
+  /** The team's own instabox accounts, which a Box may go on instead of OpenBot's. */
   accounts?: InstaboxAccount[]
-  /** Whether Nuphos's own account can make Boxes here. */
+  /** Whether OpenBot's own account can make Boxes here. */
   deployment?: boolean
   /** The names already taken, to suggest the next "Box N". */
   labels: string[]
@@ -54,7 +54,7 @@ export function useNewBox({
   onCreated: (deviceId: string) => void
 }) {
   const account = useBoxAccount(teamId, accounts, deployment)
-  // A team's own account is billed by instabox: its own sizes, and no Nuphos plan or limit.
+  // A team's own account is billed by instabox: its own sizes, and no OpenBot plan or limit.
   const choices = boxSizeChoices((account.accountId ? account.sizes : usage?.sizes) ?? [])
   const quota = usage && !account.accountId ? boxQuota(usage) : null
   const [name, setName] = useState('')

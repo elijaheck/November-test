@@ -142,7 +142,7 @@ export async function remove(id: string): Promise<boolean> {
   const allowed = await confirm(
     'Remove extension',
     `Remove "${name}"?`,
-    ['The extension and its data in the Nuphos browser are deleted.'],
+    ['The extension and its data in the OpenBot browser are deleted.'],
     'Remove',
   )
 

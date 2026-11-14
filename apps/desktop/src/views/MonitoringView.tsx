@@ -44,7 +44,7 @@ export { WatchDestinationDialog } from './monitoring/WatchDestinationDialog'
 export type { WatchDestinationDialogProps } from './monitoring/WatchDestinationDialog'
 
 // Read-only aggregation across the team's bound observability providers. Rows
-// come live from each provider's API via the backend fan-out endpoint — Nuphos
+// come live from each provider's API via the backend fan-out endpoint — OpenBot
 // stores nothing. Creation/editing happens through the agent or the provider's
 // own console; the only action here is the deep link out.
 

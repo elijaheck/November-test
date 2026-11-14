@@ -139,7 +139,7 @@ export const informers = new Map<string, InformerEntry>()
 export const subscriptions = new Map<string, Subscription>()
 
 export function scopeKeyFor(scope: Scope): string {
-  // Context is the first key segment so multiple Nuphos tabs viewing the same
+  // Context is the first key segment so multiple OpenBot tabs viewing the same
   // (kind, namespace) on *different* clusters get isolated informer state.
   // Use the unit-separator (\x1f) between segments rather than ':' because
   // real-world context names contain ':' — EKS contexts look like

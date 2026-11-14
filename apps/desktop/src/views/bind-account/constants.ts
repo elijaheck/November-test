@@ -64,7 +64,7 @@ export function cloudflareScopesFor(
 // Volcengine role TRN, e.g. trn:iam::2100000000:role/NuphosConnector.
 export const TRN_PATTERN = /^trn:iam::\d+:role\/.+$/
 // Huawei Cloud account (IAM domain) id, the IAM identity provider name, and
-// the trust agency name assigned to Nuphos's audience.
+// the trust agency name assigned to OpenBot's audience.
 export const HUAWEI_DOMAIN_ID_PATTERN = /^[0-9a-f]{32}$/i
 export const HUAWEI_IDP_NAME_PATTERN = /^[\w.-]{1,64}$/
 export const HUAWEI_AGENCY_NAME_PATTERN = /^[\w.-]{1,64}$/
@@ -72,7 +72,7 @@ export const HUAWEI_AGENCY_NAME_PATTERN = /^[\w.-]{1,64}$/
 // Alibaba Cloud RAM role ARN + OIDC provider ARN.
 export const ALIYUN_ROLE_ARN_PATTERN = /^acs:ram::\d+:role\/.+$/
 export const ALIYUN_OIDC_PROVIDER_ARN_PATTERN = /^acs:ram::\d+:oidc-provider\/.+$/
-// Tencent CAM role ARN, e.g. qcs::cam::uin/123456789:roleName/Nuphos.
+// Tencent CAM role ARN, e.g. qcs::cam::uin/123456789:roleName/OpenBot.
 export const TENCENT_ROLE_ARN_PATTERN = /^qcs::cam::uin\/\d+:role(Name)?\/.+$/
 
 export function errorMessage(e: unknown): string {

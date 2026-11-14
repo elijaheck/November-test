@@ -6,24 +6,24 @@ export function openInNuphosSkillBody(target: AgentChatSkillTarget): string {
 
   return `---
 name: open-in-nuphos
-description: Open a Nuphos Agent chat with bug context, prompts, and local files when ${opener} needs Nuphos to investigate something.
+description: Open a OpenBot Agent chat with bug context, prompts, and local files when ${opener} needs OpenBot to investigate something.
 ---
 
-# Open in Nuphos
+# Open in OpenBot
 
-Use this skill when you encounter a bug, failed command, confusing runtime behavior, or investigation that should be handed to Nuphos Agent.
+Use this skill when you encounter a bug, failed command, confusing runtime behavior, or investigation that should be handed to OpenBot Agent.
 
 ## Workflow
 
 1. Summarize the observed bug, expected behavior, actual behavior, commands run, relevant error output, repository path, and any hypothesis worth checking.
 2. Put long logs or diagnostics into local files and pass those paths as \`file\` query parameters.
-3. Open Nuphos with:
+3. Open OpenBot with:
 
 \`\`\`sh
 scripts/open-in-nuphos --source ${source} --team-id team_xxx --prompt "Investigate this bug..." --file /path/to/error.log
 \`\`\`
 
-The helper opens \`nuphos://agent-chat\` and Nuphos will start an Agent chat with the prompt and attached local file paths.
+The helper opens \`nuphos://agent-chat\` and OpenBot will start an Agent chat with the prompt and attached local file paths.
 
 Prefer passing files for logs or large command output instead of pasting everything into the prompt.
 `

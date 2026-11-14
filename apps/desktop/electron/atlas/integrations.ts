@@ -29,7 +29,7 @@ export type ResendIntegration = {
   createdAt?: string
 }
 
-// Forward an arbitrary Grafana request through the Nuphos backend's proxy.
+// Forward an arbitrary Grafana request through the OpenBot backend's proxy.
 // `path` should be the Grafana-side path (e.g. "/api/search?type=dash-db").
 export async function listLinodeAccounts(teamId: string): Promise<LinodeAccount[]> {
   const data = await call<{ accounts: LinodeAccount[] }>('GET', `/teams/${teamId}/linode-accounts`)

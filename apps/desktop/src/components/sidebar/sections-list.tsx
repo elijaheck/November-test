@@ -25,6 +25,8 @@ import { SidebarSectionHeading } from './SidebarSectionHeading'
 import { isSidebarItemActive } from './types'
 import { useInboxBadge } from './use-inbox-badge'
 
+import { IMESSAGE_KEY_PREFIX } from './imessageItems'
+
 import type { Item, ItemMenuRequest, Section } from './types'
 import type { SidebarFavorite } from '../../lib/sidebarFavorites'
 import type { Scope } from '../../types'
@@ -132,7 +134,8 @@ export function SidebarSectionList({
                           const shortcut = SIDEBAR_ITEM_SHORTCUTS[item.key]
                           const favorited = Boolean(favoriteMatch(item))
                           const chatRow =
-                            favoriteSessionId({ key: item.key, href: item.href }) !== null
+                            favoriteSessionId({ key: item.key, href: item.href }) !== null ||
+                            item.key.startsWith(IMESSAGE_KEY_PREFIX)
                           // Bots read as a chat list (name over latest message); Tasks as on main.
                           const twoLine = chatRow && !item.task
                           const bot = twoLine || Boolean(item.botNested)

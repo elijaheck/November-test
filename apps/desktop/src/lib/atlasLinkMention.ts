@@ -1,8 +1,8 @@
-// Parse an Nuphos row link into a structured `MentionTarget`, render a
+// Parse an OpenBot row link into a structured `MentionTarget`, render a
 // contenteditable-safe chip element for it, and resolve the chip's display
 // label by fetching the underlying resource where applicable.
 //
-// The Composer in AgentPanel uses this so pasted/seeded Nuphos URLs render as
+// The Composer in AgentPanel uses this so pasted/seeded OpenBot URLs render as
 // inline mention pills with a type-specific icon and the resource's real name,
 // instead of a raw URL or a path segment.
 

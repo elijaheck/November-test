@@ -75,7 +75,7 @@ function lines(hosts: Set<string>, permissions: Set<string>): string[] {
 }
 
 /**
- * The install question's lines. Every extension in Nuphos gets each tab's
+ * The install question's lines. Every extension in OpenBot gets each tab's
  * address through the tabs API, so every list says it reads browsing history.
  */
 export function installWarnings(manifest: ExtensionManifest): string[] {

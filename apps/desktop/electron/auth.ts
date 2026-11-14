@@ -88,6 +88,15 @@ export async function verifyEmailCode(email: string, code: string): Promise<User
 }
 
 /**
+ * A backend on this machine with OPENBOT_LOCAL_SIGN_IN on signs in its one
+ * local user with no account; any other backend answers 404 and the sign-in
+ * screen shows as before.
+ */
+export async function signInLocally(): Promise<UserInfo> {
+  return signInWith('/auth/local/sign-in', {})
+}
+
+/**
  * The second step of a sign-in that answered `mfa_required`: the challenge it
  * carried and a code from the authenticator app (or a recovery code).
  */

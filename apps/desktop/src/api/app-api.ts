@@ -54,6 +54,7 @@ export const appApi = {
   authSignOutAccount: (key: string) => window.api.authSignOutAccount(key),
   authSignOutAllAccounts: () => window.api.authSignOutAllAccounts(),
   authEmailRequestCode: (email: string) => window.api.authEmailRequestCode(email),
+  authLocalSignIn: () => window.api.authLocalSignIn(),
   authEmailVerifyCode: (email: string, code: string) => window.api.authEmailVerifyCode(email, code),
   analyticsIdentify: (userId: string, props?: Record<string, unknown>) =>
     window.api.analyticsIdentify(userId, props),

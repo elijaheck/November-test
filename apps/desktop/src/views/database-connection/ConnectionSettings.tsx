@@ -146,10 +146,10 @@ export function ConnectionSettingsSection({
           <p className="text-[12px] text-tertiary">
             {connection.providerOrigin
               ? t(
-                  'Removing from Nuphos deletes the provider binding reference and resource metadata. It does not delete or modify the database.',
+                  'Removing from OpenBot deletes the provider binding reference and resource metadata. It does not delete or modify the database.',
                 )
               : t(
-                  'Removing from Nuphos deletes the encrypted credential and resource metadata. It does not delete or modify the database.',
+                  'Removing from OpenBot deletes the encrypted credential and resource metadata. It does not delete or modify the database.',
                 )}
           </p>
           {isTeamAdmin && (
@@ -159,7 +159,7 @@ export function ConnectionSettingsSection({
               className="mt-4 flex items-center gap-1.5 rounded-md border border-error/40 px-3 py-1.5 text-[12px] text-error hover:bg-error/5 disabled:opacity-50"
             >
               <Trash2 className="h-3.5 w-3.5" />
-              {t('Remove from Nuphos')}
+              {t('Remove from OpenBot')}
             </button>
           )}
         </div>
@@ -191,14 +191,14 @@ export function RemoveConnectionModal({
       onClose={() => {
         if (!busy) onClose()
       }}
-      title={t('Remove database from Nuphos')}
+      title={t('Remove database from OpenBot')}
       description={
         connection.providerOrigin
           ? t(
-              'This removes the provider binding reference and Nuphos resource metadata. It never drops or modifies the underlying database.',
+              'This removes the provider binding reference and OpenBot resource metadata. It never drops or modifies the underlying database.',
             )
           : t(
-              'This removes the encrypted credential and Nuphos resource metadata. It never drops or modifies the underlying database.',
+              'This removes the encrypted credential and OpenBot resource metadata. It never drops or modifies the underlying database.',
             )
       }
       width={500}

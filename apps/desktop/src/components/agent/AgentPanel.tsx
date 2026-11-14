@@ -97,7 +97,7 @@ type Props = {
   /** Called when AgentPanel changes which session it is showing. */
   /** `unshown`: the chat the panel left without ever showing it (it could not be opened). */
   onSessionChange?: (sessionId: string | null, unshown?: string) => void
-  /** Opens Nuphos markdown links from assistant messages inside the desktop workspace. */
+  /** Opens OpenBot markdown links from assistant messages inside the desktop workspace. */
   onOpenNuphosLink?: (href: string, beside?: boolean) => boolean
   /** Opens workspace Settings at the Claude Code/OpenAB setup section. */
   onOpenAgentSettings?: () => void

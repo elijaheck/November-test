@@ -25,6 +25,7 @@ import { renderWorkspaceMenuOptions } from '../WorkspaceMenuOptions'
 import { SidebarAccountItems } from './account-items'
 import { SidebarHistoryButtons } from './history-buttons'
 import { SidebarToggleButton } from './nav-stack'
+import { SidebarSpaces } from './SidebarSpaces'
 import { SidebarStatsButton } from './SidebarStatsButton'
 
 import type { ChatLookup, HistoryTimeline } from './historyRows'
@@ -114,6 +115,7 @@ export function SidebarTeamSwitcher({
   return (
     <SkeletonReveal ready={Boolean(teamSegment)} skeleton={<SidebarTeamSwitcherSkeleton />}>
       {teamSegment && <TeamSwitcherMenu teamSegment={teamSegment} {...actions} />}
+      {teamSegment?.options && <SidebarSpaces options={teamSegment.options} />}
     </SkeletonReveal>
   )
 }

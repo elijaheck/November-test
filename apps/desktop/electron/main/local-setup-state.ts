@@ -1,5 +1,5 @@
 // What "Sync my setup" remembers on this computer, per signed-in member and team:
-// the skills and Instructions it put in Nuphos and whether to keep them in sync.
+// the skills and Instructions it put in OpenBot and whether to keep them in sync.
 // Every change goes through updateTeam on one in-memory copy that is written to
 // disk at once, so concurrent passes for different teams, a "Keep in sync"
 // toggle mid-pass, and a pass that fails half-way never lose each other's records.

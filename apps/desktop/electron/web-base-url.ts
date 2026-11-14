@@ -1,4 +1,4 @@
-// The Nuphos web origin the desktop app treats as "ours".
+// The OpenBot web origin the desktop app treats as "ours".
 //
 // It decides three things that must agree: which links render as in-app
 // mentions, which open in the app instead of a browser, and which a

@@ -2,7 +2,7 @@ import { mkdirSync } from 'node:fs'
 import { stat } from 'node:fs/promises'
 import path from 'node:path'
 
-/** The agents a computer can run for Nuphos. */
+/** The agents a computer can run for OpenBot. */
 export const LOCAL_AGENT_PROVIDERS = [
   'claude-code',
   'codex',
@@ -31,7 +31,7 @@ export function shimEnv(cliPath: string, home: string): Record<string, string> {
 }
 
 /**
- * The HOME a native ACP agent runs with for Nuphos, as /home/node is in the
+ * The HOME a native ACP agent runs with for OpenBot, as /home/node is in the
  * cloud runtime: it starts empty, so the owner's own login and config stay out,
  * and the agent's Sign in writes its credential here.
  */
@@ -66,13 +66,13 @@ export async function homeLogin(
   return Boolean(found?.isFile() && found.size > 2)
 }
 
-/** An agent never serves Nuphos from the owner's own home, where their personal config lives. */
+/** An agent never serves OpenBot from the owner's own home, where their personal config lives. */
 export const AGENT_HOME_UNAVAILABLE: Record<LocalAgentProvider, string> = {
-  'claude-code': 'Nuphos could not prepare a separate Claude Code home on this computer.',
+  'claude-code': 'OpenBot could not prepare a separate Claude Code home on this computer.',
   codex: 'Sign in to Codex on this computer with `codex login`, then check again.',
-  grok: 'Nuphos could not prepare a separate Grok Build home on this computer.',
-  antigravity: 'Nuphos could not prepare a separate Antigravity home on this computer.',
-  opencode: 'Nuphos could not prepare a separate OpenCode home on this computer.',
+  grok: 'OpenBot could not prepare a separate Grok Build home on this computer.',
+  antigravity: 'OpenBot could not prepare a separate Antigravity home on this computer.',
+  opencode: 'OpenBot could not prepare a separate OpenCode home on this computer.',
 }
 
 export const INSTALL_HINT: Record<LocalAgentProvider, string> = {

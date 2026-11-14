@@ -21,7 +21,7 @@ const MERGE_METHODS = [
   { value: 'rebase', label: t('Rebase and merge') },
 ]
 
-// Writes go through the user's own `gh` login, never the Nuphos GitHub App, so
+// Writes go through the user's own `gh` login, never the OpenBot GitHub App, so
 // GitHub records them as that person. Without a login the controls stay off.
 export function PullRequestActions({
   pull,

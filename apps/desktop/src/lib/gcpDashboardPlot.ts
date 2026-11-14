@@ -2,7 +2,7 @@ import type { TimeSeriesStyle } from '../grafana/timeSeriesDisplay.ts'
 
 const GCP_STACK = 'gcp-widget'
 
-/** Maps Cloud Monitoring XyChart plot types to Nuphos rendering semantics. */
+/** Maps Cloud Monitoring XyChart plot types to OpenBot rendering semantics. */
 export function gcpTimeSeriesStyle(plotType: string | null | undefined): TimeSeriesStyle {
   switch (plotType?.toUpperCase()) {
     case 'STACKED_AREA':

@@ -11,7 +11,7 @@ import { t } from '../../i18n'
 import { groupByConnectorCategory } from '../../lib/connectorCategories'
 import { frecency, searchDockHistory } from '../../lib/dockHistory'
 import { newTabOptionDomId, rankNewTabOptions, withAddressOption } from '../../lib/launcherMatch'
-import { TEAM_WORKSPACE_NAV_ITEMS } from '../../lib/teamOverviewNav'
+import { OFFERED_TEAM_WORKSPACE_NAV_ITEMS } from '../../lib/teamOverviewNav'
 import { RUNTIME_TERMINAL_FILTER } from '../../views/TerminalView'
 
 import { browserAddressOption } from './browserAddressOption'
@@ -100,7 +100,7 @@ export function WorkspaceNewTabPage({
     onOpenPath,
     onOpenKey,
   })
-  const workspaceItems = TEAM_WORKSPACE_NAV_ITEMS.flatMap((item): Item[] =>
+  const workspaceItems = OFFERED_TEAM_WORKSPACE_NAV_ITEMS.flatMap((item): Item[] =>
     item.key === 'team.terminal'
       ? [
           { ...item, label: t('Local terminal'), enabled: true },

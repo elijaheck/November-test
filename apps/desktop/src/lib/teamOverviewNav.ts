@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 
 import { t } from '../i18n/index.ts'
+import { isOfferedWorkspaceKey } from '../product.ts'
 
 import type { LucideIcon } from 'lucide-react'
 
@@ -88,6 +89,11 @@ export const TEAM_WORKSPACE_NAV_ITEMS: TeamOverviewNavItem[] = [
 ]
 
 /** The sidebar's untitled top section: the chat entry plus the management pages. */
+/** The workspace pages this product offers from New Tab and the palette. */
+export const OFFERED_TEAM_WORKSPACE_NAV_ITEMS = TEAM_WORKSPACE_NAV_ITEMS.filter((item) =>
+  isOfferedWorkspaceKey(item.key),
+)
+
 export const TEAM_SIDEBAR_NAV_ITEMS: TeamOverviewNavItem[] = [
   NEW_CHAT_NAV_ITEM,
   ...TEAM_MANAGEMENT_NAV_ITEMS,

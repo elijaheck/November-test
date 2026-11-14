@@ -155,7 +155,7 @@ export function sshJoinScript({ token, apiUrl }: { token: string; apiUrl: string
     'set -e',
     // The CLI is run by its full path, so the installer has no PATH advice to give.
     'curl -fsSL https://nuphos.ai/install | PATH="$HOME/.local/bin:$PATH" sh',
-    'test -x "$HOME/.local/bin/nuphos" || { echo "The Nuphos CLI did not install." >&2; exit 1; }',
+    'test -x "$HOME/.local/bin/nuphos" || { echo "The OpenBot CLI did not install." >&2; exit 1; }',
     `${env} nohup "$HOME/.local/bin/nuphos" agent >"$HOME/.nuphos-agent.log" 2>&1 </dev/null &`,
     'agent=$!',
     'cred="$HOME/.local/share/nuphos/agent/device-credential.json"',
@@ -164,7 +164,7 @@ export function sshJoinScript({ token, apiUrl }: { token: string; apiUrl: string
     'i=0; while [ $i -lt 60 ] && [ ! -s "$cred" ] && kill -0 $agent 2>/dev/null; do sleep 1; i=$((i+1)); done',
     // With systemd the CLI exits once the service it installed has joined.
     '[ -s "$cred" ] || kill -0 $agent 2>/dev/null || { cat "$HOME/.nuphos-agent.log" >&2; exit 1; }',
-    'echo "Started the Nuphos agent. Its log is ~/.nuphos-agent.log."',
+    'echo "Started the OpenBot agent. Its log is ~/.nuphos-agent.log."',
     // Which computer it is, so Desktop waits for this one: new, joined again or already there.
     'sed -n \'s/.*"deviceId": *"\\([^"]*\\)".*/Device: \\1/p\' "$cred" 2>/dev/null || true',
     '',

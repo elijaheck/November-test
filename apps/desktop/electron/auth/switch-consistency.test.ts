@@ -40,7 +40,7 @@ async function harness({ failKeep = false } = {}) {
     },
   })
 
-  // Alice on Nuphos Cloud, waiting; Bob on a self-hosted backend, active.
+  // Alice on OpenBot Cloud, waiting; Bob on a self-hosted backend, active.
   await config.write({ token: 'tok-alice', api: CLOUD, userInfo: ALICE })
   session.use(SELF, null, null)
   await config.park(CLOUD)
@@ -119,7 +119,7 @@ test('a switch whose account file cannot be written puts the backend back', asyn
 test('after a restart between the two writes, the stored account is not used on the wrong backend', async () => {
   const h = await harness()
   // As if the app stopped after saving Alice's backend but before her file:
-  // a new process on Nuphos Cloud finds Bob, whose token is the self-hosted one's.
+  // a new process on OpenBot Cloud finds Bob, whose token is the self-hosted one's.
   const restarted = new AuthSession(CLOUD)
   const config = configFile({
     path: h.file,
@@ -176,7 +176,7 @@ test('a sign-in is saved only as the backend that issued it', async () => {
   const h = await harness()
   const before = await h.onDisk()
 
-  // A browser sign-in begun on Nuphos Cloud finishes after the endpoint moved.
+  // A browser sign-in begun on OpenBot Cloud finishes after the endpoint moved.
   await assert.rejects(
     h.config.write({ token: 'tok-late', api: CLOUD, userInfo: ALICE }),
     OtherBackendError,

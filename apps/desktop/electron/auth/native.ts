@@ -147,7 +147,7 @@ export async function completeNativeLogin(
 
           browser.hit?.respond(
             500,
-            errorPage(reason ?? 'Nuphos could not finish the sign-in. Please try again.'),
+            errorPage(reason ?? 'OpenBot could not finish the sign-in. Please try again.'),
           )
           throw reason ? buildAtlasError(reason, 'sign_in_not_saved') : e
         }
@@ -162,6 +162,6 @@ export async function completeNativeLogin(
     await new Promise((r) => setTimeout(r, CALLBACK_WAIT_INTERVAL_MS))
   }
 
-  browser.hit?.respond(408, errorPage('Nuphos gave up waiting for this sign-in.'))
+  browser.hit?.respond(408, errorPage('OpenBot gave up waiting for this sign-in.'))
   throw new Error('Login timed out')
 }

@@ -1,8 +1,8 @@
 import { agentApi } from './api/agent-api.ts'
 import { appApi } from './api/app-api.ts'
-import { channelsApi } from './api/channels-api.ts'
 import { awsApi } from './api/aws-api.ts'
 import { browserExtensionsApi } from './api/browser-extensions-api.ts'
+import { channelsApi } from './api/channels-api.ts'
 import { cloudflareApi } from './api/cloudflare-api.ts'
 import { cloudflarePagesApi } from './api/cloudflare-pages-api.ts'
 import { databaseApi } from './api/database-api.ts'
@@ -10,9 +10,13 @@ import { deviceApi } from './api/device-api.ts'
 import { isAccountGone, isNetworkError, isSessionRejected, parseAtlasError } from './api/errors.ts'
 import { gcpClustersApi } from './api/gcp-clusters-api.ts'
 import { gitApi } from './api/git-api.ts'
+import { agentApprovalApi } from './api/agent-approval-api.ts'
+import { imessageApi } from './api/imessage-api.ts'
 import { instructionsApi } from './api/instructions-api.ts'
 import { integrationsApi } from './api/integrations-api.ts'
 import { k8sApi } from './api/k8s-api.ts'
+import { linkPreviewApi } from './api/link-preview-api.ts'
+import { mailApi } from './api/mail-api.ts'
 import { monitoringApi } from './api/monitoring-api.ts'
 import { plaudApi } from './api/plaud-api.ts'
 import { posthogApi } from './api/posthog-api.ts'
@@ -25,18 +29,22 @@ import { withStepUp } from './lib/stepUp.ts'
 
 import type { WindowAgentApi } from './api/window-agent.ts'
 import type { WindowAppApi } from './api/window-app.ts'
-import type { WindowChannelsApi } from './api/window-channels.ts'
 import type { WindowAwsApi } from './api/window-aws.ts'
 import type { WindowBrowserExtensionsApi } from './api/window-browser-extensions.ts'
+import type { WindowChannelsApi } from './api/window-channels.ts'
 import type { WindowCloudflarePagesApi } from './api/window-cloudflare-pages.ts'
 import type { WindowCloudflareApi } from './api/window-cloudflare.ts'
 import type { WindowDatabaseApi } from './api/window-database.ts'
 import type { WindowDeviceApi } from './api/window-device.ts'
 import type { WindowGcpClustersApi } from './api/window-gcp-clusters.ts'
 import type { WindowGitApi } from './api/window-git.ts'
+import type { WindowAgentApprovalApi } from './api/window-agent-approval.ts'
+import type { WindowIMessageApi } from './api/window-imessage.ts'
 import type { WindowInstructionsApi } from './api/window-instructions.ts'
 import type { WindowIntegrationsApi } from './api/window-integrations.ts'
 import type { WindowK8sApi } from './api/window-k8s.ts'
+import type { WindowLinkPreviewApi } from './api/window-link-preview.ts'
+import type { WindowMailApi } from './api/window-mail.ts'
 import type { WindowMonitoringApi } from './api/window-monitoring.ts'
 import type { WindowPlaudApi } from './api/window-plaud.ts'
 import type { WindowPosthogApi } from './api/window-posthog.ts'
@@ -71,6 +79,10 @@ declare global {
       WindowIntegrationsApi &
       WindowPosthogApi &
       WindowPlaudApi &
+      WindowMailApi &
+      WindowIMessageApi &
+      WindowAgentApprovalApi &
+      WindowLinkPreviewApi &
       WindowSessionAccessApi &
       WindowChannelsApi &
       WindowAwsApi &
@@ -96,6 +108,10 @@ const rawApi = {
   ...integrationsApi,
   ...posthogApi,
   ...plaudApi,
+  ...mailApi,
+  ...imessageApi,
+  ...agentApprovalApi,
+  ...linkPreviewApi,
   ...awsApi,
   ...gcpClustersApi,
   ...gitApi,

@@ -33,7 +33,7 @@ export function InstaboxForm({ st }: { st: BindState }) {
           </li>
           <li>
             {t(
-              'Computers made on this account are billed to it by instabox, not to your Nuphos plan.',
+              'Computers made on this account are billed to it by instabox, not to your OpenBot plan.',
             )}
           </li>
         </ol>

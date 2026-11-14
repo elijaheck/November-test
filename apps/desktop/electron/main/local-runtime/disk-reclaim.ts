@@ -3,7 +3,7 @@ import { lstat, readdir, readFile, realpath, rmdir, unlink, writeFile } from 'no
 import path from 'node:path'
 
 /**
- * A session workspace is a directory Nuphos makes inside a workspace for one
+ * A session workspace is a directory OpenBot makes inside a workspace for one
  * conversation, named after that conversation and carrying a marker naming the same
  * one. Both have to agree before anything here is deleted: a hashed name can be a
  * coincidence, and a marker on its own can be copied.
@@ -41,7 +41,12 @@ export type SessionWorkspaceEntry = {
 
 /** Why an entry was kept. Every one of them is a reason not to delete somebody's files. */
 export type KeepReason =
-  'escapes-root' | 'unmarked' | 'holds-work' | 'unknown-age' | 'too-recent' | 'in-use'
+  | 'escapes-root'
+  | 'unmarked'
+  | 'holds-work'
+  | 'unknown-age'
+  | 'too-recent'
+  | 'in-use'
 
 export type ReclaimDecision =
   | { name: string; path: string; delete: true; reason: 'stale-session-workspace' }

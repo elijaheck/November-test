@@ -87,7 +87,7 @@ export function LoginApiEndpoint({ inputClassName, onChange }: Props) {
             onClick={() => void save(null)}
             className="titlebar-no-drag"
           >
-            Use Nuphos Cloud
+            Use OpenBot Cloud
           </Button>
         )}
         <Button

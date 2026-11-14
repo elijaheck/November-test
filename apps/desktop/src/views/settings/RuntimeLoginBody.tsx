@@ -104,7 +104,7 @@ export function RuntimeLoginBody({
     return keyIgnored ? (
       <p className="text-[13px] leading-5 text-error">
         {t(
-          'The runtime did not take the key. Update Nuphos on the computer it runs on, then try again.',
+          'The runtime did not take the key. Update OpenBot on the computer it runs on, then try again.',
         )}
       </p>
     ) : keySent ? (

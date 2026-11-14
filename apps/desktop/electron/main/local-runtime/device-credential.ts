@@ -14,7 +14,7 @@ export type DeviceCredential = {
   box?: true
 }
 
-/** Only a Box is Nuphos's whole computer, so only there may its default agents' logins go. */
+/** Only a Box is OpenBot's whole computer, so only there may its default agents' logins go. */
 export const ownsMachine = (credential: DeviceCredential | null): boolean =>
   credential?.box === true
 
@@ -88,7 +88,7 @@ export async function credentialRevoked(
 /** Exits for good: the saved credential stays, so a restart fails the same way. */
 export function exitRevoked(): never {
   console.error(
-    'This computer was disconnected from Nuphos. Join it again with a new token: `nuphos agent --join -`.',
+    'This computer was disconnected from OpenBot. Join it again with a new token: `nuphos agent --join -`.',
   )
   process.exit(EXIT_REVOKED)
 }
@@ -130,7 +130,7 @@ export async function deviceCredentialFor(options: {
   )
 
   if (typeof joined === 'number') {
-    if (joined !== 401) throw new Error(`Could not join Nuphos (HTTP ${String(joined)}).`)
+    if (joined !== 401) throw new Error(`Could not join OpenBot (HTTP ${String(joined)}).`)
     // A used token left in a service's environment must not restart forever either.
     console.error('This join token is invalid, used or expired; create a new one.')
     process.exit(EXIT_REVOKED)
